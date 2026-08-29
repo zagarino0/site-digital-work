@@ -21,7 +21,7 @@ import {
   getProjectImageUrl,
   type Project,
 } from "../services/projectsApi";
-
+import { useTranslation } from "react-i18next";
 /* =========================================================
    ANIMATIONS
 ========================================================= */
@@ -55,6 +55,8 @@ const itemVariants: Variants = {
 ========================================================= */
 
 export default function Realisations() {
+  const { t } = useTranslation();
+
   const [projects, setProjects] = useState<Project[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>("Tous");
   const [loading, setLoading] = useState(true);
@@ -79,11 +81,11 @@ export default function Realisations() {
           error
         );
 
-        setError(
-          error instanceof Error
-            ? error.message
-            : "Impossible de charger les réalisations."
-        );
+       
+         {error instanceof Error
+          ? error.message
+          : t("realisations.states.loadError")}
+     
       } finally {
         setLoading(false);
       }
@@ -120,18 +122,16 @@ export default function Realisations() {
   /* =======================================================
      CATEGORIES
   ======================================================= */
+const categories = useMemo(() => {
+  const projectCategories = normalizedProjects.map(
+    (project) => project.category
+  );
 
-  const categories = useMemo(() => {
-    const projectCategories = normalizedProjects.map(
-      (project) => project.category
-    );
-
-    return [
-      "Tous",
-      ...getUniqueProjectCategories(projectCategories),
-    ];
-  }, [normalizedProjects]);
-
+  return [
+    "Tous",
+    ...getUniqueProjectCategories(projectCategories),
+  ];
+}, [normalizedProjects]);
   /* =======================================================
      FILTRAGE
   ======================================================= */
@@ -219,48 +219,44 @@ export default function Realisations() {
               text-center
             "
           >
+             </motion.div>
             <motion.div variants={itemVariants}>
-              <Badge>Nos réalisations</Badge>
-            </motion.div>
+            <Badge>{t("realisations.hero.badge")}</Badge>
 
-            <motion.h1
-              variants={itemVariants}
-              className="
-                mt-7
-                text-5xl
-                font-black
-                leading-[1.02]
-                tracking-[-0.04em]
-                text-dw-text
-                sm:text-6xl
-                lg:text-7xl
-              "
-            >
-              Des projets conçus
-              <br />
+              <motion.h1
+                variants={itemVariants}
+                className="
+                  mt-7
+                  text-5xl
+                  font-black
+                  leading-[1.02]
+                  tracking-[-0.04em]
+                  text-dw-text
+                  sm:text-6xl
+                  lg:text-7xl
+                "
+              >
+                {t("realisations.hero.title")}
+                <br />
+                <span className="dw-gradient-text">
+                  {t("realisations.hero.titleHighlight")}
+                </span>
+              </motion.h1>
 
-              <span className="dw-gradient-text">
-                pour produire des résultats.
-              </span>
-            </motion.h1>
-
-            <motion.p
-              variants={itemVariants}
-              className="
-                mx-auto
-                mt-7
-                max-w-2xl
-                text-base
-                leading-8
-                text-dw-muted
-                sm:text-lg
-              "
-            >
-              Découvrez une sélection de projets web,
-              mobiles, métiers et réseaux réalisés avec
-              des technologies modernes et adaptées aux
-              besoins de chaque entreprise.
-            </motion.p>
+                <motion.p
+                  variants={itemVariants}
+                  className="
+                    mx-auto
+                    mt-7
+                    max-w-2xl
+                    text-base
+                    leading-8
+                    text-dw-muted
+                    sm:text-lg
+                  "
+                >
+                  {t("realisations.hero.description")}
+                </motion.p>
           </motion.div>
         </Container>
       </section>
@@ -295,7 +291,18 @@ export default function Realisations() {
 
               return (
                 <button
-                  key={category}
+                  key={category === "Tous"
+                        ? t("realisations.categories.all")
+                        : t(
+                            `realisations.categories.${category
+                              .toLowerCase()
+                              .normalize("NFD")
+                              .replace(/[\u0300-\u036f]/g, "")
+                              .replace(/\s+/g, "_")}`,
+                            {
+                              defaultValue: category,
+                            }
+                          )}
                   type="button"
                   onClick={() =>
                     setActiveCategory(category)
@@ -357,9 +364,9 @@ export default function Realisations() {
 
           {loading && (
             <div className="py-20 text-center">
-              <p className="text-dw-muted">
-                Chargement des réalisations...
-              </p>
+                  <p className="text-dw-muted">
+                    {t("realisations.states.loading")}
+                  </p>
             </div>
           )}
 
@@ -370,7 +377,7 @@ export default function Realisations() {
             filteredProjects.length === 0 && (
               <div className="py-20 text-center">
                 <p className="text-dw-muted">
-                  Aucun projet dans cette catégorie.
+                  {t("realisations.states.empty")}
                 </p>
               </div>
             )}
@@ -427,70 +434,67 @@ export default function Realisations() {
             "
           >
             <div>
-              <Badge>Notre approche projet</Badge>
+              <Badge>{t("realisations.process.badge")}</Badge>
 
-              <h2
-                className="
-                  mt-6
-                  text-3xl
-                  font-bold
-                  tracking-tight
-                  text-dw-text
-                  sm:text-4xl
-                "
-              >
-                Nous ne développons pas
-                <br />
-                juste des fonctionnalités.
-              </h2>
+                <h2
+                  className="
+                    mt-6
+                    text-3xl
+                    font-bold
+                    tracking-tight
+                    text-dw-text
+                    sm:text-4xl
+                  "
+                >
+                  {t("realisations.process.title")}
+                  <br />
+                  {t("realisations.process.titleSecondLine")}
+                </h2>
 
-              <p
-                className="
-                  mt-5
-                  max-w-xl
-                  text-base
-                  leading-8
-                  text-dw-muted
-                "
-              >
-                Chaque projet commence par la compréhension
-                du besoin. L'objectif est de construire un outil
-                réellement utile à l'entreprise et à ses
-                utilisateurs.
-              </p>
+                <p
+                  className="
+                    mt-5
+                    max-w-xl
+                    text-base
+                    leading-8
+                    text-dw-muted
+                  "
+                >
+                  {t("realisations.process.description")}
+                </p>
 
-              <div className="mt-8">
-                <Button to="/contact">
-                  Parler de mon projet
-                  <ArrowRight size={17} />
-                </Button>
-              </div>
+                <div className="mt-8">
+                  <Button to="/contact">
+                    {t("realisations.process.cta")}
+                    <ArrowRight size={17} />
+                  </Button>
+                </div>
             </div>
 
             <div className="space-y-4">
               <ProcessItem
-                number="01"
-                title="Analyse"
-                text="Compréhension du besoin, des utilisateurs et des objectifs."
-              />
+                  number="01"
+                  title={t("realisations.process.steps.analysis.title")}
+                  text={t("realisations.process.steps.analysis.text")}
+                />
 
-              <ProcessItem
-                number="02"
-                title="Conception"
-                text="Architecture, expérience utilisateur et définition des fonctionnalités."
-              />
+                <ProcessItem
+                  number="02"
+                  title={t("realisations.process.steps.design.title")}
+                  text={t("realisations.process.steps.design.text")}
+                />
 
-              <ProcessItem
-                number="03"
-                title="Développement"
-                text="Construction de la solution avec une architecture maintenable."
-              />
+                <ProcessItem
+                  number="03"
+                  title={t("realisations.process.steps.development.title")}
+                  text={t("realisations.process.steps.development.text")}
+                />
 
-              <ProcessItem
-                number="04"
-                title="Mise en production"
-                text="Déploiement, tests et accompagnement après livraison."
-              />
+                <ProcessItem
+                  number="04"
+                  title={t("realisations.process.steps.production.title")}
+                  text={t("realisations.process.steps.production.text")}
+                />
             </div>
           </div>
         </Container>
@@ -554,44 +558,42 @@ export default function Realisations() {
               >
                 <ArrowRight size={22} />
               </div>
+                <h2
+                  className="
+                    mx-auto
+                    mt-6
+                    max-w-3xl
+                    text-3xl
+                    font-bold
+                    tracking-tight
+                    text-dw-text
+                    sm:text-4xl
+                  "
+                >
+                  {t("realisations.cta.title")}
+                  <br />
+                  {t("realisations.cta.titleHighlight")}
+                </h2>
 
-              <h2
-                className="
-                  mx-auto
-                  mt-6
-                  max-w-3xl
-                  text-3xl
-                  font-bold
-                  tracking-tight
-                  text-dw-text
-                  sm:text-4xl
-                "
-              >
-                Votre projet pourrait être
-                <br />
-                notre prochaine réalisation.
-              </h2>
+                <p
+                  className="
+                    mx-auto
+                    mt-4
+                    max-w-2xl
+                    text-base
+                    leading-7
+                    text-dw-muted
+                  "
+                >
+                  {t("realisations.cta.description")}
+                </p>
 
-              <p
-                className="
-                  mx-auto
-                  mt-4
-                  max-w-2xl
-                  text-base
-                  leading-7
-                  text-dw-muted
-                "
-              >
-                Présentez-nous votre idée et construisons
-                ensemble une solution adaptée à votre activité.
-              </p>
-
-              <div className="mt-8">
-                <Button to="/contact">
-                  Démarrer un projet
-                  <ArrowRight size={17} />
-                </Button>
-              </div>
+                <div className="mt-8">
+                  <Button to="/contact">
+                    {t("realisations.cta.button")}
+                    <ArrowRight size={17} />
+                  </Button>
+                </div>
             </div>
           </div>
         </Container>
@@ -608,11 +610,10 @@ interface ProjectCardProps {
   project: Project;
 }
 
-function ProjectCard({
-  project,
-}: ProjectCardProps) {
-  const [imageError, setImageError] =
-    useState(false);
+function ProjectCard({ project }: ProjectCardProps) {
+  const { t } = useTranslation();
+
+  const [imageError, setImageError] = useState(false);
 
   const projectLink =
     project.demo_url ||
@@ -620,8 +621,8 @@ function ProjectCard({
     "";
 
   const hasLink = Boolean(projectLink);
-const imageUrl =
-  getProjectImageUrl(
+
+  const imageUrl = getProjectImageUrl(
     project.image_url
   );
   return (
@@ -749,8 +750,20 @@ const imageUrl =
               backdrop-blur-md
             "
           >
-            {getCanonicalProjectCategory(
-              project.category
+            //esssaye
+           {t(
+              `realisations.categories.${getCanonicalProjectCategory(
+                project.category
+              )
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/\s+/g, "_")}`,
+              {
+                defaultValue: getCanonicalProjectCategory(
+                  project.category
+                ),
+              }
             )}
           </span>
         </div>
@@ -777,7 +790,10 @@ const imageUrl =
               text-dw-text
             "
           >
-            {project.title}
+            aria-label={t("realisations.project.viewProduction", {
+                title: project.title,
+              })}
+         
           </h3>
 
           {hasLink && (

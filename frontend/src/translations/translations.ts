@@ -398,24 +398,76 @@ export const translations = {
     // =======================================================
 
     realisations: { 
+      //pour page accueil
       eyebrow: "Nos réalisations",
        title: "Des solutions conçues pour créer de la", 
        titleHighlight: "valeur",
         description: "Découvrez une sélection de projets et de solutions numériques développés par Digital Work, avec une approche centrée sur les besoins métier, la performance et l'évolutivité.", featured: "Projet phare", 
         viewProject: "Voir le projet", 
         inDevelopment: "En développement", 
-        projects: { digitalWork: 
-          { category: "Plateforme digitale",
-             title: "Digital Work", 
-             description: "Le site de Digital Work, conçu comme une véritable vitrine digitale pour présenter nos services, notre expertise et nos réalisations, tout en facilitant la prise de contact avec les futurs clients.", }, 
-             hotspotManagement: { category: "Solution réseau", title: "Hotspot Management V2", 
-              description: "Une plateforme de gestion de hotspots permettant d'administrer les utilisateurs, les sessions, les vouchers, les routeurs, les sites et les statistiques depuis une interface centralisée.", },
-               mobileApplications: { category: "Applications mobiles", 
-                title: "Applications mobiles", 
-                description: "Des applications Android et iOS développées avec React Native pour répondre à des besoins métier spécifiques, avec une attention particulière portée à l'expérience utilisateur et à la simplicité d'utilisation.", }, },
-                 cta: {
-                   description: "Vous avez un besoin similaire ou une idée que vous souhaitez transformer en solution digitale ?",
-                    button: "Parlons de votre projet", }, },
+
+           // pour page realisation 
+       
+    "hero": {
+      "badge": "Nos réalisations",
+      "title": "Des projets conçus",
+      "titleHighlight": "pour produire des résultats.",
+      "description": "Découvrez une sélection de projets web, mobiles, métiers et réseaux réalisés avec des technologies modernes et adaptées aux besoins de chaque entreprise."
+    },
+    "categories": {
+      "all": "Tous",
+      "developpement_web": "Développement Web",
+      "application_web": "Application Web",
+      "application_mobile": "Application Mobile",
+      "solution_metier": "Solution métier",
+      "reseaux": "Réseaux",
+      "automatisation": "Automatisation",
+      "solution_digitale": "Solution digitale"
+    },
+    "states": {
+      "loading": "Chargement des réalisations...",
+      "loadError": "Impossible de charger les réalisations.",
+      "empty": "Aucun projet dans cette catégorie."
+    },
+    "process": {
+      "badge": "Notre approche projet",
+      "title": "Nous ne développons pas",
+      "titleSecondLine": "juste des fonctionnalités.",
+      "description": "Chaque projet commence par la compréhension du besoin. L'objectif est de construire un outil réellement utile à l'entreprise et à ses utilisateurs.",
+      "cta": "Parler de mon projet",
+      "steps": {
+        "analysis": {
+          "title": "Analyse",
+          "text": "Compréhension du besoin, des utilisateurs et des objectifs."
+        },
+        "design": {
+          "title": "Conception",
+          "text": "Architecture, expérience utilisateur et définition des fonctionnalités."
+        },
+        "development": {
+          "title": "Développement",
+          "text": "Construction de la solution avec une architecture maintenable."
+        },
+        "production": {
+          "title": "Mise en production",
+          "text": "Déploiement, tests et accompagnement après livraison."
+        }
+      }
+    },
+    "project": {
+      "keyPoints": "Points clés",
+      "view": "Voir le projet",
+      "unavailable": "Projet indisponible",
+      "viewProduction": "Voir {{title}} en production"
+    },
+    "cta": {
+      "title": "Votre projet pourrait être",
+      "titleHighlight": "notre prochaine réalisation.",
+      "description": "Présentez-nous votre idée et construisons ensemble une solution adaptée à votre activité.",
+      "button": "Démarrer un projet"
+    }
+  
+  },
 
     // =======================================================
     // CTA
@@ -911,35 +963,67 @@ export const translations = {
 
       inDevelopment: "Eo am-pamolavolana",
 
-      projects: {
-        digitalWork: {
-          title: "Digital Work",
-          category: "Plateforme nomerika",
-          description:
-            "Plateforme maoderina natao hanehoana ny tolotra, ny tetikasa ary ny fahaiza-manaon'ny Digital Work.",
-        },
-
-        hotspotManagement: {
-          title: "Hotspot Management",
-          category: "Vahaolana amin'ny tambajotra",
-          description:
-            "Vahaolana fitantanana hotspot ahafahana mitantana mpampiasa, sessions, vouchers, routeurs ary statistika.",
-        },
-
-        mobileApplications: {
-          title: "Application mobile",
-          category: "Mobile",
-          description:
-            "Application mobile natao hanomezana traikefa haingana, mora ampiasaina ary mifanaraka amin'ny filan'ny asa.",
-        },
-      },
-
-      cta: {
-        description:
-          "Manana tetikasa mitovitovy amin'izany ve ianao na hevitra tianao hotanterahina?",
-
+      cta: { 
+      "title": "Mety ho",
+      "titleHighlight": "tetikasa manaraka vitanay ny tetikasanao.",
+      "description": "Lazao anay ny hevitrao ary hiara-hanangana vahaolana mifanaraka amin'ny asanao isika.",
         button: "Andao hiresaka momba ny tetikasanao",
       },
+
+      //pour la page realisation 
+      
+    "hero": {
+      "badge": "Asa vitanay",
+      "title": "Tetikasa natao",
+      "titleHighlight": "hamokatra vokatra.",
+      "description": "Jereo ireo tetikasa web, mobile, fitantanana ary tambajotra novolavolaina tamin'ny teknolojia maoderina mifanaraka amin'ny filan'ny orinasa tsirairay."
+    },
+    "categories": {
+      "all": "Rehetra",
+      "developpement_web": "Fampivoarana Web",
+      "application_web": "Application Web",
+      "application_mobile": "Application Mobile",
+      "solution_metier": "Vahaolana ho an'ny orinasa",
+      "reseaux": "Tambajotra",
+      "automatisation": "Automatisation",
+      "solution_digitale": "Vahaolana nomerika"
+    },
+    "states": {
+      "loading": "Ampidirina ny tetikasa...",
+      "loadError": "Tsy afaka nampiditra ireo tetikasa.",
+      "empty": "Tsy misy tetikasa amin'ity sokajy ity."
+    },
+    "process": {
+      "badge": "Fomba fiasanay",
+      "title": "Tsy manorina fonction",
+      "titleSecondLine": "fotsiny izahay.",
+      "description": "Ny tetikasa tsirairay dia manomboka amin'ny fahatakarana ny filàna. Ny tanjona dia ny hanangana fitaovana tena ilaina ho an'ny orinasa sy ny mpampiasa azy.",
+      "cta": "Hiresaka momba ny tetikasako",
+      "steps": {
+        "analysis": {
+          "title": "Famakafakana",
+          "text": "Fahatakarana ny filàna, ny mpampiasa ary ny tanjona."
+        },
+        "design": {
+          "title": "Famolavolana",
+          "text": "Architecture, traikefan'ny mpampiasa ary famaritana ny fonctionnalités."
+        },
+        "development": {
+          "title": "Fampandrosoana",
+          "text": "Fananganana vahaolana manana architecture mora tazonina."
+        },
+        "production": {
+          "title": "Fametrahana",
+          "text": "Déploiement, fitsapana ary fanohanana aorian'ny fandefasana."
+        }
+      }
+    },
+    "project": {
+      "keyPoints": "Hevi-dehibe",
+      "view": "Jereo ny tetikasa",
+      "unavailable": "Tetikasa tsy misy",
+      "viewProduction": "Jereo {{title}} amin'ny production"
+    },
     },
 
     cta: {
@@ -1424,50 +1508,73 @@ export const translations = {
       cta: "Let's discuss your project",
     },
     realisations: {
-      eyebrow: "Our projects",
-
-      title: "Projects designed to",
-
-      titleHighlight: "create value",
-
-      description:
-        "Discover some examples of digital solutions we have developed with a focus on performance, simplicity, and scalability.",
-
+    hero: {
+      badge: "Our work",
+      title: "Projects designed",
+      titleHighlight: "to deliver results.",
+      description: "Discover a selection of web, mobile, business and network projects built with modern technologies tailored to each company's needs."
+    },
       featured: "Featured project",
 
       viewProject: "View project",
 
       inDevelopment: "Project in development",
 
-      projects: {
-        digitalWork: {
-          title: "Digital Work",
-          category: "Digital platform",
-          description:
-            "A modern platform designed to showcase Digital Work's services, projects, and expertise.",
+      //for the page of realisation 
+   
+    categories: {
+      "all": "All",
+      developpement_web: "Web Development",
+      application_web: "Web Application",
+      application_mobile: "Mobile Application",
+      solution_metier: "Business Solution",
+      reseaux: "Networks",
+      automatisation: "Automation",
+      solution_digitale: "Digital Solution"
+    },
+    "states": {
+      "loading": "Loading projects...",
+      "loadError": "Unable to load projects.",
+      "empty": "No project in this category."
+    },
+    "process": {
+      "badge": "Our project approach",
+      "title": "We don't just develop",
+      "titleSecondLine": "features.",
+      "description": "Every project starts with understanding the need. Our goal is to build a tool that is genuinely useful to the company and its users.",
+      "cta": "Discuss my project",
+      "steps": {
+        "analysis": {
+          "title": "Analysis",
+          "text": "Understanding the needs, users and business objectives."
         },
-
-        hotspotManagement: {
-          title: "Hotspot Management",
-          category: "Network solution",
-          description:
-            "A hotspot management solution for administering users, sessions, vouchers, routers, and statistics.",
+        "design": {
+          "title": "Design",
+          "text": "Architecture, user experience and feature definition."
         },
-
-        mobileApplications: {
-          title: "Mobile applications",
-          category: "Mobile",
-          description:
-            "Mobile applications designed to provide a fast, intuitive experience adapted to business needs.",
+        "development": {
+          "title": "Development",
+          "text": "Building the solution with a maintainable architecture."
         },
-      },
-
-      cta: {
-        description:
-          "Do you have a similar project or an idea you would like to bring to life?",
-
-        button: "Let's discuss your project",
-      },
+        "production": {
+          "title": "Production",
+          "text": "Deployment, testing and post-launch support."
+        }
+      }
+    },
+    "project": {
+      "keyPoints": "Key points",
+      "view": "View project",
+      "unavailable": "Project unavailable",
+      "viewProduction": "View {{title}} in production"
+    },
+    cta: {
+      title: "Your project could be",
+      "titleHighlight": "our next success story.",
+      "description": "Tell us about your idea and let's build a solution tailored to your business.",
+      button: "Start a project"
+    }
+  
     },
     cta: {
       badge: "Let's build your project",
