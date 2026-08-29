@@ -4,7 +4,6 @@ import {
   ArrowRight,
   CheckCircle2,
   Code2,
-  Globe2,
   Layers3,
   ShieldCheck,
   Sparkles,
