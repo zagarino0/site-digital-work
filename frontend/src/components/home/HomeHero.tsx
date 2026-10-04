@@ -59,7 +59,7 @@ export default function HomeHero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.08 }}
-              className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl xl:text-[5.25rem]"
+              className="max-w-4xl font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl xl:text-[5.25rem]"
             >
               {t("hero.title")}{" "}
               <span className="text-[#d9ad61]">{t("hero.titleHighlight")}</span>
