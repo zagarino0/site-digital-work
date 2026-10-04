@@ -79,7 +79,7 @@ export default function HomePillars() {
                 className="group relative border-t border-[#dcd7cc] bg-white py-7 pr-5 transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className="flex items-start justify-between">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f4f1eb] text-[#11110f] transition-colors group-hover:bg-[#11110f] group-hover:text-white">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f4f1eb] text-[#11110f] transition-colors group-hover:bg-[#11110f] group-hover:text-white dark:bg-[#2a2924] dark:text-[#f5f2e9] dark:group-hover:bg-[#f5f2e9] dark:group-hover:text-[#11110f]">
                     <Icon className="h-5 w-5" strokeWidth={1.7} />
                   </div>
                   <span className="font-mono text-[11px] font-medium tracking-[0.18em] text-[#aaa398]">
