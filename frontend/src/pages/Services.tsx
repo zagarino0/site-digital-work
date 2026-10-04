@@ -354,7 +354,7 @@ function ServiceCard({ service }: ServiceCardProps) {
         {/* Features */}
 
         <div className="mt-7 grid gap-3 sm:grid-cols-2">
-          {t(`servicesPage.cards.${service.key}.features`, { returnObjects: true }).map((feature: string) => (
+          {(t(`servicesPage.cards.${service.key}.features`, { returnObjects: true }) as string[]).map((feature: string) => (
             <div
               key={feature}
               className="flex items-center gap-2 text-sm text-dw-muted"
@@ -372,7 +372,7 @@ function ServiceCard({ service }: ServiceCardProps) {
         {/* {t("servicesPage.technologies.eyebrow")} */}
 
         <div className="mt-8 flex flex-wrap gap-2 border-t border-white/[0.06] pt-6">
-          {t(`servicesPage.cards.${service.key}.technologies`, { returnObjects: true }).map((technology: string) => (
+          {(t(`servicesPage.cards.${service.key}.technologies`, { returnObjects: true }) as string[]).map((technology: string) => (
             <span
               key={technology}
               className="rounded-lg border border-white/[0.06] bg-white/[0.025] px-3 py-1.5 text-xs font-medium text-dw-muted"
