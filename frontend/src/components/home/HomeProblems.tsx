@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   AlertTriangle,
@@ -11,30 +10,12 @@ import {
 import { useTranslation } from "react-i18next";
 
 const problems = [
-  {
-    key: "time",
-    icon: Clock3,
-  },
-  {
-    key: "technology",
-    icon: Code2,
-  },
-  {
-    key: "visibility",
-    icon: EyeOff,
-  },
-  {
-    key: "systems",
-    icon: Layers,
-  },
-  {
-    key: "profitability",
-    icon: TrendingDown,
-  },
-  {
-    key: "scalability",
-    icon: AlertTriangle,
-  },
+  { key: "time", icon: Clock3 },
+  { key: "technology", icon: Code2 },
+  { key: "visibility", icon: EyeOff },
+  { key: "systems", icon: Layers },
+  { key: "profitability", icon: TrendingDown },
+  { key: "scalability", icon: AlertTriangle },
 ] as const;
 
 export default function HomeProblems() {
@@ -43,256 +24,90 @@ export default function HomeProblems() {
   return (
     <section
       id="problems"
-      className="
-        relative overflow-hidden
-        bg-slate-50
-        py-24
-        text-slate-900
-        dark:bg-slate-950
-        dark:text-white
-        sm:py-28
-      "
+      className="relative overflow-hidden bg-[#faf9f6] py-24 text-[#11110f] sm:py-28"
     >
-      {/* Background decoration */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div
-          className="
-            absolute -left-32 top-20
-            h-72 w-72
-            rounded-full
-            bg-red-500/5
-            blur-3xl
-            dark:bg-red-500/10
-          "
-        />
-
-        <div
-          className="
-            absolute -right-32 bottom-10
-            h-80 w-80
-            rounded-full
-            bg-blue-500/5
-            blur-3xl
-            dark:bg-blue-500/10
-          "
-        />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section heading */}
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span
-            className="
-              inline-flex items-center
-              rounded-full
-              border border-red-200
-              bg-red-50
-              px-4 py-2
-              text-sm font-semibold
-              text-red-600
-              dark:border-red-900/50
-              dark:bg-red-950/30
-              dark:text-red-400
-            "
-          >
-            {t("problems.eyebrow")}
-          </span>
+          <div className="mb-5 flex items-center justify-center gap-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#6e6a61]">
+            <span className="h-px w-10 bg-[#cfc7b8]" />
+            <span>{t("problems.eyebrow")}</span>
+            <span className="h-px w-10 bg-[#cfc7b8]" />
+          </div>
 
-          <h2
-            className="
-              mt-6
-              text-3xl font-bold
-              tracking-tight
-              text-slate-950
-              dark:text-white
-              sm:text-4xl
-              lg:text-5xl
-            "
-          >
+          <h2 className="font-serif text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-[#11110f] sm:text-5xl lg:text-[3.25rem]">
             {t("problems.title")}{" "}
-            <span className="text-red-500">
-              {t("problems.highlight")}
-            </span>
+            <span className="text-[#c99a4d]">{t("problems.highlight")}</span>
           </h2>
 
-          <p
-            className="
-              mt-6
-              text-base
-              leading-8
-              text-slate-600
-              dark:text-slate-400
-              sm:text-lg
-            "
-          >
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#6e6a61] sm:text-lg">
             {t("problems.description")}
           </p>
         </motion.div>
 
-        {/* Problems grid */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {problems.map((problem, index) => {
             const Icon = problem.icon;
-
             const content = t(`problems.items.${problem.key}`, {
               returnObjects: true,
-            }) as {
-              title: string;
-              description: string;
-            };
+            }) as { title: string; description: string };
 
             return (
               <motion.article
                 key={problem.key}
-                initial={{ opacity: 0, y: 28 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.08,
-                }}
-                className="
-                  group relative
-                  rounded-2xl
-                  border border-slate-200
-                  bg-white
-                  p-7
-                  shadow-sm
-                  transition-all duration-300
-                  hover:-translate-y-1
-                  hover:border-red-200
-                  hover:shadow-xl
-                  hover:shadow-slate-900/5
-                  dark:border-slate-800
-                  dark:bg-slate-900/60
-                  dark:hover:border-red-900/60
-                  dark:hover:shadow-black/20
-                "
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                className="group relative min-h-[190px] rounded-2xl border border-[#e5e1d8] bg-white p-6 shadow-[0_8px_30px_rgba(17,17,15,0.035)] transition duration-300 hover:-translate-y-1 hover:border-[#cfc7b8] hover:shadow-[0_18px_45px_rgba(17,17,15,0.08)] sm:p-7"
               >
-                {/* Icon */}
-                <div
-                  className="
-                    mb-6
-                    flex h-12 w-12
-                    items-center justify-center
-                    rounded-xl
-                    bg-red-50
-                    text-red-600
-                    transition-colors duration-300
-                    group-hover:bg-red-600
-                    group-hover:text-white
-                    dark:bg-red-950/40
-                    dark:text-red-400
-                    dark:group-hover:bg-red-600
-                    dark:group-hover:text-white
-                  "
-                >
-                  <Icon
-                    className="h-6 w-6"
-                    strokeWidth={1.8}
-                  />
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f3f0ea] text-[#11110f]">
+                    <Icon className="h-5 w-5" strokeWidth={1.7} />
+                  </div>
+
+                  <span className="text-[11px] font-semibold tracking-[0.18em] text-[#11110f]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
 
-                {/* Title */}
-                <h3
-                  className="
-                    text-xl
-                    font-semibold
-                    tracking-tight
-                    text-slate-900
-                    dark:text-white
-                  "
-                >
+                <h3 className="mt-6 text-lg font-semibold tracking-tight text-[#11110f]">
                   {content.title}
                 </h3>
 
-                {/* Description */}
-                <p
-                  className="
-                    mt-3
-                    text-sm
-                    leading-7
-                    text-slate-600
-                    dark:text-slate-400
-                  "
-                >
+                <p className="mt-2 max-w-md text-sm leading-6 text-[#6e6a61]">
                   {content.description}
                 </p>
 
-                {/* Bottom accent */}
-                <div
-                  className="
-                    mt-6
-                    h-px
-                    w-0
-                    bg-red-500
-                    transition-all duration-300
-                    group-hover:w-12
-                  "
-                />
+                <span className="absolute bottom-6 right-6 flex h-9 w-9 items-center justify-center rounded-full border border-[#ddd8ce] text-[#11110f] transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-[#11110f] group-hover:text-white">
+                  <ArrowRightIcon />
+                </span>
               </motion.article>
             );
           })}
         </div>
-
-        {/* Closing statement */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mx-auto mt-16 max-w-4xl text-center"
-        >
-          <div
-            className="
-              rounded-2xl
-              border border-slate-200
-              bg-white
-              px-6 py-8
-              shadow-sm
-              dark:border-slate-800
-              dark:bg-slate-900/60
-              sm:px-10
-            "
-          >
-            <p
-              className="
-                text-lg
-                font-medium
-                leading-8
-                text-slate-800
-                dark:text-slate-200
-                sm:text-xl
-              "
-            >
-              {t("problems.closing.before")}{" "}
-              <span
-                className="
-                  font-bold
-                  text-slate-950
-                  dark:text-white
-                "
-              >
-                {t("problems.closing.strong")}
-              </span>{" "}
-              {t("problems.closing.middle")}{" "}
-              <span className="font-bold text-red-500">
-                {t("problems.closing.value")}
-              </span>
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
 }
 
+function ArrowRightIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.7"
+      className="h-4 w-4"
+      aria-hidden="true"
+    >
+      <path d="M5 12h13" />
+      <path d="m13 6 6 6-6 6" />
+    </svg>
+  );
+}
