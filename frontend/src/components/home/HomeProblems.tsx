@@ -24,7 +24,7 @@ export default function HomeProblems() {
   return (
     <section
       id="problems"
-      className="relative overflow-hidden bg-[#faf9f6] py-20 text-[#11110f] sm:py-24"
+      className="relative overflow-hidden bg-[#faf9f6] py-20 text-[#11110f] dark:bg-[#1f1e1b] dark:text-[#f5f2e9] sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
@@ -40,7 +40,7 @@ export default function HomeProblems() {
             <span className="h-px w-10 bg-[#cfc7b8]" />
           </div>
 
-          <h2 className="font-serif text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-[#11110f] sm:text-5xl lg:text-[3.25rem]">
+          <h2 className="font-serif text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-[#11110f] dark:text-[#f5f2e9] sm:text-5xl lg:text-[3.25rem]">
             {t("problems.title")}{" "}
             <span className="text-[#c99a4d]">{t("problems.highlight")}</span>
           </h2>
@@ -76,11 +76,11 @@ export default function HomeProblems() {
                   </span>
                 </div>
 
-                <h3 className="mt-5 text-lg font-semibold tracking-tight text-[#11110f]">
+                <h3 className="mt-5 text-lg font-semibold tracking-tight text-[#11110f] dark:text-[#f5f2e9]">
                   {content.title}
                 </h3>
 
-                <p className="mt-2 max-w-md text-sm leading-6 text-[#6e6a61]">
+                <p className="mt-2 max-w-md text-sm leading-6 text-[#6e6a61] dark:text-[#b9b5ac]">
                   {content.description}
                 </p>
 
