@@ -124,7 +124,7 @@ select:focus-visible {
   position: fixed;
   inset: 0;
   z-index: -30;
-  background-image: url("/images/mahajanga-background.webp");
+  background-image: url("/images/mahajanga-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
