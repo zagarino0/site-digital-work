@@ -34,11 +34,11 @@ export default function Footer() {
   return (
     <>
       <footer className="border-t border-[#e5e1d8] bg-white dark:border-[#e5e1d8] dark:bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 py-12 sm:px-6 sm:py-16 lg:px-8">
           {/* Main footer */}
-         <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+         <div className="grid min-w-0 gap-10 sm:gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
             {/* Brand */}
-            <div className="lg:col-span-1">
+            <div className="min-w-0 lg:col-span-1">
                 <div>
                     {/* =================================================
               LOGO
@@ -90,8 +90,10 @@ export default function Footer() {
                   {/* Social */}
                   <div className="mt-7 flex items-center gap-3">
                     <a
-                      href="#"
-                      aria-label="Facebook"
+                      href="https://www.facebook.com/search/top?q=zagarino%20Razafindrafita"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Facebook — Zagarino Razafindrafita"
                       className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
                     >
                       <Facebook className="h-4 w-4" />
@@ -106,16 +108,20 @@ export default function Footer() {
                     </a>
 
                     <a
-                      href="#"
-                      aria-label="LinkedIn"
+                      href="https://www.linkedin.com/in/zagarino-razafindrafita/"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="LinkedIn — Zagarino Razafindrafita"
                       className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
                     >
                       <Linkedin className="h-4 w-4" />
                     </a>
 
                     <a
-                      href="#"
-                      aria-label="GitHub"
+                      href="https://github.com/zagarino0"
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="GitHub — zagarino0"
                       className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
                     >
                       <Github className="h-4 w-4" />
@@ -123,9 +129,9 @@ export default function Footer() {
                   </div>
                 </div>
             </div>
-            <div className="grid grid-cols-3 gap-4 lg:contents">  
+            <div className="grid min-w-0 grid-cols-1 gap-10 sm:grid-cols-2 lg:contents">  
             {/* Services */}
-            <div>
+            <div className="min-w-0">
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#11110f] dark:text-[#11110f]">
                 {t("footer.services.title")}
               </h3>
@@ -259,7 +265,7 @@ export default function Footer() {
               <div className="mt-5 space-y-4">
                 <a
                   href={`mailto:${t("footer.contact.email")}`}
-                  className="flex items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                  className="flex min-w-0 items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
                 >
                   <Mail className="mt-0.5 h-4 w-4 shrink-0" />
 
@@ -274,13 +280,13 @@ export default function Footer() {
                 >
                   <Phone className="mt-0.5 h-4 w-4 shrink-0" />
 
-                  <span>{t("footer.contact.phone")}</span>
+                  <span className="min-w-0 break-words">{t("footer.contact.phone")}</span>
                 </a>
 
                 <div className="flex items-start gap-3 text-sm text-[#6e6a61] dark:text-[#77736a]">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
 
-                  <span>{t("footer.madagascar")}</span>
+                  <span className="min-w-0 break-words">{t("footer.madagascar")}</span>
                 </div>
               </div>
 
@@ -323,7 +329,7 @@ export default function Footer() {
                 {t("footer.copyright")}
               </p>
 
-              <div className="flex items-center gap-5">
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
                 <button
                   type="button"
                   onClick={() => setModal("legal")}
