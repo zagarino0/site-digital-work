@@ -251,7 +251,7 @@ export default function Solutions() {
             <SectorCard
               icon={Hotel}
               title={t("solutionsPage.sectors.items.hotel.title")}
-              text="{t("solutionsPage.positioning.stats.visibility.title")}, réservation, présence digitale et outils de gestion."
+              text={t("solutionsPage.sectors.items.hotel.text")}
             />
 
             <SectorCard
