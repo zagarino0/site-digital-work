@@ -93,11 +93,19 @@ button, a, input, textarea, select {
 }
 
 ::selection { background: var(--dw-primary); color: var(--dw-background); }
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--dw-background); }
-::-webkit-scrollbar-thumb { background: rgba(23, 23, 20, 0.18); border-radius: 999px; }
-[data-theme="dark"] ::-webkit-scrollbar-thumb { background: rgba(245, 242, 233, 0.18); }
-::-webkit-scrollbar-thumb:hover { background: var(--dw-primary); }
+
+/* Hide the native page scrollbar while preserving scrolling. */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
 
 button:focus-visible,
 a:focus-visible,
