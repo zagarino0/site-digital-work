@@ -37,6 +37,28 @@ export interface Project {
   updated_at: string;
 }
 
+/**
+ * Nettoie les valeurs historiques incorrectes provenant des projets.
+ * Certains anciens enregistrements contiennent le markup d'un attribut
+ * HTML au lieu du véritable titre.
+ */
+export function getSafeProjectTitle(
+  title: string | null | undefined,
+  shortTitle?: string | null
+): string {
+  const value = title?.trim() ?? "";
+  const fallback = shortTitle?.trim() ?? "";
+
+  if (
+    /^aria-label\s*=\s*\{title\}$/i.test(value) ||
+    /^aria-label\s*=\s*["']?\{title\}["']?$/i.test(value)
+  ) {
+    return fallback || "Projet Digital Work";
+  }
+
+  return value || fallback || "Projet Digital Work";
+}
+
 export interface ProjectPayload {
   title: string;
 
