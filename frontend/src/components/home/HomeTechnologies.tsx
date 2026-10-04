@@ -1,11 +1,11 @@
-import { Code2, Database, Globe2, Layers3, Smartphone, Server, ShieldCheck, Zap } from "lucide-react";
+import { Code2, Database, Globe2, Layers3, Smartphone, Server, ShieldCheck, Zap, type LucideIcon } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 type Technology = {
   name: string;
   categoryKey: string;
   descriptionKey: string;
-  icon: React.ElementType;
+  icon: LucideIcon;
 };
 
 const technologies: Technology[] = [
