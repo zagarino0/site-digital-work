@@ -110,6 +110,46 @@ select:focus-visible {
 
 
 /* =========================================================
+   PROJECT STATUS BADGES
+   Explicit light/dark contrast so status text remains readable.
+========================================================= */
+.dw-status-completed {
+  border-color: rgba(47, 107, 79, 0.28);
+  background-color: rgba(47, 107, 79, 0.10);
+  color: #24553e;
+}
+
+.dw-status-in-progress {
+  border-color: rgba(138, 100, 29, 0.30);
+  background-color: rgba(138, 100, 29, 0.11);
+  color: #65470f;
+}
+
+.dw-status-maintenance {
+  border-color: rgba(138, 91, 45, 0.30);
+  background-color: rgba(138, 91, 45, 0.11);
+  color: #68431f;
+}
+
+[data-theme="dark"] .dw-status-completed {
+  border-color: rgba(134, 183, 154, 0.30);
+  background-color: rgba(134, 183, 154, 0.15);
+  color: #a9d2b8;
+}
+
+[data-theme="dark"] .dw-status-in-progress {
+  border-color: rgba(216, 182, 109, 0.30);
+  background-color: rgba(216, 182, 109, 0.15);
+  color: #ead08d;
+}
+
+[data-theme="dark"] .dw-status-maintenance {
+  border-color: rgba(208, 162, 116, 0.30);
+  background-color: rgba(208, 162, 116, 0.15);
+  color: #e4bc91;
+}
+
+/* =========================================================
    PUBLIC SITE SURFACE
    White editorial layout. The Mahajanga image is used only
    inside the homepage hero composition.
