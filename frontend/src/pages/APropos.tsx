@@ -162,20 +162,20 @@ export default function APropos() {
                 <div className="mt-8 space-y-5">
                   <ValueLine
                     icon={Lightbulb}
-                    title="{t("aboutPage.objective.items.understand.title")}"
-                    text="{t("aboutPage.objective.items.understand.text")}"
+                    title={t("aboutPage.objective.items.understand.title")}
+                    text={t("aboutPage.objective.items.understand.text")}
                   />
 
                   <ValueLine
                     icon={Code2}
-                    title="{t("aboutPage.objective.items.build.title")}"
-                    text="{t("aboutPage.objective.items.build.text")}"
+                    title={t("aboutPage.objective.items.build.title")}
+                    text={t("aboutPage.objective.items.build.text")}
                   />
 
                   <ValueLine
                     icon={Rocket}
-                    title="{t("aboutPage.method.steps.develop.title")}"
-                    text="{t("aboutPage.objective.items.evolve.text")}"
+                    title={t("aboutPage.method.steps.develop.title")}
+                    text={t("aboutPage.objective.items.evolve.text")}
                   />
                 </div>
               </div>
@@ -193,20 +193,20 @@ export default function APropos() {
           <div className="grid gap-6 lg:grid-cols-3 text-dw-white">
             <VisionCard
               icon={Target}
-              title="{t("aboutPage.vision.mission.title")}"
-              text="{t("aboutPage.vision.mission.text")}"
+              title={t("aboutPage.vision.mission.title")}
+              text={t("aboutPage.vision.mission.text")}
             />
 
             <VisionCard
               icon={Lightbulb}
-              title="{t("aboutPage.vision.vision.title")}"
+              title={t("aboutPage.vision.vision.title")}
               text="Créer un écosystème digital où la technologie simplifie les opérations, améliore l'expérience client et accélère la croissance."
             />
 
             <VisionCard
               icon={Rocket}
-              title="{t("aboutPage.vision.ambition.title")}"
-              text="{t("aboutPage.vision.ambition.text")}"
+              title={t("aboutPage.vision.ambition.title")}
+              text={t("aboutPage.vision.ambition.text")}
             />
           </div>
         </Container>
@@ -219,7 +219,7 @@ export default function APropos() {
       <section className="py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="{t("aboutPage.expertise.eyebrow")}"
+            eyebrow={t("aboutPage.expertise.eyebrow")}
             title={
               <>
                 {t("aboutPage.expertise.title")}
@@ -227,7 +227,7 @@ export default function APropos() {
                 {t("aboutPage.expertise.titleHighlight")}
               </>
             }
-            description="{t("aboutPage.expertise.description")}"
+            description={t("aboutPage.expertise.description")}
           />
 
           <motion.div
@@ -242,8 +242,8 @@ export default function APropos() {
           >
             <ExpertiseCard
               icon={Code2}
-              title="{t("aboutPage.expertise.items.web.title")}"
-              text="{t("aboutPage.expertise.items.web.text")}"
+              title={t("aboutPage.expertise.items.web.title")}
+              text={t("aboutPage.expertise.items.web.text")}
               tags={[
                 "React",
                 "TypeScript",
@@ -253,8 +253,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={Users2}
-              title="{t("aboutPage.expertise.items.mobile.title")}"
-              text="{t("aboutPage.expertise.items.mobile.text")}"
+              title={t("aboutPage.expertise.items.mobile.title")}
+              text={t("aboutPage.expertise.items.mobile.text")}
               tags={[
                 "React Native",
                 "Expo",
@@ -264,8 +264,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={Zap}
-              title="{t("aboutPage.expertise.items.digital.title")}"
-              text="{t("aboutPage.expertise.items.digital.text")}"
+              title={t("aboutPage.expertise.items.digital.title")}
+              text={t("aboutPage.expertise.items.digital.text")}
               tags={[
                 "Automation",
                 "Workflow",
@@ -275,8 +275,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={ShieldCheck}
-              title="{t("aboutPage.expertise.items.network.title")}"
-              text="{t("aboutPage.expertise.items.network.text")}"
+              title={t("aboutPage.expertise.items.network.title")}
+              text={t("aboutPage.expertise.items.network.text")}
               tags={[
                 "MikroTik",
                 "Hotspot",
@@ -286,8 +286,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={Sparkles}
-              title="{t("aboutPage.expertise.items.ux.title")}"
-              text="{t("aboutPage.expertise.items.ux.text")}"
+              title={t("aboutPage.expertise.items.ux.title")}
+              text={t("aboutPage.expertise.items.ux.text")}
               tags={[
                 "UI",
                 "UX",
@@ -297,8 +297,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={Rocket}
-              title="{t("aboutPage.expertise.items.support.title")}"
-              text="{t("aboutPage.expertise.items.support.text")}"
+              title={t("aboutPage.expertise.items.support.title")}
+              text={t("aboutPage.expertise.items.support.text")}
               tags={[
                 "Conseil",
                 "Déploiement",
@@ -316,7 +316,7 @@ export default function APropos() {
       <section className="border-y border-white/[0.06] bg-white/[0.015] py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="{t("aboutPage.method.eyebrow")}"
+            eyebrow={t("aboutPage.method.eyebrow")}
             title={
               <>
                 {t("aboutPage.method.title")}
@@ -324,32 +324,32 @@ export default function APropos() {
                 {t("aboutPage.method.titleHighlight")}
               </>
             }
-            description="{t("aboutPage.method.description")}"
+            description={t("aboutPage.method.description")}
           />
 
           <div className="mt-14 grid gap-5 md:grid-cols-4">
             <MethodCard
               number="01"
-              title="{t("aboutPage.method.steps.listen.title")}"
+              title={t("aboutPage.method.steps.listen.title")}
               text="{t("aboutPage.objective.items.understand.title")} votre activité, vos utilisateurs et vos contraintes."
             />
 
             <MethodCard
               number="02"
-              title="{t("aboutPage.method.steps.design.title")}"
+              title={t("aboutPage.method.steps.design.title")}
               text="Définir l'expérience, les fonctionnalités et l'architecture."
             />
 
             <MethodCard
               number="03"
-              title="{t("aboutPage.method.steps.develop.title")}"
+              title={t("aboutPage.method.steps.develop.title")}
               text="{t("aboutPage.objective.items.build.title")} une solution fiable avec des technologies adaptées."
             />
 
             <MethodCard
               number="04"
-              title="{t("aboutPage.method.steps.evolve.title")}"
-              text="{t("aboutPage.method.steps.evolve.text")}"
+              title={t("aboutPage.method.steps.evolve.title")}
+              text={t("aboutPage.method.steps.evolve.text")}
             />
           </div>
         </Container>
@@ -376,23 +376,23 @@ export default function APropos() {
 
             <div className="grid gap-4 sm:grid-cols-2">
               <ValueCard
-                title="{t("aboutPage.values.items.simplicity.title")}"
-                text="{t("aboutPage.values.items.simplicity.text")}"
+                title={t("aboutPage.values.items.simplicity.title")}
+                text={t("aboutPage.values.items.simplicity.text")}
               />
 
               <ValueCard
-                title="{t("aboutPage.values.items.performance.title")}"
-                text="{t("aboutPage.values.items.performance.text")}"
+                title={t("aboutPage.values.items.performance.title")}
+                text={t("aboutPage.values.items.performance.text")}
               />
 
               <ValueCard
-                title="{t("aboutPage.values.items.transparency.title")}"
-                text="{t("aboutPage.values.items.transparency.text")}"
+                title={t("aboutPage.values.items.transparency.title")}
+                text={t("aboutPage.values.items.transparency.text")}
               />
 
               <ValueCard
-                title="{t("aboutPage.values.items.scalability.title")}"
-                text="{t("aboutPage.values.items.scalability.text")}"
+                title={t("aboutPage.values.items.scalability.title")}
+                text={t("aboutPage.values.items.scalability.text")}
               />
             </div>
           </div>
