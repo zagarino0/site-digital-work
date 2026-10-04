@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { useRef, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import Button from "../ui/Button";
 import ThemeSwitcher from "../ui/ThemeSwitcher";
@@ -20,9 +20,6 @@ const navigation = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { t } = useTranslation();
-  const { pathname } = useLocation();
-  const isHome = pathname === "/";
-
   const adminClickCount = useRef(0);
   const adminClickTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
