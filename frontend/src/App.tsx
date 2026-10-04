@@ -19,6 +19,8 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminProtectedRoute from "./pages/admin/AdminProtectedRoute";
 import { MessageCircle } from "lucide-react";
 import ProjectForm from "./pages/admin/ProjectForm";
+import AdminForgotPassword from "./pages/admin/AdminForgotPassword";
+import AdminResetPassword from "./pages/admin/AdminResetPassword";
 
 function App() {
   const location = useLocation();
@@ -38,6 +40,16 @@ function App() {
           <Route path="/contact" element={<Contact />} />
 
           <Route path="/admin/login" element={<AdminLogin />} />
+
+          <Route
+            path="/admin/forgot-password"
+            element={<AdminForgotPassword />}
+          />
+
+          <Route
+            path="/admin/reset-password"
+            element={<AdminResetPassword />}
+          />
 
           <Route
             path="/admin"
