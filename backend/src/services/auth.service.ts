@@ -1,11 +1,13 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { createHash, randomBytes } from "node:crypto";
 
 import pool from "../database/db.js";
 
 interface AdminUser {
   id: string;
   username: string;
+  email: string | null;
   password_hash: string;
   is_active: boolean;
 }
@@ -14,6 +16,8 @@ export interface AuthTokenPayload {
   id: string;
   username: string;
 }
+
+const PASSWORD_RESET_TTL_MINUTES = 30;
 
 function getJwtSecret(): string {
   const secret = process.env.JWT_SECRET?.trim();
@@ -25,6 +29,10 @@ function getJwtSecret(): string {
   }
 
   return secret;
+}
+
+function hashResetToken(token: string): string {
+  return createHash("sha256").update(token).digest("hex");
 }
 
 export async function findAdminByUsername(
@@ -41,6 +49,7 @@ export async function findAdminByUsername(
       SELECT
         id,
         username,
+        email,
         password_hash,
         is_active
       FROM admin_users
@@ -48,6 +57,34 @@ export async function findAdminByUsername(
       LIMIT 1
     `,
     [normalizedUsername]
+  );
+
+  return result.rows[0] ?? null;
+}
+
+export async function findAdminByUsernameOrEmail(
+  identifier: string
+): Promise<AdminUser | null> {
+  const normalizedIdentifier = identifier.trim();
+
+  if (!normalizedIdentifier) {
+    return null;
+  }
+
+  const result = await pool.query<AdminUser>(
+    `
+      SELECT
+        id,
+        username,
+        email,
+        password_hash,
+        is_active
+      FROM admin_users
+      WHERE LOWER(username) = LOWER($1)
+         OR LOWER(COALESCE(email, '')) = LOWER($1)
+      LIMIT 1
+    `,
+    [normalizedIdentifier]
   );
 
   return result.rows[0] ?? null;
@@ -90,4 +127,112 @@ export function createAccessToken(
         process.env.JWT_EXPIRES_IN ?? "8h",
     } as jwt.SignOptions
   );
+}
+
+export async function createPasswordResetToken(
+  adminId: string
+): Promise<string> {
+  await pool.query(
+    `
+      DELETE FROM password_reset_tokens
+      WHERE admin_id = $1
+         OR expires_at < NOW()
+    `,
+    [adminId]
+  );
+
+  const rawToken = randomBytes(32).toString("hex");
+  const tokenHash = hashResetToken(rawToken);
+
+  await pool.query(
+    `
+      INSERT INTO password_reset_tokens (
+        admin_id,
+        token_hash,
+        expires_at
+      )
+      VALUES (
+        $1,
+        $2,
+        NOW() + ($3 * INTERVAL '1 minute')
+      )
+    `,
+    [
+      adminId,
+      tokenHash,
+      PASSWORD_RESET_TTL_MINUTES,
+    ]
+  );
+
+  return rawToken;
+}
+
+export async function resetAdminPassword(
+  rawToken: string,
+  newPassword: string
+): Promise<boolean> {
+  const tokenHash = hashResetToken(rawToken);
+
+  const client = await pool.connect();
+
+  try {
+    await client.query("BEGIN");
+
+    const tokenResult = await client.query<{
+      id: string;
+      admin_id: string;
+    }>(
+      `
+        SELECT
+          id,
+          admin_id
+        FROM password_reset_tokens
+        WHERE token_hash = $1
+          AND expires_at > NOW()
+          AND used_at IS NULL
+        LIMIT 1
+      `,
+      [tokenHash]
+    );
+
+    const token = tokenResult.rows[0];
+
+    if (!token) {
+      await client.query("ROLLBACK");
+      return false;
+    }
+
+    const passwordHash = await bcrypt.hash(
+      newPassword,
+      12
+    );
+
+    await client.query(
+      `
+        UPDATE admin_users
+        SET
+          password_hash = $1,
+          updated_at = NOW()
+        WHERE id = $2
+      `,
+      [passwordHash, token.admin_id]
+    );
+
+    await client.query(
+      `
+        UPDATE password_reset_tokens
+        SET used_at = NOW()
+        WHERE id = $1
+      `,
+      [token.id]
+    );
+
+    await client.query("COMMIT");
+    return true;
+  } catch (error) {
+    await client.query("ROLLBACK");
+    throw error;
+  } finally {
+    client.release();
+  }
 }
