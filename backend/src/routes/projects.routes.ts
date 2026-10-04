@@ -4,6 +4,7 @@ import {
   createProjectController,
   deleteProjectController,
   listProjects,
+  listAdminProjects,
   showProject,
   updateProjectController,
 } from "../controllers/projects.controller.js";
@@ -19,6 +20,12 @@ const router = Router();
 */
 
 router.get("/", listProjects);
+
+router.get(
+  "/admin",
+  requireAdmin,
+  listAdminProjects
+);
 
 router.get("/:id", showProject);
 
