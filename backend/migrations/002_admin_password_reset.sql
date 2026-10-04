@@ -25,3 +25,11 @@ ON password_reset_tokens (admin_id);
 CREATE INDEX IF NOT EXISTS
   password_reset_tokens_expires_at_idx
 ON password_reset_tokens (expires_at);
+
+
+-- One-time admin bootstrap marker.
+-- The bootstrap endpoint is permanently disabled after the first successful initialization.
+CREATE TABLE IF NOT EXISTS admin_bootstrap (
+  id BOOLEAN PRIMARY KEY DEFAULT TRUE CHECK (id),
+  completed_at TIMESTAMPTZ
+);
