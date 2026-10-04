@@ -13,7 +13,7 @@ export default function HomeHero() {
       id="home"
       className="relative overflow-hidden bg-white text-[#11110f]"
     >
-      <div className="mx-auto grid min-h-[720px] max-w-7xl items-center gap-12 px-5 pb-16 pt-28 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 lg:px-8 lg:pb-20 lg:pt-32">
+      <div className="mx-auto grid min-h-[650px] max-w-7xl items-center gap-12 px-5 pb-14 pt-24 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 lg:px-8 lg:pb-16 lg:pt-28">
         <div className="relative z-10 max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -29,7 +29,7 @@ export default function HomeHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05 }}
-            className="max-w-[760px] font-serif text-5xl font-semibold leading-[0.96] tracking-[-0.05em] text-[#11110f] sm:text-6xl lg:text-[4.7rem] xl:text-[5.15rem]"
+            className="max-w-[760px] font-serif text-5xl font-semibold leading-[0.96] tracking-[-0.05em] text-[#11110f] sm:text-6xl lg:text-[4.7rem] xl:text-[4.85rem]"
           >
             {t("hero.title")}{" "}
             <span className="text-[#c99a4d]">{t("hero.titleHighlight")}</span>
@@ -94,7 +94,7 @@ export default function HomeHero() {
           transition={{ duration: 0.8, delay: 0.12 }}
           className="relative mx-auto w-full max-w-[650px] lg:ml-auto"
         >
-          <div className="relative min-h-[430px] sm:min-h-[500px]">
+          <div className="relative min-h-[390px] sm:min-h-[450px]">
             <div className="absolute left-[8%] top-[7%] z-10 w-[76%] overflow-hidden rounded-[18px] border border-white bg-white p-1 shadow-[0_24px_60px_rgba(17,17,15,0.12)]">
               <img
                 src={image}
