@@ -63,6 +63,7 @@ interface FormData {
 ========================================================= */
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
