@@ -111,42 +111,42 @@ select:focus-visible {
 
 /* =========================================================
    PROJECT STATUS BADGES
-   Explicit light/dark contrast so status text remains readable.
+   High-contrast light/dark variants.
 ========================================================= */
 .dw-status-completed {
-  border-color: rgba(47, 107, 79, 0.28);
-  background-color: rgba(47, 107, 79, 0.10);
-  color: #24553e;
+  border-color: #2f6b4f !important;
+  background-color: #e7f1eb !important;
+  color: #173b2a !important;
 }
 
 .dw-status-in-progress {
-  border-color: rgba(138, 100, 29, 0.30);
-  background-color: rgba(138, 100, 29, 0.11);
-  color: #65470f;
+  border-color: #8a641d !important;
+  background-color: #f7efd9 !important;
+  color: #4d360d !important;
 }
 
 .dw-status-maintenance {
-  border-color: rgba(138, 91, 45, 0.30);
-  background-color: rgba(138, 91, 45, 0.11);
-  color: #68431f;
+  border-color: #8a5b2d !important;
+  background-color: #f5e9dc !important;
+  color: #4a2d16 !important;
 }
 
 [data-theme="dark"] .dw-status-completed {
-  border-color: rgba(134, 183, 154, 0.30);
-  background-color: rgba(134, 183, 154, 0.15);
-  color: #a9d2b8;
+  border-color: #86b79a !important;
+  background-color: #304b3d !important;
+  color: #e4f3e9 !important;
 }
 
 [data-theme="dark"] .dw-status-in-progress {
-  border-color: rgba(216, 182, 109, 0.30);
-  background-color: rgba(216, 182, 109, 0.15);
-  color: #ead08d;
+  border-color: #d8b66d !important;
+  background-color: #514522 !important;
+  color: #fff1bd !important;
 }
 
 [data-theme="dark"] .dw-status-maintenance {
-  border-color: rgba(208, 162, 116, 0.30);
-  background-color: rgba(208, 162, 116, 0.15);
-  color: #e4bc91;
+  border-color: #d0a274 !important;
+  background-color: #4e3928 !important;
+  color: #ffe2c5 !important;
 }
 
 /* =========================================================
