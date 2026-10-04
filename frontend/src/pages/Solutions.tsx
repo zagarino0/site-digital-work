@@ -176,13 +176,13 @@ export default function Solutions() {
                   <MiniStat
                     icon={Workflow}
                     title={t("solutionsPage.positioning.stats.automation.title")}
-                    text="Gagner du temps"
+                    text={t("solutionsPage.positioning.stats.automation.text")}
                   />
 
                   <MiniStat
                     icon={Settings2}
                     title={t("solutionsPage.positioning.stats.evolution.title")}
-                    text="Grandir avec vos outils"
+                    text={t("solutionsPage.positioning.stats.evolution.text")}
                   />
                 </div>
               </div>
@@ -198,15 +198,15 @@ export default function Solutions() {
       <section className="border-y border-white/[0.06] bg-white/[0.015] py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="Nos solutions"
+            eyebrow={t("solutionsPage.solutions.eyebrow")}
             title={
               <>
-                Une solution pour chaque
+                {t("solutionsPage.solutions.title")}
                 <br />
-                besoin métier.
+                {t("solutionsPage.solutions.titleHighlight")}
               </>
             }
-            description="Nous combinons stratégie digitale, design et développement pour créer des solutions adaptées à chaque contexte."
+            description={t("solutionsPage.solutions.description")}
           />
 
           <motion.div
