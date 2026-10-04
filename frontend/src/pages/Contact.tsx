@@ -10,6 +10,7 @@ import {
   Send,
 } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import { useTranslation } from "react-i18next";
 
 import Container from "../components/ui/Container";
 import Badge from "../components/ui/Badge";
@@ -119,17 +120,17 @@ export default function Contact() {
             className="max-w-3xl"
           >
             <motion.div variants={itemVariants}>
-              <Badge>Contact</Badge>
+              <Badge>{t("contactPage.hero.badge")}</Badge>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
               className="mt-7 text-5xl font-black leading-[1.02] tracking-[-0.04em] text-dw-white sm:text-6xl"
             >
-              Parlons de votre
+              {t("contactPage.hero.title")}
               <br />
               <span className="dw-gradient-text">
-                prochain projet digital.
+                {t("contactPage.hero.titleHighlight")}
               </span>
             </motion.h1>
 
@@ -137,9 +138,7 @@ export default function Contact() {
               variants={itemVariants}
               className="mt-7 max-w-2xl text-base leading-8 text-dw-muted sm:text-lg"
             >
-              Présentez-nous votre besoin. Nous analyserons
-              votre projet et vous proposerons une approche
-              adaptée à vos objectifs.
+              {t("contactPage.hero.description")}
             </motion.p>
           </motion.div>
         </Container>
@@ -159,33 +158,33 @@ export default function Contact() {
             <div className="space-y-5">
               <ContactInfo
                 icon={MessageCircle}
-                title="WhatsApp"
-                text="Échangez directement avec Digital Work."
-                value="Nous contacter"
+                title={t("contactPage.info.whatsapp.title")}
+                text={t("contactPage.info.whatsapp.text")}
+                value={t("contactPage.info.whatsapp.value")}
                 href="https://wa.me/2610348428652"
               />
 
               <ContactInfo
                 icon={Mail}
-                title="Email"
-                text="Pour les demandes professionnelles."
+                title={t("contactPage.info.email.title")}
+                text={t("contactPage.info.email.text")}
                 value="rrzafindrafita@gmail.com"
                 href="mailto:rrzafindrafita@gmail.com"
               />
 
               <ContactInfo
                 icon={Phone}
-                title="Téléphone"
-                text="Disponible pour discuter de votre projet."
+                title={t("contactPage.info.phone.title")}
+                text={t("contactPage.info.phone.text")}
                 value="+261 34 84 286 52"
                 href="tel:+2610348428652"
               />
 
               <ContactInfo
                 icon={MapPin}
-                title="Localisation"
-                text="Digital Work accompagne également les projets à distance."
-                value="Madagascar"
+                title={t("contactPage.info.location.title")}
+                text={t("contactPage.info.location.text")}
+                value={t("contactPage.info.location.value")}
               />
 
               <div className="rounded-2xl border border-white/[0.07] bg-dw-card p-6">
@@ -196,13 +195,12 @@ export default function Contact() {
                   />
 
                   <h3 className="font-bold text-dw-white">
-                    Disponibilité
+                    {t("contactPage.info.availability.title")}
                   </h3>
                 </div>
 
                 <p className="mt-3 text-sm leading-6 text-dw-muted">
-                  Nous répondons généralement aux demandes
-                  professionnelles dans les meilleurs délais.
+                  {t("contactPage.info.availability.text")}
                 </p>
               </div>
             </div>
@@ -220,16 +218,15 @@ export default function Contact() {
                 <>
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.15em] text-dw-primary">
-                      Votre projet
+                      {t("contactPage.form.eyebrow")}
                     </p>
 
                     <h2 className="mt-3 text-2xl font-bold text-dw-white">
-                      Décrivez-nous votre besoin
+                      {t("contactPage.form.title")}
                     </h2>
 
                     <p className="mt-2 text-sm leading-6 text-dw-muted">
-                      Plus votre demande est précise, plus nous
-                      pourrons vous proposer une solution pertinente.
+                      {t("contactPage.form.description")}
                     </p>
                   </div>
 
@@ -241,11 +238,11 @@ export default function Contact() {
 
                     <div className="grid gap-5 sm:grid-cols-2">
                       <FormField
-                        label="Nom complet"
+                        label={t("contactPage.form.name")}
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="Votre nom"
+                        placeholder={t("contactPage.form.namePlaceholder")}
                         required
                       />
 
@@ -255,7 +252,7 @@ export default function Contact() {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="vous@entreprise.com"
+                        placeholder={t("contactPage.form.emailPlaceholder")}
                         required
                       />
                     </div>
@@ -264,19 +261,19 @@ export default function Contact() {
 
                     <div className="grid gap-5 sm:grid-cols-2">
                       <FormField
-                        label="Téléphone"
+                        label={t("contactPage.form.phone")}
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+261 ..."
+                        placeholder={t("contactPage.form.phonePlaceholder")}
                       />
 
                       <FormField
-                        label="Entreprise"
+                        label={t("contactPage.form.company")}
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        placeholder="Nom de votre entreprise"
+                        placeholder={t("contactPage.form.companyPlaceholder")}
                       />
                     </div>
 
@@ -284,34 +281,34 @@ export default function Contact() {
 
                     <div className="grid gap-5 sm:grid-cols-2">
                       <SelectField
-                        label="Type de projet"
+                        label={t("contactPage.form.service")}
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
                         options={[
-                          "Création de site web",
-                          "Application web",
-                          "Application mobile",
-                          "Digitalisation",
-                          "Solution réseau / Wi-Fi",
-                          "Refonte d'un site existant",
-                          "Autre",
+                          t("contactPage.form.services.web"),
+                          t("contactPage.form.services.webApp"),
+                          t("contactPage.form.services.mobile"),
+                          t("contactPage.form.services.digital"),
+                          t("contactPage.form.services.network"),
+                          t("contactPage.form.services.redesign"),
+                          t("contactPage.form.services.other"),
                         ]}
                         required
                       />
 
                       <SelectField
-                        label="Budget estimatif"
+                        label={t("contactPage.form.budget")}
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
                         options={[
-                          "Moins de 1 000 000 Ar",
-                          "1 000 000 – 3 000 000 Ar",
-                          "3 000 000 – 5 000 000 Ar",
-                          "5 000 000 – 10 000 000 Ar",
-                          "Plus de 10 000 000 Ar",
-                          "Je ne sais pas encore",
+                          t("contactPage.form.budgets.under1"),
+                          t("contactPage.form.budgets.oneTo3"),
+                          t("contactPage.form.budgets.threeTo5"),
+                          t("contactPage.form.budgets.fiveTo10"),
+                          t("contactPage.form.budgets.over10"),
+                          t("contactPage.form.budgets.unknown"),
                         ]}
                       />
                     </div>
@@ -333,7 +330,7 @@ export default function Contact() {
                         onChange={handleChange}
                         required
                         rows={7}
-                        placeholder="Expliquez-nous votre besoin, vos objectifs, les fonctionnalités souhaitées..."
+                        placeholder={t("contactPage.form.messagePlaceholder")}
                         className="w-full resize-none rounded-xl border border-white/[0.08] bg-white/[0.025] px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-dw-primary/50 focus:ring-2 focus:ring-dw-primary/10"
                       />
                     </div>
@@ -344,7 +341,7 @@ export default function Contact() {
                       type="submit"
                       className="group flex w-full items-center justify-center gap-2 rounded-xl bg-dw-primary px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-110"
                     >
-                      Envoyer ma demande
+                      {t("contactPage.form.submit")}
 
                       <Send
                         size={17}
@@ -353,8 +350,7 @@ export default function Contact() {
                     </button>
 
                     <p className="text-center text-xs leading-5 text-dw-muted">
-                      Vos informations sont utilisées uniquement
-                      pour traiter votre demande.
+                      {t("contactPage.form.privacy")}
                     </p>
                   </form>
                 </>
@@ -379,17 +375,16 @@ export default function Contact() {
                   </div>
 
                   <p className="text-sm font-semibold text-emerald-400">
-                    Besoin d'une réponse rapide ?
+                    {t("contactPage.whatsapp.eyebrow")}
                   </p>
                 </div>
 
                 <h2 className="mt-4 text-2xl font-bold text-dw-white sm:text-3xl">
-                  Échangeons directement sur WhatsApp.
+                  {t("contactPage.whatsapp.title")}
                 </h2>
 
                 <p className="mt-3 max-w-xl text-sm leading-6 text-dw-muted">
-                  Pour une première discussion ou une demande
-                  rapide, WhatsApp est le moyen le plus direct.
+                  {t("contactPage.whatsapp.description")}
                 </p>
               </div>
 
@@ -560,7 +555,7 @@ function SelectField({
         className="w-full rounded-xl border border-white/[0.08] bg-dw-card px-4 py-3 text-sm text-dw-white outline-none transition focus:border-dw-primary/50 focus:ring-2 focus:ring-dw-primary/10"
       >
         <option value="">
-          Sélectionner
+          {t("contactPage.form.select")}
         </option>
 
         {options.map((option) => (
@@ -594,12 +589,11 @@ function SuccessMessage({
       </div>
 
       <h2 className="mt-6 text-2xl font-bold text-dw-white">
-        Demande enregistrée
+        {t("contactPage.success.title")}
       </h2>
 
       <p className="mt-3 max-w-md text-sm leading-7 text-dw-muted">
-        Merci pour votre demande. Nous avons bien reçu
-        les informations concernant votre projet.
+        {t("contactPage.success.description")}
       </p>
 
       <div className="mt-8">
@@ -607,7 +601,7 @@ function SuccessMessage({
           to="/"
           variant="secondary"
         >
-          Retour à l'accueil
+          {t("contactPage.success.home")}
         </Button>
       </div>
 
@@ -616,7 +610,7 @@ function SuccessMessage({
         onClick={onReset}
         className="mt-5 text-xs text-dw-muted transition hover:text-white"
       >
-        Envoyer une autre demande
+        {t("contactPage.success.another")}
       </button>
     </div>
   );
