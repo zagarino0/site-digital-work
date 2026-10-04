@@ -129,7 +129,7 @@ export default function Footer() {
                   </div>
                 </div>
             </div>
-            <div className="grid min-w-0 grid-cols-1 gap-10 sm:grid-cols-2 lg:contents">  
+            <div className="grid min-w-0 grid-cols-2 gap-x-6 gap-y-10 lg:contents">  
             {/* Services */}
             <div className="min-w-0">
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#11110f] dark:text-[#11110f]">
