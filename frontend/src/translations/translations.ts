@@ -802,7 +802,17 @@ export const translations = {
         "keyPoints": "Points clés",
         "view": "Voir le projet",
         "unavailable": "Projet indisponible",
-        "viewProduction": "{title}"
+        "viewProduction": "{title}",
+        "status": {
+          "completed": "Vita",
+          "in-progress": "Eo am-panatanterahana",
+          "maintenance": "Fikojakojana"
+        },
+        "status": {
+          "completed": "Terminé",
+          "in-progress": "En cours",
+          "maintenance": "Maintenance"
+        }
       },
       "cta": {
         "title": "Votre projet pourrait être",
@@ -2290,7 +2300,12 @@ export const translations = {
         "keyPoints": "Key points",
         "view": "View project",
         "unavailable": "Project unavailable",
-        "viewProduction": "View {{title}} in production"
+        "viewProduction": "View {{title}} in production",
+        "status": {
+          "completed": "Completed",
+          "in-progress": "In progress",
+          "maintenance": "Maintenance"
+        }
       },
       "cta": {
         "title": "Your project could be",
