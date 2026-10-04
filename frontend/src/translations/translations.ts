@@ -94,13 +94,20 @@ export const translations = {
     // =======================================================
 
     hero: {
-      badge: "Solutions digitales sur mesure",
-      title: "Transformez votre activité avec le digital.",
+      badge: "De Mahajanga au monde",
+      title: "Des solutions digitales pour un avenir",
+      titleHighlight: "plus grand",
       description:
-        "Digital Work conçoit des sites web, applications et solutions digitales modernes pour aider les entreprises à gagner en visibilité, automatiser leurs activités et développer leur présence en ligne.",
-      primary: "Démarrer un projet",
+        "Digital Work accompagne les entreprises, institutions et entrepreneurs de Mahajanga et de Madagascar dans leur transformation digitale.",
+      primary: "Découvrir nos services",
       secondary: "Voir nos réalisations",
       discover: "Découvrir",
+      stats: {
+        projects: "Projets réalisés",
+        clients: "Clients satisfaits",
+        experience: "Années d'expérience",
+        location: "Notre ancrage local",
+      },
     },
 
     // =======================================================
@@ -672,13 +679,20 @@ export const translations = {
     },
 
     hero: {
-      badge: "Vahaolana nomerika mifanaraka amin'ny filàna",
-      title: "Ampitomboy ny asanao amin'ny alalan'ny digital.",
+      badge: "Avy any Mahajanga ho an'izao tontolo izao",
+      title: "Vahaolana nomerika ho an'ny hoavy",
+      titleHighlight: "lehibe kokoa",
       description:
-        "Digital Work dia mamorona tranonkala, application ary vahaolana nomerika maoderina hanampiana ny orinasa hampitombo ny fahitana azy, hanamora ny asa ary hampivelatra ny fisiany amin'ny Internet.",
-      primary: "Hanomboka tetikasa",
+        "Digital Work dia manampy ny orinasa, andrim-panjakana ary mpandraharaha ao Mahajanga sy Madagasikara amin'ny fanovana nomerika.",
+      primary: "Hijery ny tolotray",
       secondary: "Hijery ny tetikasanay",
       discover: "Hijery bebe kokoa",
+      stats: {
+        projects: "Tetikasa vita",
+        clients: "Mpanjifa afa-po",
+        experience: "Taona niasana",
+        location: "Fototra eto an-toerana",
+      },
     },
 
    pillars: {
@@ -1233,13 +1247,20 @@ export const translations = {
     },
 
     hero: {
-      badge: "Custom digital solutions",
-      title: "Transform your business with digital.",
+      badge: "From Mahajanga to the world",
+      title: "Digital solutions for a",
+      titleHighlight: "bigger future",
       description:
-        "Digital Work creates modern websites, applications and digital solutions that help businesses increase visibility, automate operations and grow their online presence.",
-      primary: "Start a project",
+        "Digital Work helps businesses, institutions and entrepreneurs in Mahajanga and Madagascar move forward with digital transformation.",
+      primary: "Discover our services",
       secondary: "View our projects",
       discover: "Discover",
+      stats: {
+        projects: "Projects delivered",
+        clients: "Satisfied clients",
+        experience: "Years of experience",
+        location: "Local roots",
+      },
     },
     pillars: {
       eyebrow: "Our expertise",
