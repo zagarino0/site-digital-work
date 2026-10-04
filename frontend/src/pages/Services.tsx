@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
   Check,
@@ -48,107 +49,12 @@ const itemVariants: Variants = {
 ========================================================= */
 
 const services = [
-  {
-    number: "01",
-    icon: Globe2,
-    title: "Création de sites web",
-    description:
-      "Nous concevons des sites web modernes, rapides et adaptés à votre activité pour améliorer votre visibilité et transformer vos visiteurs en clients.",
-    features: [
-      "Site vitrine professionnel",
-      "Landing page",
-      "Site institutionnel",
-      "Responsive mobile",
-      "Optimisation SEO",
-      "Performance web",
-    ],
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-  },
-
-  {
-    number: "02",
-    icon: LayoutDashboard,
-    title: "Applications web",
-    description:
-      "Des applications métier sur mesure pour centraliser vos données, automatiser vos processus et piloter votre activité.",
-    features: [
-      "Dashboard administrateur",
-      "Gestion utilisateurs",
-      "Gestion des données",
-      "Système d'authentification",
-      "API REST",
-      "Base de données",
-    ],
-    technologies: ["React", "Node.js", "PostgreSQL"],
-  },
-
-  {
-    number: "03",
-    icon: Smartphone,
-    title: "Applications mobiles",
-    description:
-      "Nous développons des applications mobiles modernes pour Android et iOS avec une expérience utilisateur fluide.",
-    features: [
-      "Application Android",
-      "Application iOS",
-      "Interface moderne",
-      "Notifications",
-      "Authentification",
-      "Connexion API",
-    ],
-    technologies: ["React Native", "Expo", "Firebase"],
-  },
-
-  {
-    number: "04",
-    icon: Workflow,
-    title: "Digitalisation",
-    description:
-      "Nous transformons vos processus manuels en workflows digitaux afin de réduire les tâches répétitives et gagner en efficacité.",
-    features: [
-      "Analyse des processus",
-      "Digitalisation métier",
-      "Automatisation",
-      "Workflows",
-      "Gestion documentaire",
-      "Tableaux de bord",
-    ],
-    technologies: ["Node.js", "React", "Automation"],
-  },
-
-  {
-    number: "05",
-    icon: Code2,
-    title: "Logiciels sur mesure",
-    description:
-      "Des solutions logicielles conçues spécifiquement pour répondre aux besoins opérationnels de votre entreprise.",
-    features: [
-      "Analyse des besoins",
-      "Architecture technique",
-      "Développement personnalisé",
-      "Gestion des utilisateurs",
-      "Sécurité",
-      "Maintenance",
-    ],
-    technologies: ["TypeScript", "Node.js", "PostgreSQL"],
-  },
-
-  {
-    number: "06",
-    icon: Sparkles,
-    title: "Modernisation digitale",
-    description:
-      "Nous améliorons vos outils existants pour les rendre plus modernes, performants, sécurisés et faciles à utiliser.",
-    features: [
-      "Refonte UI/UX",
-      "Modernisation technique",
-      "Optimisation performance",
-      "Responsive design",
-      "Migration",
-      "Maintenance évolutive",
-    ],
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-  },
+  { number: "01", icon: Globe2, key: "web" },
+  { number: "02", icon: LayoutDashboard, key: "applications" },
+  { number: "03", icon: Smartphone, key: "mobile" },
+  { number: "04", icon: Workflow, key: "digitalization" },
+  { number: "05", icon: Code2, key: "customSoftware" },
+  { number: "06", icon: Sparkles, key: "modernization" },
 ];
 
 /* =========================================================
@@ -156,6 +62,8 @@ const services = [
 ========================================================= */
 
 export default function Services() {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* =====================================================
@@ -179,17 +87,17 @@ export default function Services() {
             className="mx-auto max-w-4xl text-center"
           >
             <motion.div variants={itemVariants}>
-              <Badge>Nos expertises</Badge>
+              <Badge>{t("servicesPage.hero.badge")}</Badge>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
               className="mt-7 text-5xl font-black tracking-[-0.04em] text-dw-white sm:text-6xl lg:text-7xl"
             >
-              Des solutions digitales
+              {t("servicesPage.hero.title")}
               <br />
               <span className="dw-gradient-text">
-                conçues pour votre croissance.
+                {t("servicesPage.hero.titleHighlight")}
               </span>
             </motion.h1>
 
@@ -197,10 +105,7 @@ export default function Services() {
               variants={itemVariants}
               className="mx-auto mt-7 max-w-2xl text-base leading-8 text-dw-muted sm:text-lg"
             >
-              Digital Work accompagne les entreprises dans
-              leur transformation digitale, de la conception
-              d'un site web au développement de solutions
-              métier complètes.
+              {t("servicesPage.hero.description")}
             </motion.p>
 
             <motion.div
@@ -208,7 +113,7 @@ export default function Services() {
               className="mt-9 flex flex-col justify-center gap-3 sm:flex-row"
             >
               <Button to="/contact">
-                Démarrer un projet
+                {t("servicesPage.hero.primary")}
                 <ArrowRight size={17} />
               </Button>
 
@@ -216,7 +121,7 @@ export default function Services() {
                 to="/realisations"
                 variant="secondary"
               >
-                Voir nos réalisations
+                {t("servicesPage.hero.secondary")}
               </Button>
             </motion.div>
           </motion.div>
@@ -230,15 +135,15 @@ export default function Services() {
       <section className="border-t border-white/[0.06] py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="Ce que nous faisons"
+            eyebrow="{t("servicesPage.intro.eyebrow")}"
             title={
               <>
-                Une expertise digitale
+                {t("servicesPage.intro.title")}
                 <br />
-                orientée résultats.
+                {t("servicesPage.intro.titleHighlight")}
               </>
             }
-            description="Nous ne développons pas simplement des interfaces. Nous concevons des outils numériques capables de répondre à vos objectifs commerciaux et opérationnels."
+            description="{t("servicesPage.intro.description")}"
           />
 
           {/* Services grid */}
@@ -268,21 +173,19 @@ export default function Services() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <Badge>Technologies</Badge>
+              <Badge>{t("servicesPage.technologies.eyebrow")}</Badge>
 
               <h2 className="mt-6 text-3xl font-bold tracking-tight text-dw-white sm:text-4xl">
-                Une stack moderne pour des produits performants.
+                {t("servicesPage.technologies.title")}
               </h2>
 
               <p className="mt-5 max-w-xl text-base leading-8 text-dw-muted">
-                Nous privilégions des technologies modernes,
-                maintenables et adaptées aux besoins réels de
-                chaque projet.
+                {t("servicesPage.technologies.description")}
               </p>
 
               <div className="mt-8">
                 <Button to="/contact">
-                  Discuter de votre projet
+                  {t("servicesPage.technologies.button")}
                   <ArrowRight size={16} />
                 </Button>
               </div>
@@ -302,7 +205,7 @@ export default function Services() {
               ].map((technology) => (
                 <div
                   key={technology}
-                  className="flex min-h-[90px] items-center justify-center rounded-2xl border border-white/[0.07] bg-dw-card px-4 text-center text-sm font-semibold text-dwwhite transition-all duration-300 hover:-translate-y-1 hover:border-dw-primary/30 hover:bg-dw-primary/[0.04]"
+                  className="flex min-h-[90px] items-center justify-center rounded-2xl border border-white/[0.07] bg-dw-card px-4 text-center text-sm font-semibold text-dw-white transition-all duration-300 hover:-translate-y-1 hover:border-dw-primary/30 hover:bg-dw-primary/[0.04]"
                 >
                   {technology}
                 </div>
@@ -319,40 +222,40 @@ export default function Services() {
       <section className="py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="Notre méthode"
+            eyebrow="{t("servicesPage.process.eyebrow")}"
             title={
               <>
-                Du besoin au produit
+                {t("servicesPage.process.title")}
                 <br />
-                opérationnel.
+                {t("servicesPage.process.titleHighlight")}
               </>
             }
-            description="Une méthode simple et structurée pour transformer votre idée en solution digitale concrète."
+            description="{t("servicesPage.process.description")}"
           />
 
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             <ProcessCard
               number="01"
-              title="Analyse"
-              text="Nous comprenons votre activité, vos utilisateurs et vos objectifs."
+              title="{t("servicesPage.process.steps.analysis.title")}"
+              text="{t("servicesPage.process.steps.analysis.text")}"
             />
 
             <ProcessCard
               number="02"
-              title="Conception"
+              title="{t("servicesPage.process.steps.design.title")}"
               text="Nous définissons l'expérience utilisateur et l'architecture de la solution."
             />
 
             <ProcessCard
               number="03"
-              title="Développement"
-              text="Nous développons votre solution avec une stack moderne et évolutive."
+              title="{t("servicesPage.process.steps.development.title")}"
+              text="{t("servicesPage.process.steps.development.text")}"
             />
 
             <ProcessCard
               number="04"
-              title="Livraison"
-              text="Nous mettons votre solution en production et assurons son évolution."
+              title="{t("servicesPage.process.steps.delivery.title")}"
+              text="{t("servicesPage.process.steps.delivery.text")}"
             />
           </div>
         </Container>
@@ -373,17 +276,16 @@ export default function Services() {
               </div>
 
               <h2 className="mx-auto mt-6 max-w-3xl text-3xl font-bold tracking-tight text-dw-white sm:text-4xl">
-                Vous avez un projet digital ?
+                {t("servicesPage.cta.title")}
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dw-muted">
-                Parlons de votre besoin et construisons
-                ensemble la solution adaptée à votre activité.
+                {t("servicesPage.cta.description")}
               </p>
 
               <div className="mt-8">
                 <Button to="/contact">
-                  Parlons de votre projet
+                  {t("servicesPage.cta.button")}
                   <ArrowRight size={17} />
                 </Button>
               </div>
@@ -440,19 +342,19 @@ function ServiceCard({ service }: ServiceCardProps) {
         {/* Title */}
 
         <h3 className="mt-7 text-2xl font-bold text-dw-white">
-          {service.title}
+          {t(`servicesPage.cards.${service.key}.title`)}
         </h3>
 
         {/* Description */}
 
         <p className="mt-4 text-sm leading-7 text-dw-muted">
-          {service.description}
+          {t(`servicesPage.cards.${service.key}.description`)}
         </p>
 
         {/* Features */}
 
         <div className="mt-7 grid gap-3 sm:grid-cols-2">
-          {service.features.map((feature) => (
+          {t(`servicesPage.cards.${service.key}.features`, { returnObjects: true }).map((feature: string) => (
             <div
               key={feature}
               className="flex items-center gap-2 text-sm text-dw-muted"
@@ -467,10 +369,10 @@ function ServiceCard({ service }: ServiceCardProps) {
           ))}
         </div>
 
-        {/* Technologies */}
+        {/* {t("servicesPage.technologies.eyebrow")} */}
 
         <div className="mt-8 flex flex-wrap gap-2 border-t border-white/[0.06] pt-6">
-          {service.technologies.map((technology) => (
+          {t(`servicesPage.cards.${service.key}.technologies`, { returnObjects: true }).map((technology: string) => (
             <span
               key={technology}
               className="rounded-lg border border-white/[0.06] bg-white/[0.025] px-3 py-1.5 text-xs font-medium text-dw-muted"
