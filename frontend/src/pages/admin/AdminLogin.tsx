@@ -377,6 +377,19 @@ export default function AdminLogin() {
               </div>
             </div>
 
+            <div className="flex justify-end">
+              <button
+                type="button"
+                onClick={() =>
+                  navigate("/admin/forgot-password")
+                }
+                disabled={loading}
+                className="text-xs font-medium text-dw-muted transition hover:text-dw-text disabled:opacity-60"
+              >
+                Mot de passe oublié ?
+              </button>
+            </div>
+
             {/* =================================================
                 SUBMIT
             ================================================== */}
