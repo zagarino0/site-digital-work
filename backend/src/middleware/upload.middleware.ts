@@ -25,9 +25,13 @@ const __dirname = path.dirname(__filename);
  * ../../uploads
  */
 
-const uploadDirectory = path.resolve(
-  __dirname,
-  "../../uploads/projects"
+const uploadRoot = process.env.UPLOADS_DIR
+  ? path.resolve(process.env.UPLOADS_DIR)
+  : path.resolve(__dirname, "../../uploads");
+
+const uploadDirectory = path.join(
+  uploadRoot,
+  "projects"
 );
 
 /* =========================================================
