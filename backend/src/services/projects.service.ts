@@ -75,8 +75,41 @@ export async function getProjects() {
 }
 
 /* =========================================================
+   GET PUBLISHED PROJECTS — PUBLIC SOURCE
+========================================================= */
+
+export async function getPublishedProjects() {
+  const result = await pool.query(`
+    SELECT
+      id,
+      title,
+      short_title,
+      description,
+      details,
+      category,
+      image_url,
+      technologies,
+      benefits,
+      project_url,
+      demo_url,
+      featured,
+      published,
+      status,
+      created_at,
+      updated_at
+    FROM public.projects
+    WHERE published = TRUE
+    ORDER BY created_at ASC
+  `);
+
+  return result.rows;
+}
+
+/* =========================================================
    GET PROJECT BY ID
 ========================================================= */
+
+
 
 export async function getProjectById(id: string) {
   const result = await pool.query(
