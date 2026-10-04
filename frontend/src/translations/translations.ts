@@ -804,11 +804,6 @@ export const translations = {
         "unavailable": "Projet indisponible",
         "viewProduction": "{title}",
         "status": {
-          "completed": "Vita",
-          "in-progress": "Eo am-panatanterahana",
-          "maintenance": "Fikojakojana"
-        },
-        "status": {
           "completed": "Terminé",
           "in-progress": "En cours",
           "maintenance": "Maintenance"
@@ -1789,7 +1784,12 @@ export const translations = {
         "keyPoints": "Hevi-dehibe",
         "view": "Jereo ny tetikasa",
         "unavailable": "Tetikasa tsy misy",
-        "viewProduction": "{title}"
+        "viewProduction": "{title}",
+        "status": {
+          "completed": "Vita",
+          "in-progress": "Eo am-panatanterahana",
+          "maintenance": "Fikojakojana"
+        }
       }
     },
     "cta": {
@@ -2301,6 +2301,11 @@ export const translations = {
         "view": "View project",
         "unavailable": "Project unavailable",
         "viewProduction": "View {{title}} in production",
+        "status": {
+          "completed": "Completed",
+          "in-progress": "In progress",
+          "maintenance": "Maintenance"
+        },
         "status": {
           "completed": "Completed",
           "in-progress": "In progress",
