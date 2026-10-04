@@ -78,55 +78,7 @@ export default function Footer() {
                     {t("footer.description")}
                   </p>
 
-                  {/* Contact shortcut */}
-                  <Link
-                    to="/contact"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#11110f] transition-colors hover:text-[#c99a4d] dark:text-[#c99a4d] dark:hover:text-[#11110f]"
-                  >
-                    <Mail className="h-4 w-4" />
-                    {t("footer.contact.title")}
-                  </Link>
 
-                  {/* Social */}
-                  <div className="mt-7 flex items-center gap-3">
-                    <a
-                      href="https://www.facebook.com/search/top?q=zagarino%20Razafindrafita"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="Facebook — Zagarino Razafindrafita"
-                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
-                    >
-                      <Facebook className="h-4 w-4" />
-                    </a>
-
-                    <a
-                      href="#"
-                      aria-label="Instagram"
-                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
-                    >
-                      <Instagram className="h-4 w-4" />
-                    </a>
-
-                    <a
-                      href="https://www.linkedin.com/in/zagarino-razafindrafita/"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="LinkedIn — Zagarino Razafindrafita"
-                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-
-                    <a
-                      href="https://github.com/zagarino0"
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label="GitHub — zagarino0"
-                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
-                    >
-                      <Github className="h-4 w-4" />
-                    </a>
-                  </div>
                 </div>
             </div>
             <div className="grid min-w-0 grid-cols-2 gap-x-6 gap-y-10 lg:contents">  
@@ -288,6 +240,47 @@ export default function Footer() {
 
                   <span className="min-w-0 break-words">{t("footer.madagascar")}</span>
                 </div>
+              </div>
+
+              {/* Social */}
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <a
+                  href="https://www.facebook.com/search/top?q=zagarino%20Razafindrafita"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook — Zagarino Razafindrafita"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
+                >
+                  <Facebook className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/zagarino-razafindrafita/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn — Zagarino Razafindrafita"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
+                >
+                  <Linkedin className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="https://github.com/zagarino0"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub — zagarino0"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
+                >
+                  <Github className="h-4 w-4" />
+                </a>
               </div>
 
               {/* Language */}
