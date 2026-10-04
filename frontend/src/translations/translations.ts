@@ -438,6 +438,7 @@ export const translations = {
         ambition: { title: "Notre ambition", text: "Devenir un partenaire technologique de référence pour les entreprises qui souhaitent moderniser leurs activités." },
       },
       expertise: {
+      tags: { advice: "Conseil", deployment: "Déploiement", support: "Support" },
         eyebrow: "Notre expertise",
         title: "Design, développement",
         titleHighlight: "et stratégie digitale.",
@@ -622,6 +623,7 @@ export const translations = {
         ambition: { title: "Our ambition", text: "Become a trusted technology partner for businesses modernizing their operations." },
       },
       expertise: {
+      tags: { advice: "Torohevitra", deployment: "Fametrahana", support: "Fanohanana" },
         eyebrow: "Our expertise",
         title: "Design, development",
         titleHighlight: "and digital strategy.",
@@ -1451,6 +1453,7 @@ export const translations = {
         ambition: { title: "Ny tanjonay lehibe", text: "Ho mpiara-miombon'antoka ara-teknolojia itokisan'ny orinasa te hanavao ny asany." },
       },
       expertise: {
+      tags: { advice: "Consulting", deployment: "Deployment", support: "Support" },
         eyebrow: "Ny fahaiza-manaonay",
         title: "Famolavolana, fampandrosoana",
         titleHighlight: "ary paikady nomerika.",
