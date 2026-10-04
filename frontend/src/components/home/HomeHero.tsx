@@ -179,13 +179,13 @@ export default function HomeHero() {
               </div>
             </div>
 
-            <div className="absolute bottom-[4%] left-[25%] z-30 flex items-center gap-3">
-              <span className="font-serif text-2xl italic text-[#11110f]">Mahajanga</span>
-              <span className="h-px w-14 bg-[#b7a98d]" />
-              <span className="max-w-[120px] text-[9px] font-medium uppercase leading-4 tracking-[0.18em] text-[#77736a]">
+            <div className="absolute bottom-[4%] left-1/2 z-30 flex w-max max-w-[calc(100%-20px)] -translate-x-1/2 items-center gap-2">
+              <span className="whitespace-nowrap font-serif text-2xl italic text-[#11110f]">Mahajanga</span>
+              <span className="h-px w-8 shrink-0 bg-[#b7a98d] sm:w-14" />
+              <span className="w-[100px] text-[8px] font-medium uppercase leading-4 tracking-[0.16em] text-[#77736a] sm:w-auto sm:max-w-[120px] sm:text-[9px] sm:tracking-[0.18em]">
                 {t("hero.stats.localTagline")}
               </span>
-              <ArrowUpRight className="h-4 w-4 text-[#b7a98d]" />
+              <ArrowUpRight className="h-4 w-4 shrink-0 text-[#b7a98d]" />
             </div>
           </div>
         </motion.div>
