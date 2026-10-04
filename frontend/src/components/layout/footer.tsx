@@ -257,7 +257,7 @@ export default function Footer() {
             </div>
 
             {/* Contact */}
-            <div>
+            <div className="col-span-2 min-w-0 lg:col-span-1">
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#11110f] dark:text-[#11110f]">
                 {t("footer.contact.title")}
               </h3>
