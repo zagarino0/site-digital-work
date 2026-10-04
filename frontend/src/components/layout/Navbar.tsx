@@ -44,7 +44,7 @@ export default function Navbar() {
         adminClickTimer.current = null;
       }
 
-      window.location.href = "/admin/login";
+      window.location.href = `${import.meta.env.BASE_URL}admin/login`;
     }
   };
 
