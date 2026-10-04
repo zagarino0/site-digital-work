@@ -24,6 +24,19 @@ import {
 } from "../services/projectsApi";
 import { useTranslation } from "react-i18next";
 /* =========================================================
+   DATA SANITIZATION
+========================================================= */
+
+function cleanProjectText(value: string | null | undefined): string {
+  if (!value) return "";
+
+  return value
+    .replace(/^\s*\/\/esssaye\s*/i, "")
+    .replace(/^\s*esssaye\s*/i, "")
+    .trim();
+}
+
+/* =========================================================
    ANIMATIONS
 ========================================================= */
 
@@ -114,8 +127,9 @@ export default function Realisations() {
   const normalizedProjects = useMemo(() => {
     return projects.map((project) => ({
       ...project,
+      title: cleanProjectText(project.title),
       category: getCanonicalProjectCategory(
-        project.category
+        cleanProjectText(project.category)
       ),
     }));
   }, [projects]);
@@ -757,7 +771,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           >
             {t(
               `realisations.categories.${getCanonicalProjectCategory(
-                project.category
+                cleanProjectText(project.category)
               )
                 .toLowerCase()
                 .normalize("NFD")
@@ -765,7 +779,7 @@ function ProjectCard({ project }: ProjectCardProps) {
                 .replace(/\s+/g, "_")}`,
               {
                 defaultValue: getCanonicalProjectCategory(
-                  project.category
+                  cleanProjectText(project.category)
                 ),
               }
             )}
