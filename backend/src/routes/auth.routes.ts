@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import {
+  bootstrapAdminAccount,
   forgotPassword,
   login,
   resetPassword,
@@ -8,6 +9,7 @@ import {
 
 const router = Router();
 
+router.post("/bootstrap-admin", bootstrapAdminAccount);
 router.post("/login", login);
 router.post(
   "/forgot-password",
