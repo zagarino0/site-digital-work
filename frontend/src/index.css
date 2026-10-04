@@ -136,9 +136,11 @@ select:focus-visible {
   inset: 0;
   z-index: -20;
   pointer-events: none;
-  background:
-    linear-gradient(to bottom, rgba(10,10,9,.48), rgba(10,10,9,.72)),
-    rgba(247,245,239,.38);
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 9, 0.08),
+    rgba(10, 10, 9, 0.18)
+  );
 }
 
 .dw-site-shell main {
@@ -147,18 +149,23 @@ select:focus-visible {
 }
 
 .dw-site-shell main > * {
-  background-color: rgba(247,245,239,.58);
-  backdrop-filter: blur(2px);
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 [data-theme="dark"] .dw-site-backdrop-overlay {
-  background:
-    linear-gradient(to bottom, rgba(8,8,7,.58), rgba(8,8,7,.78)),
-    rgba(23,23,20,.28);
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 8, 7, 0.12),
+    rgba(8, 8, 7, 0.24)
+  );
 }
 
 [data-theme="dark"] .dw-site-shell main > * {
-  background-color: rgba(23,23,20,.55);
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 @media (max-width: 768px) {
