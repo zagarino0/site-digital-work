@@ -214,7 +214,7 @@ export default function Footer() {
                 {t("footer.contact.title")}
               </h3>
 
-              <div className="mt-5 space-y-4">
+              <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-8">
                 <a
                   href={`mailto:${t("footer.contact.email")}`}
                   className="flex min-w-0 items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
@@ -242,8 +242,9 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Social */}
-              <div className="mt-7 flex flex-wrap items-center gap-3">
+              <div className="col-start-2 row-start-1">
+                {/* Social */}
+                <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="https://www.facebook.com/search/top?q=zagarino%20Razafindrafita"
                   target="_blank"
@@ -284,7 +285,7 @@ export default function Footer() {
               </div>
 
               {/* Language */}
-              <div className="mt-7">
+              <div className="col-start-2 row-start-2">
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                   {t("footer.language")}
                 </p>
@@ -310,6 +311,7 @@ export default function Footer() {
                     );
                   })}
                 </div>
+              </div>
               </div>
             </div>
             </div>
