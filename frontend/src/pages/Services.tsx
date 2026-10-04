@@ -243,7 +243,7 @@ export default function Services() {
             <ProcessCard
               number="02"
               title={t("servicesPage.process.steps.design.title")}
-              text="Nous définissons l'expérience utilisateur et l'architecture de la solution."
+              text={t("servicesPage.process.steps.design.text")}
             />
 
             <ProcessCard
@@ -315,6 +315,7 @@ interface ServiceCardProps {
 }
 
 function ServiceCard({ service }: ServiceCardProps) {
+  const { t } = useTranslation();
   const Icon = service.icon;
 
   return (
