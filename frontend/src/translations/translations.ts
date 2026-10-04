@@ -179,7 +179,7 @@ export const translations = {
     "positioning": {
       "badge": "Plus qu'un site web",
       "title": "Nous construisons des outils qui font avancer votre entreprise.",
-      "description": "Votre présence digitale doit être un véritable levier commercial. Digital Work combine design, développement et compréhension métier pour créer des solutions utiles, performantes et évolutives.",
+      "description": "Votre présence digitale doit être un véritable levier commercial. Digital Work combine conception, développement et compréhension métier pour créer des solutions utiles, performantes et évolutives.",
       "button": "Découvrir nos solutions",
       "visibility": {
         "title": "Visibilité",
@@ -225,7 +225,7 @@ export const translations = {
       },
       "impact": {
         "title": "Une approche orientée impact",
-        "description": "Chaque décision technique doit servir un objectif métier. Notre approche combine design, développement et stratégie pour construire des produits digitaux utiles, performants et durables."
+        "description": "Chaque décision technique doit servir un objectif métier. Notre approche combine conception, développement et stratégie pour construire des produits digitaux utiles, performants et durables."
       },
       "benefits": [
         "Une architecture technique évolutive",
@@ -323,7 +323,7 @@ export const translations = {
         "tags": {
           "advice": "Conseil",
           "deployment": "Déploiement",
-          "support": "Support"
+          "support": "Assistance"
         },
         "eyebrow": "Notre expertise",
         "title": "Conception, développement",
@@ -753,7 +753,7 @@ export const translations = {
         "reseaux_infrastructure": "Réseau & Infrastructure",
         "cybersecurite": "Cybersécurité",
         "iot_systemes_connectes": "IoT & Systèmes connectés",
-        "ui_ux_design": "UI/UX Design",
+        "ui_ux_design": "UI/UX Conception",
         "ecommerce": "E-commerce",
         "cms_wordpress": "CMS & WordPress",
         "erp_gestion": "ERP & Gestion",
@@ -984,7 +984,7 @@ export const translations = {
       "items": {
         "react": "Interface web maoderina, haingana ary mora tazomina, mifototra amin'ny rafitra mampiasa singa.",
         "reactNative": "Fampiharana mobile Android sy iOS manome traikefa mirindra sy mora ampiasaina.",
-        "nodejs": "API sy services backend mahomby hampifandraisana tsara ny fampiharana-nao.",
+        "nodejs": "API sy tolotra backend mahomby hampifandraisana tsara ny fampiharana-nao.",
         "typescript": "Kaody matanjaka kokoa, misy typage ary mora ampitomboina mba hampihenana ny fahadisoana sy hanamora ny fikojakojana.",
         "postgresql": "Fitantanana angona azo antoka miaraka amin'ny base de données relationnelle natao ho an'ny fampiharana maoderina.",
         "webTechnologies": "HTML, CSS, JavaScript ary fitaovana maoderina hananganana traikefa web haingana sy mahomby.",
@@ -998,7 +998,7 @@ export const translations = {
         "description": "Tsy ny fanangonana teknolojia maro no tanjonay. Ny safidy ara-teknika tsirairay dia mifototra amin'ny filàna mazava : fahombiazana, fiarovana, fikojakojana, fahafahana mivoatra ary traikefan'ny mpampiasa.",
         "web": "Fampiharana",
         "mobile": "Android & iOS",
-        "api": "Services backend",
+        "api": "Tolotra backend",
         "data": "Angona voalamina"
       },
       "closing": "Fitaovana ihany ny teknolojia. Ny tanjonay dia ny mamorona vahaolana mahasoa, azo itokisana ary mifanaraka amin'ny asanao."
@@ -1114,7 +1114,7 @@ export const translations = {
         }
       },
       "closing": {
-        "before": "Ny digital dia tsy tokony",
+        "before": "Ny nomerika dia tsy tokony",
         "strong": "hanasarotra",
         "middle": "ny asanao.",
         "value": "Tokony hamorona tombontsoa izy."
@@ -1155,7 +1155,7 @@ export const translations = {
         "text": "Fitaovana haingana natao ho an'ny tanjonao."
       },
       "automation": {
-        "title": "Automatisation",
+        "title": "Fanaovana ho azy",
         "text": "Ahenao ny asa miverimberina ary mitsitsia fotoana."
       },
       "evolution": {
@@ -1248,7 +1248,7 @@ export const translations = {
       "intro": {
         "badge": "Ny fomba fiasanay",
         "title": "Tokony ho fitaovana hampitomboana ny asanao ny nomerika.",
-        "p1": "Manana lanja ny tranonkala na fampiharana rehefa mamaly filàna mazava.",
+        "p1": "Manana lanja ny tranonkala na ny fampiharana rehefa mamaly filàna mazava.",
         "p2": "Ao amin'ny Digital Work, ny olana ara-barotra no dinihinay voalohany alohan'ny hisafidianana teknolojia. Mamorona vahaolana tsotra, mahomby ary tena azo ampiasaina izahay.",
         "p3": "Ny tanjonay dia ny hanova ny teknolojia ho tombony tena izy ho an'ny orinasanao."
       },
@@ -1286,8 +1286,8 @@ export const translations = {
       },
       "expertise": {
         "tags": {
-          "advice": "Consulting",
-          "deployment": "Deployment",
+          "advice": "Torohevitra",
+          "deployment": "Fametrahana",
           "support": "Fanohanana"
         },
         "eyebrow": "Ny fahaiza-manaonay",
@@ -1296,11 +1296,11 @@ export const translations = {
         "description": "Ampifandraisinay ny fahaiza-manao samihafa mba tsy hampitomboana mpanome tolotra amin'ny tetikasa iray.",
         "items": {
           "web": {
-            "title": "Fampandrosoana web",
-            "text": "Tranonkala matihanina, plateforme métier, dashboard ary fampiharana web maoderina."
+            "title": "Fampandrosoana tranonkala",
+            "text": "Tranonkala matihanina, sehatra ho an'ny orinasa, takelaka fanaraha-maso ary fampiharana tranonkala maoderina."
           },
           "mobile": {
-            "title": "Fampiharana mobile",
+            "title": "Fampiharana finday",
             "text": "Fampiharana Android sy iOS manana traikefa mpampiasa maoderina."
           },
           "digital": {
@@ -1313,7 +1313,7 @@ export const translations = {
           },
           "ux": {
             "title": "Traikefan'ny mpampiasa",
-            "text": "Interface maoderina natao ho tsotra, haingana ary mora ampiasaina."
+            "text": "Endrika maoderina natao ho tsotra, haingana ary mora ampiasaina."
           },
           "support": {
             "title": "Fanohanana",
@@ -1329,18 +1329,18 @@ export const translations = {
         "steps": {
           "listen": {
             "title": "Mihaino",
-            "text": "Mahafantatra votre asa, vos mpampiasa et vos fepetra."
+            "text": "Mahafantatra ny asanao, ny mpampiasa anao ary ny fepetrao izahay."
           },
           "design": {
             "title": "Mamolavola",
-            "text": "Mamaritra ny traikefa, ny asa ilaina ary ny rafitra."
+            "text": "Faritanay ny traikefa, ny asa ilaina ary ny rafitra."
           },
           "develop": {
             "title": "Mampivoatra",
-            "text": "Manangana une vahaolana fiable avec des technologies adaptées."
+            "text": "Manangana vahaolana azo itokisana amin'ny teknolojia mifanaraka izahay."
           },
           "evolve": {
-            "title": "Évoluer",
+            "title": "Mampivoatra",
             "text": "Mandrefy, manatsara ary mampivoatra ny vahaolana."
           }
         }
@@ -1411,67 +1411,67 @@ export const translations = {
       "cards": {
         "presence": {
           "title": "Fisiana nomerika",
-          "subtitle": "Soyez visible. Soyez crédible.",
-          "description": "Manangana izahay une fisiana nomerika professionnelle permettant à votre orinasa d'être trouvée, comprise et contactée facilement.",
+          "subtitle": "Aoka ho hita. Aoka ho itokisana.",
+          "description": "Manangana fisiana nomerika matihanina izahay mba hahitan'ny olona mora foana ny orinasanao, hahatakarany azy ary hifandraisany aminao.",
           "features": [
-            "Site web professionnel",
-            "Landing pages",
-            "Référencement naturel",
+            "Tranonkala matihanina",
+            "Pejy fandraisana",
+            "Fisehoana amin'ny milina fikarohana",
             "Google Business",
-            "Responsive mobile",
-            "Optimisation des fahombiazanas"
+            "Mifanaraka amin'ny finday",
+            "Fanatsarana ny fahombiazana"
           ]
         },
         "management": {
-          "title": "Gestion d'orinasa",
-          "subtitle": "Pilotez votre asa depuis un seul endroit.",
-          "description": "Nous développons des plateformes permettant de centraliser vos données, vos mpampiasa, vos opérations et vos indicateurs.",
+          "title": "Fitantanana orinasa",
+          "subtitle": "Tantano amin'ny toerana iray ny asanao.",
+          "description": "Mamorona sehatra izahay mba hampivondronana ny angona, ny mpampiasa, ny asa ary ny tondro rehetra.",
           "features": [
-            "Dashboards",
-            "Gestion mpampiasa",
-            "Statistiques",
-            "Gestion clients",
-            "Gestion des opérations",
-            "Rapports"
+            "Takelaka fanaraha-maso",
+            "Fitantanana mpampiasa",
+            "Antontan'isa",
+            "Fitantanana mpanjifa",
+            "Fitantanana ny asa",
+            "Tatitra"
           ]
         },
         "processes": {
-          "title": "Fanovana nomerika des dingana",
-          "subtitle": "Moins de tâches manuelles. Plus d'efficacité.",
-          "description": "Nous transformons vos dingana papier ou Excel en workflows numériques simples, automatisés et traçables.",
+          "title": "Fanovana nomerika ny dingana",
+          "subtitle": "Asa tanana vitsy kokoa. Fahombiazana bebe kokoa.",
+          "description": "Avadika ho fizotry ny asa nomerika tsotra, mandeha ho azy ary azo arahina ny dingana atao amin'ny taratasy na takelaka kajy.",
           "features": [
-            "Workflows métier",
+            "Fizotry ny asa",
             "Fanaovana ho azy",
-            "Formulaires numériques",
-            "Notifications",
-            "Gestion documentaire",
-            "Suivi des opérations"
+            "Taratasim-panazavana nomerika",
+            "Fampandrenesana",
+            "Fitantanana antontan-taratasy",
+            "Fanaraha-maso ny asa"
           ]
         },
         "hospitality": {
-          "title": "Hotely & restauration",
-          "subtitle": "Une expérience digitale adaptée à votre établissement.",
-          "description": "Nous créons des vahaolanas digitales pour les hôtels, restaurants et établissements touristiques afin d'améliorer leur visibilité et leur gestion.",
+          "title": "Hotely sy fisakafoanana",
+          "subtitle": "Traikefa nomerika mifanaraka amin'ny toeram-piasanao.",
+          "description": "Mamorona vahaolana nomerika ho an'ny hotely, trano fisakafoanana ary toeram-pizahantany izahay mba hanatsarana ny fahitana sy ny fitantanana.",
           "features": [
-            "Site hôtelier",
-            "Menu digital",
+            "Tranonkala hotely",
+            "Lisitry ny sakafo nomerika",
             "Famandrihana",
-            "Galerie photos",
+            "Galerian-tsary",
             "WhatsApp Business",
-            "Gestion de contenu"
+            "Fitantanana votoaty"
           ]
         },
         "network": {
-          "title": "Tambajotra & Wi-Fi",
-          "subtitle": "Connectez vos mpampiasa et contrôlez votre réseau.",
-          "description": "Nous développons et intégrons des vahaolanas de gestion Wi-Fi et réseau pour les orinasas, hôtels, espaces publics et zones communautaires.",
+          "title": "Tambajotra sy Wi-Fi",
+          "subtitle": "Ampifandraiso ny mpampiasa ary fehezo ny tambajotra.",
+          "description": "Mamolavola sy mampiditra vahaolana fitantanana Wi-Fi sy tambajotra ho an'ny orinasa, hotely, toerana ho an'ny daholobe ary vondrom-piarahamonina izahay.",
           "features": [
             "Hotspot Wi-Fi",
-            "Gestion vouchers",
+            "Fitantanana kaody fidirana",
             "MikroTik",
-            "Gestion mpampiasa",
-            "Statistiques réseau",
-            "Portail captif"
+            "Fitantanana mpampiasa",
+            "Antontan'isa tambajotra",
+            "Vavahady fidirana"
           ]
         }
       },
@@ -1479,19 +1479,19 @@ export const translations = {
         "eyebrow": "Sehatra",
         "title": "Vahaolana mifanaraka",
         "titleHighlight": "amin'ny tontolo iasanao.",
-        "description": "Ny fomba fiasanay s'adapte aux fepetra et aux objectifs de votre secteur d'asa.",
+        "description": "Ny fomba fiasanay dia mifanaraka amin'ny fepetra sy ny tanjon'ny sehatra iasanao.",
         "items": {
           "hotel": {
             "title": "Hotely",
-            "text": "Fahitana, famandrihana, fisiana nomerika et outils de gestion."
+            "text": "Fahitana, famandrihana, fisiana nomerika ary fitaovana fitantanana."
           },
           "sme": {
             "title": "Orinasa madinika sy salantsalany",
-            "text": "Fanovana nomerika des dingana et centralisation des opérations."
+            "text": "Fanovana nomerika ny dingana sy fampivondronana ny asa."
           },
           "retail": {
             "title": "Varotra",
-            "text": "Vahaolana web sy mobile hanatsarana ny fifandraisana amin'ny mpanjifa."
+            "text": "Vahaolana amin'ny tranonkala sy finday hanatsarana ny fifandraisana amin'ny mpanjifa."
           },
           "network": {
             "title": "Tambajotra",
@@ -1530,7 +1530,7 @@ export const translations = {
         "badge": "Ny fahaiza-manaonay",
         "title": "Vahaolana nomerika",
         "titleHighlight": "natao hampitomboana ny asanao.",
-        "description": "Manampy ny orinasa amin'ny fanovana nomerika ny Digital Work, manomboka amin'ny famolavolana tranonkala ka hatramin'ny vahaolana métier feno.",
+        "description": "Manampy ny orinasa amin'ny fanovana nomerika ny Digital Work, manomboka amin'ny famolavolana tranonkala ka hatramin'ny vahaolana ho an'ny orinasa feno.",
         "primary": "Hanomboka tetikasa",
         "secondary": "Hijery ny tetikasanay"
       },
@@ -1538,19 +1538,19 @@ export const translations = {
         "eyebrow": "Izay ataonay",
         "title": "Fahaiza-manao nomerika",
         "titleHighlight": "mifantoka amin'ny vokatra.",
-        "description": "Nous ne développons pas simplement des interfaces. Mamolavola izahay des outils numériques capables de répondre à vos objectifs commerciaux et opérationnels."
+        "description": "Tsy mamolavola endrika fotsiny izahay. Manangana fitaovana nomerika afaka mamaly ny tanjona ara-barotra sy ara-piasanao izahay."
       },
       "cards": {
         "web": {
           "title": "Famoronana tranonkala",
-          "description": "Mamolavola izahay des sites web modernes, rapides et adaptés à votre asa pour améliorer votre visibilité et transformer vos visiteurs en clients.",
+          "description": "Mamolavola tranonkala maoderina, haingana ary mifanaraka amin'ny asanao izahay mba hanatsarana ny fahitanao sy hanovana ny mpitsidika ho mpanjifa.",
           "features": [
-            "Site vitrine professionnel",
-            "Landing page",
-            "Site institutionnel",
-            "Responsive mobile",
-            "Optimisation SEO",
-            "Fahombiazana web"
+            "Tranonkala fampahafantarana matihanina",
+            "Pejy fandraisana",
+            "Tranonkala andrim-panjakana",
+            "Mifanaraka amin'ny finday",
+            "Fanatsarana SEO",
+            "Fahombiazan'ny tranonkala"
           ],
           "technologies": [
             "React",
@@ -1559,15 +1559,15 @@ export const translations = {
           ]
         },
         "applications": {
-          "title": "Fampiharana web",
-          "description": "Des fampiharanas métier sur mesure pour centraliser vos données, automatiser vos dingana et piloter votre asa.",
+          "title": "Fampiharana tranonkala",
+          "description": "Fampiharana ho an'ny asa namboarina manokana mba hampivondronana ny angonao, hanaovana ho azy ny dingana ary hitantanana ny asanao.",
           "features": [
-            "Dashboard administrateur",
-            "Gestion mpampiasa",
-            "Gestion des données",
-            "Système d'authentification",
+            "Takelaka fanaraha-maso mpitantana",
+            "Fitantanana mpampiasa",
+            "Fitantanana angona",
+            "Rafitra fanamarinana",
             "API REST",
-            "Base de données"
+            "Tahiry angona"
           ],
           "technologies": [
             "React",
@@ -1576,15 +1576,15 @@ export const translations = {
           ]
         },
         "mobile": {
-          "title": "Fampiharana mobile",
-          "description": "Nous développons des fampiharanas mobiles modernes pour Android et iOS avec une traikefan'ny mpampiasa fluide.",
+          "title": "Fampiharana finday",
+          "description": "Mamorona fampiharana finday maoderina ho an'ny Android sy iOS izahay, miaraka amin'ny traikefa mpampiasa milamina.",
           "features": [
             "Fampiharana Android",
             "Fampiharana iOS",
-            "Interface moderne",
-            "Notifications",
-            "Authentification",
-            "Connexion API"
+            "Endrika maoderina",
+            "Fampandrenesana",
+            "Fanamarinana",
+            "Fifandraisana API"
           ],
           "technologies": [
             "React Native",
@@ -1594,30 +1594,30 @@ export const translations = {
         },
         "digitalization": {
           "title": "Fanovana nomerika",
-          "description": "Nous transformons vos dingana manuels en workflows digitaux afin de réduire les tâches répétitives et gagner en efficacité.",
+          "description": "Avadika ho fizotry ny asa nomerika ny dingana atao tanana mba hampihenana ny asa miverimberina sy hampitomboana ny fahombiazana.",
           "features": [
-            "Famakafakana des dingana",
-            "Fanovana nomerika métier",
+            "Famakafakana ny dingana",
+            "Fanovana nomerika ho an'ny asa",
             "Fanaovana ho azy",
-            "Workflows",
-            "Gestion documentaire",
-            "Tableaux de bord"
+            "Fizotry ny asa",
+            "Fitantanana antontan-taratasy",
+            "Takelaka fanaraha-maso"
           ],
           "technologies": [
             "Node.js",
             "React",
-            "Fanaovana ho azy"
+            "Automation"
           ]
         },
         "customSoftware": {
-          "title": "Logiciel natao manokana",
-          "description": "Des vahaolanas logicielles conçues spécifiquement pour répondre aux besoins opérationnels de votre orinasa.",
+          "title": "Rindrambaiko namboarina manokana",
+          "description": "Vahaolana rindrambaiko natao manokana hamaly ny filàn'ny asan'ny orinasanao.",
           "features": [
-            "Famakafakana des besoins",
-            "Rafitra technique",
-            "Fampandrosoana personnalisé",
-            "Gestion des mpampiasa",
-            "Sécurité",
+            "Famakafakana ny filàna",
+            "Rafitra ara-teknika",
+            "Fampandrosoana manokana",
+            "Fitantanana mpampiasa",
+            "Fiarovana",
             "Fikojakojana"
           ],
           "technologies": [
@@ -1628,14 +1628,14 @@ export const translations = {
         },
         "modernization": {
           "title": "Fanavaozana nomerika",
-          "description": "Nous améliorons vos outils existants pour les rendre plus modernes, performants, sécurisés et faciles à utiliser.",
+          "description": "Manatsara ny fitaovanao efa misy izahay mba hahatonga azy ho maoderina kokoa, mahomby kokoa, azo antoka ary mora ampiasaina.",
           "features": [
-            "Refonte UI/UX",
-            "Modernisation technique",
-            "Optimisation fahombiazana",
-            "Responsive famolavolana",
-            "Migration",
-            "Fikojakojana évolutive"
+            "Fanavaozana UI/UX",
+            "Fanavaozana ara-teknika",
+            "Fanatsarana ny fahombiazana",
+            "Mifanaraka amin'ny finday",
+            "Fifindrana",
+            "Fikojakojana mitohy"
           ],
           "technologies": [
             "React",
@@ -1646,7 +1646,7 @@ export const translations = {
       },
       "technologies": {
         "eyebrow": "Teknolojia",
-        "title": "Rafitra teknika maoderina ho an'ny vokatra mahomby.",
+        "title": "Rafitra maoderina ho an'ny vokatra mahomby.",
         "description": "Misafidy teknolojia maoderina, mora tazomina ary mifanaraka amin'ny filàna tena izy amin'ny tetikasa tsirairay izahay.",
         "button": "Hiresaka momba ny tetikasanao"
       },
@@ -1666,10 +1666,10 @@ export const translations = {
           },
           "development": {
             "title": "Fampandrosoana",
-            "text": "Amboarinay amin'ny rafitra teknika maoderina sy mora mivoatra ny vahaolanao."
+            "text": "Amboarinay amin'ny teknolojia maoderina sy mora mivoatra ny vahaolanao."
           },
           "delivery": {
-            "title": "Fandefasana",
+            "title": "Fametrahana",
             "text": "Avoakanay amin'ny famokarana ny vahaolanao ary tohizanay ny fampivoarana azy."
           }
         }
@@ -1718,7 +1718,7 @@ export const translations = {
         "application_mobile": "Fampiharana Mobile",
         "solution_metier": "Vahaolana ho an'ny orinasa",
         "reseaux": "Tambajotra",
-        "automatisation": "Automatisation",
+        "automatisation": "Fanaovana ho azy",
         "solution_digitale": "Vahaolana nomerika",
         "logiciel": "Logiciel",
         "reseaux_infrastructure": "Tambajotra & Fotodrafitrasa",
@@ -1908,7 +1908,7 @@ export const translations = {
         "webApplications": "Fampiharana web",
         "mobileApplications": "Fampiharana mobile",
         "businessSolutions": "Vahaolana ho an'ny orinasa",
-        "automation": "Automatisation",
+        "automation": "Fanaovana ho azy",
         "digitalSolutions": "Vahaolana nomerika"
       },
       "navigation": {
@@ -2544,7 +2544,7 @@ export const translations = {
         "steps": {
           "listen": {
             "title": "Listen",
-            "text": "Understand votre business, vos users et vos contraintes."
+            "text": "Understand your business, vos users et vos contraintes."
           },
           "design": {
             "title": "Design",
@@ -2552,7 +2552,7 @@ export const translations = {
           },
           "develop": {
             "title": "Evolve",
-            "text": "Build une solution fiable avec des technologies adaptées."
+            "text": "Build a solution fiable avec des technologies adaptées."
           },
           "evolve": {
             "title": "Évoluer",
@@ -2640,13 +2640,13 @@ export const translations = {
         "management": {
           "title": "Management d'business",
           "subtitle": "Pilotez votre business depuis un seul endroit.",
-          "description": "Nous développons des plateformes permettant de centraliser vos data, vos users, vos opérations et vos indicateurs.",
+          "description": "Nous développons des plateformes permettant de centraliser vos data, vos users, vos operations et vos indicateurs.",
           "features": [
             "Dashboards",
             "Management users",
             "Statistiques",
             "Management clients",
-            "Management des opérations",
+            "Management des operations",
             "Rapports"
           ]
         },
@@ -2660,7 +2660,7 @@ export const translations = {
             "Formulaires numériques",
             "Notifications",
             "Management documentaire",
-            "Suivi des opérations"
+            "Suivi des operations"
           ]
         },
         "hospitality": {
@@ -2702,7 +2702,7 @@ export const translations = {
           },
           "sme": {
             "title": "SMEs",
-            "text": "Digital transformation des processes et centralisation des opérations."
+            "text": "Digital transformation des processes et centralisation des operations."
           },
           "retail": {
             "title": "Retail",
