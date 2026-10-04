@@ -1,48 +1,16 @@
 import multer from "multer";
 import path from "node:path";
-import fs from "node:fs";
-import { fileURLToPath } from "node:url";
+
+import {
+  getProjectUploadsDirectory,
+} from "../config/uploads.js";
 
 /* =========================================================
-   PATHS
+   UPLOAD DIRECTORY
 ========================================================= */
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-/*
- * upload.middleware.ts
- *
- * backend/
- * ├── src/
- * │   └── middleware/
- * │       └── upload.middleware.ts
- * │
- * └── uploads/
- *     └── projects/
- *
- * Depuis src/middleware :
- * ../../uploads
- */
-
-const uploadRoot = process.env.UPLOADS_DIR
-  ? path.resolve(process.env.UPLOADS_DIR)
-  : path.resolve(__dirname, "../../uploads");
-
-const uploadDirectory = path.join(
-  uploadRoot,
-  "projects"
-);
-
-/* =========================================================
-   CREATE DIRECTORY
-========================================================= */
-
-if (!fs.existsSync(uploadDirectory)) {
-  fs.mkdirSync(uploadDirectory, {
-    recursive: true,
-  });
-}
+const uploadDirectory =
+  getProjectUploadsDirectory();
 
 console.log(
   "[UPLOAD] Project upload directory:",
