@@ -2702,7 +2702,7 @@ export const translations = {
           },
           "sme": {
             "title": "SMEs",
-            "text": "Digital transformation of processes et centralisation des operations."
+            "text": "Digital transformation of processes and centralized operations."
           },
           "retail": {
             "title": "Retail",
@@ -2775,11 +2775,11 @@ export const translations = {
         },
         "applications": {
           "title": "Web applications",
-          "description": "Custom business applications pour centraliser vos data, automatiser vos processes et piloter votre business.",
+          "description": "Custom business applications to centralize your data, automate your processes and manage your business.",
           "features": [
             "Dashboard administrateur",
             "Management users",
-            "Management des data",
+            "Data management",
             "Système d'authentication",
             "API REST",
             "Base de data"
@@ -2792,7 +2792,7 @@ export const translations = {
         },
         "mobile": {
           "title": "Mobile applications",
-          "description": "We develop modern mobile applications pour Android et iOS avec une experience utilisateur fluide.",
+          "description": "We develop modern mobile applications for Android and iOS with a smooth user experience.",
           "features": [
             "Application Android",
             "Application iOS",
@@ -2809,9 +2809,9 @@ export const translations = {
         },
         "digitalization": {
           "title": "Digital transformation",
-          "description": "Nous transformons vos processes manuels en workflows digitaux afin de réduire les tâches répétitives et gagner en efficacité.",
+          "description": "We transform manual processes into digital workflows to reduce repetitive tasks and improve efficiency.",
           "features": [
-            "Analysis des processes",
+            "Process analysis",
             "Digital transformation métier",
             "Automation",
             "Workflows",
@@ -2826,12 +2826,12 @@ export const translations = {
         },
         "customSoftware": {
           "title": "Custom software",
-          "description": "Custom software solutions designed pour répondre aux needs opérationnels de votre business.",
+          "description": "Custom software solutions designed to meet your business needs.",
           "features": [
-            "Analysis des needs",
+            "Needs analysis",
             "Architecture technical",
             "Development personnalisé",
-            "Management des users",
+            "User management",
             "Security",
             "Maintenance"
           ],
@@ -2843,7 +2843,7 @@ export const translations = {
         },
         "modernization": {
           "title": "Digital modernization",
-          "description": "We improve your existing tools pour les rendre plus modernes, performants, sécurisés et faciles à utiliser.",
+          "description": "We improve your existing tools to make them more modern, performant, secure and easy to use.",
           "features": [
             "Redesign UI/UX",
             "Modernisation technical",
