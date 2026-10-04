@@ -150,7 +150,7 @@ export default function HomeRealisations() {
       id="realisations"
       className="
         border-y
-        border-dw-border
+        border-[#e3dfd7]
         bg-white
         py-24
         sm:py-32
@@ -186,9 +186,9 @@ export default function HomeRealisations() {
             className="
               mt-6
               text-3xl
-              font-bold
+              font-semibold
               tracking-tight
-              text-dw-text
+              text-[#11110f]
               sm:text-4xl
               lg:text-5xl
             "
@@ -207,7 +207,7 @@ export default function HomeRealisations() {
               max-w-2xl
               text-base
               leading-8
-              text-dw-muted
+              text-[#6e6a61]
             "
           >
             {t(
@@ -236,9 +236,9 @@ export default function HomeRealisations() {
                 key={item}
                 className="
                   overflow-hidden
-                  rounded-3xl
+                  rounded-[16px]
                   border
-                  border-dw-border
+                  border-[#e3dfd7]
                   bg-white
                 "
               >
@@ -246,7 +246,7 @@ export default function HomeRealisations() {
                   className="
                     aspect-[16/10]
                     animate-pulse
-                    bg-dw-surface
+                    bg-[#f4f1eb]
                   "
                 />
 
@@ -257,7 +257,7 @@ export default function HomeRealisations() {
                       w-2/3
                       animate-pulse
                       rounded
-                      bg-dw-surface
+                      bg-[#f4f1eb]
                     "
                   />
 
@@ -267,7 +267,7 @@ export default function HomeRealisations() {
                       w-full
                       animate-pulse
                       rounded
-                      bg-dw-surface
+                      bg-[#f4f1eb]
                     "
                   />
 
@@ -277,7 +277,7 @@ export default function HomeRealisations() {
                       w-4/5
                       animate-pulse
                       rounded
-                      bg-dw-surface
+                      bg-[#f4f1eb]
                     "
                   />
                 </div>
@@ -322,10 +322,10 @@ export default function HomeRealisations() {
                 mx-auto
                 mt-12
                 max-w-xl
-                rounded-3xl
+                rounded-[16px]
                 border
-                border-dw-border
-                bg-dw-card
+                border-[#e3dfd7]
+                bg-white
                 p-10
                 text-center
               "
@@ -350,8 +350,8 @@ export default function HomeRealisations() {
                 className="
                   mt-5
                   text-lg
-                  font-bold
-                  text-dw-text
+                  font-semibold
+                  text-[#11110f]
                 "
               >
                 {t(
@@ -365,7 +365,7 @@ export default function HomeRealisations() {
                   mt-2
                   text-sm
                   leading-6
-                  text-dw-muted
+                  text-[#6e6a61]
                 "
               >
                 {t(
@@ -428,15 +428,15 @@ export default function HomeRealisations() {
               inline-flex
               items-center
               gap-2
-              rounded-xl
+              rounded-full
               border
               border-[#d6d0c4]
-              bg-dw-primary/10
+              bg-[#f4f1eb]
               px-5
               py-3
               text-sm
               font-semibold
-              text-dw-primary
+              text-[#11110f]
               transition-all
               hover:border-[#11110f]
               hover:bg-[#eee9df]
@@ -494,16 +494,16 @@ function ProjectCard({
         h-full
         flex-col
         overflow-hidden
-        rounded-3xl
+        rounded-[16px]
         border
-        border-dw-border
-        bg-dw-card
+        border-[#e3dfd7]
+        bg-white
         transition-all
         duration-300
         hover:-translate-y-1
         hover:border-[#c99a4d]
         hover:shadow-xl
-        hover:shadow-dw-primary/5
+        hover:shadow-black/5
       "
     >
       {/* =================================================
@@ -516,8 +516,8 @@ function ProjectCard({
           aspect-[16/10]
           overflow-hidden
           border-b
-          border-dw-border
-          bg-dw-surface
+          border-[#e3dfd7]
+          bg-[#f4f1eb]
         "
       >
         {imageUrl && !imageError ? (
@@ -551,10 +551,7 @@ function ProjectCard({
               flex
               items-center
               justify-center
-              bg-gradient-to-br
-              from-dw-primary/10
-              via-dw-surface
-              to-dw-background
+              bg-[#f4f1eb]
             "
           >
             <div
@@ -566,11 +563,11 @@ function ProjectCard({
                 justify-center
                 rounded-2xl
                 border
-                border-dw-primary/20
-                bg-dw-primary/10
+                border-[#d6d0c4]
+                bg-[#f4f1eb]
                 text-2xl
                 font-black
-                text-dw-primary
+                text-[#11110f]
               "
             >
               DW
@@ -604,9 +601,9 @@ function ProjectCard({
           >
             <span
               className="
-                rounded-lg
+                rounded-full
                 border
-                border-white/10
+                border-white/20
                 bg-black/40
                 px-3
                 py-1.5
@@ -647,9 +644,9 @@ function ProjectCard({
           <h3
             className="
               text-xl
-              font-bold
+              font-semibold
               leading-tight
-              text-dw-text
+              text-[#11110f]
             "
           >
             {project.title}
@@ -671,15 +668,15 @@ function ProjectCard({
                 shrink-0
                 items-center
                 justify-center
-                rounded-lg
+                rounded-full
                 border
-                border-dw-border
-                bg-dw-surface
-                text-dw-muted
+                border-[#e3dfd7]
+                bg-[#f4f1eb]
+                text-[#6e6a61]
                 transition-all
-                hover:border-dw-primary/30
-                hover:bg-dw-primary/10
-                hover:text-dw-primary
+                hover:border-[#c99a4d]
+                hover:bg-[#f4f1eb]
+                hover:text-[#11110f]
               "
             >
               <ExternalLink size={16} />
@@ -696,7 +693,7 @@ function ProjectCard({
               line-clamp-3
               text-sm
               leading-7
-              text-dw-muted
+              text-[#6e6a61]
             "
           >
             {project.description}
@@ -721,15 +718,15 @@ function ProjectCard({
                   <span
                     key={`${project.id}-technology-${index}`}
                     className="
-                      rounded-lg
+                      rounded-full
                       border
-                      border-dw-border
-                      bg-dw-surface
+                      border-[#e3dfd7]
+                      bg-[#f4f1eb]
                       px-2.5
                       py-1
                       text-[11px]
                       font-medium
-                      text-dw-muted
+                      text-[#6e6a61]
                     "
                   >
                     {technology}
@@ -750,18 +747,18 @@ function ProjectCard({
                 inline-flex
                 items-center
                 gap-2
-                rounded-xl
+                rounded-full
                 border
-                border-dw-primary/20
-                bg-dw-primary/10
+                border-[#d6d0c4]
+                bg-[#f4f1eb]
                 px-4
                 py-2.5
                 text-sm
                 font-semibold
-                text-dw-primary
+                text-[#11110f]
                 transition-all
-                hover:border-dw-primary/40
-                hover:bg-dw-primary/15
+                hover:border-[#11110f]
+                hover:bg-[#eee9df]
               "
             >
               {t(
@@ -783,15 +780,15 @@ function ProjectCard({
               className="
                 inline-flex
                 items-center
-                rounded-xl
+                rounded-full
                 border
-                border-dw-border
-                bg-dw-surface
+                border-[#e3dfd7]
+                bg-[#f4f1eb]
                 px-4
                 py-2.5
                 text-sm
                 font-medium
-                text-dw-muted
+                text-[#6e6a61]
               "
             >
               {t(
