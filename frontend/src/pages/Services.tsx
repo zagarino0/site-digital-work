@@ -304,10 +304,7 @@ export default function Services() {
 interface Service {
   number: string;
   icon: typeof Globe2;
-  title: string;
-  description: string;
-  features: string[];
-  technologies: string[];
+  key: string;
 }
 
 interface ServiceCardProps {
