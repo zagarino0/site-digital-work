@@ -879,7 +879,7 @@ function ProjectCard({ project }: ProjectCardProps) {
                       text-dw-success
                     "
                   >
-                    Points clés
+                    {t("realisations.project.keyPoints")}
                   </p>
 
                   <ul className="mt-3 space-y-2">

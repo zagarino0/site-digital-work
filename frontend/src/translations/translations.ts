@@ -458,7 +458,7 @@ export const translations = {
       "keyPoints": "Points clés",
       "view": "Voir le projet",
       "unavailable": "Projet indisponible",
-      "viewProduction": "Voir {{title}} en production"
+      "viewProduction": "{title}"
     },
     "cta": {
       "title": "Votre projet pourrait être",
@@ -1022,7 +1022,7 @@ export const translations = {
       "keyPoints": "Hevi-dehibe",
       "view": "Jereo ny tetikasa",
       "unavailable": "Tetikasa tsy misy",
-      "viewProduction": "Jereo {{title}} amin'ny production"
+      "viewProduction": "{title}"
     },
     },
 

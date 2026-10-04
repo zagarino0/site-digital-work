@@ -1,264 +1,811 @@
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
+import { motion, type Variants } from "framer-motion";
 import {
-  ArrowUpRight,
+  ArrowRight,
   ExternalLink,
   FolderKanban,
-  Smartphone,
-  Globe,
-  Monitor,
 } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-interface Realisation {
-  title: string;
-  category: string;
-  description: string;
-  technologies: string[];
-  icon: typeof Globe;
-  href?: string;
-  featured?: boolean;
-}
+import Container from "../ui/Container";
+import Badge from "../ui/Badge";
 
-/**
- * Les informations des projets restent dans leur langue d'origine.
- *
- * IMPORTANT :
- * - title       → ne pas traduire
- * - category    → ne pas traduire
- * - description → ne pas traduire
- * - technologies → ne pas traduire
- *
- * Ces données pourront ensuite venir directement de l'API / base de données.
- */
-const realisations: Realisation[] = [
-  {
-    title: "Digital Work",
-    category: "Plateforme digitale",
-    description:
-      "Une plateforme moderne pensée pour présenter les services, les réalisations et l'expertise de Digital Work.",
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-    icon: Globe,
-    featured: true,
-  },
-  {
-    title: "Hotspot Management",
-    category: "Solution réseau",
-    description:
-      "Une solution de gestion de hotspots permettant d'administrer les utilisateurs, sessions, vouchers, routeurs et statistiques.",
-    technologies: ["React", "Node.js", "PostgreSQL", "MikroTik"],
-    icon: Monitor,
-    featured: true,
-  },
-  {
-    title: "Applications mobiles",
-    category: "Mobile",
-    description:
-      "Des applications mobiles conçues pour offrir une expérience rapide, intuitive et adaptée aux besoins métier.",
-    technologies: ["React Native", "Expo", "Firebase"],
-    icon: Smartphone,
-  },
-];
+import {
+  fetchProjects,
+  getProjectImageUrl,
+  type Project,
+} from "../../services/projectsApi";
 
-const containerVariants = {
+import {
+  getCanonicalProjectCategory,
+} from "../../constants/projectCategories";
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+const containerVariants: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.08,
     },
   },
 };
 
-const cardVariants = {
+const itemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 30,
+    y: 24,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.55,
-      ease: "easeOut" as const,
+      ease: "easeOut",
     },
   },
 };
 
+/* =========================================================
+   COMPONENT
+========================================================= */
+
 export default function HomeRealisations() {
   const { t } = useTranslation();
+
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  /* =======================================================
+     CHARGEMENT DES PROJETS DEPUIS LE BACKEND
+  ======================================================= */
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function loadProjects() {
+      try {
+        setLoading(true);
+        setError("");
+
+        const data = await fetchProjects();
+
+        if (!mounted) {
+          return;
+        }
+
+        setProjects(data);
+      } catch (err) {
+        console.error(
+          "Erreur chargement réalisations accueil:",
+          err
+        );
+
+        if (!mounted) {
+          return;
+        }
+
+        setError(
+          err instanceof Error
+            ? err.message
+            : t(
+                "realisations.errors.load",
+                "Impossible de charger les réalisations."
+              )
+        );
+      } finally {
+        if (mounted) {
+          setLoading(false);
+        }
+      }
+    }
+
+    void loadProjects();
+
+    return () => {
+      mounted = false;
+    };
+  }, [t]);
+
+  /* =======================================================
+     NORMALISATION DES PROJETS
+
+     IMPORTANT :
+     Aucun projet n'est créé ici.
+     Les données viennent exclusivement du backend.
+  ======================================================= */
+
+  const normalizedProjects = useMemo(() => {
+    return projects.map((project) => ({
+      ...project,
+      category: getCanonicalProjectCategory(
+        project.category
+      ),
+    }));
+  }, [projects]);
+
+  /* =======================================================
+     PROJETS À AFFICHER
+
+     La homepage affiche simplement les 3 premiers projets
+     retournés par le backend.
+
+     Si tu veux plus tard un système "featured",
+     il faudra ajouter explicitement ce champ au backend.
+  ======================================================= */
+
+  const displayedProjects = useMemo(() => {
+    return normalizedProjects.slice(0, 3);
+  }, [normalizedProjects]);
+
+  /* =======================================================
+     RENDER
+  ======================================================= */
 
   return (
     <section
       id="realisations"
-      className="relative overflow-hidden bg-white py-24 dark:bg-slate-950 sm:py-28"
+      className="
+        border-y
+        border-dw-border
+        bg-dw-surface
+        py-24
+        sm:py-32
+      "
     >
-      {/* Background decoration */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute -right-40 top-20 h-80 w-80 rounded-full bg-blue-500/5 blur-3xl dark:bg-blue-500/10" />
+      <Container>
+        {/* =================================================
+            HEADER
+        ================================================== */}
 
-        <div className="absolute -left-40 bottom-20 h-80 w-80 rounded-full bg-indigo-500/5 blur-3xl dark:bg-indigo-500/10" />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto mb-16 max-w-3xl text-center"
-        >
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
-            <FolderKanban className="h-4 w-4 text-blue-600 dark:text-blue-400" />
-
-            {t("realisations.eyebrow")}
-          </div>
-
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
-            {t("realisations.title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              {t("realisations.titleHighlight")}
-            </span>
-          </h2>
-
-          <p className="mt-6 text-base leading-8 text-slate-600 dark:text-slate-400 sm:text-lg">
-            {t("realisations.description")}
-          </p>
-        </motion.div>
-
-        {/* Projects */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.08 }}
-          className="grid gap-6 lg:grid-cols-2"
+          viewport={{
+            once: true,
+            amount: 0.15,
+          }}
+          className="
+            mx-auto
+            max-w-3xl
+            text-center
+          "
         >
-          {realisations.map((project, index) => {
-            const Icon = project.icon;
+          <motion.div variants={itemVariants}>
+            <Badge>
+              {t(
+                "realisations.badge",
+                "Nos réalisations"
+              )}
+            </Badge>
+          </motion.div>
 
-            return (
-              <motion.article
-                key={project.title}
-                variants={cardVariants}
-                className={`group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-2xl hover:shadow-blue-500/10 dark:border-slate-800 dark:bg-slate-900/70 dark:hover:border-blue-900 ${
-                  project.featured
-                    ? "lg:min-h-[380px]"
-                    : "lg:min-h-[340px]"
-                } ${index === 2 ? "lg:col-span-2" : ""}`}
+          <motion.h2
+            variants={itemVariants}
+            className="
+              mt-6
+              text-3xl
+              font-bold
+              tracking-tight
+              text-dw-text
+              sm:text-4xl
+              lg:text-5xl
+            "
+          >
+            {t(
+              "realisations.home.title",
+              "Des solutions conçues pour produire des résultats."
+            )}
+          </motion.h2>
+
+          <motion.p
+            variants={itemVariants}
+            className="
+              mx-auto
+              mt-5
+              max-w-2xl
+              text-base
+              leading-8
+              text-dw-muted
+            "
+          >
+            {t(
+              "realisations.home.description",
+              "Découvrez quelques projets réalisés par Digital Work."
+            )}
+          </motion.p>
+        </motion.div>
+
+        {/* =================================================
+            LOADING
+        ================================================== */}
+
+        {loading && (
+          <div
+            className="
+              mt-12
+              grid
+              gap-6
+              md:grid-cols-2
+              lg:grid-cols-3
+            "
+          >
+            {[1, 2, 3].map((item) => (
+              <div
+                key={item}
+                className="
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-dw-border
+                  bg-dw-card
+                "
               >
-                {/* Project visual area */}
-                <div className="relative flex min-h-[180px] items-center justify-center overflow-hidden bg-gradient-to-br from-slate-100 via-white to-blue-50 dark:from-slate-900 dark:via-slate-950 dark:to-blue-950/30">
+                <div
+                  className="
+                    aspect-[16/10]
+                    animate-pulse
+                    bg-dw-surface
+                  "
+                />
+
+                <div className="space-y-4 p-6">
                   <div
-                    aria-hidden="true"
-                    className="absolute inset-0 opacity-40"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(rgba(100,116,139,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(100,116,139,0.08) 1px, transparent 1px)",
-                      backgroundSize: "32px 32px",
-                    }}
+                    className="
+                      h-5
+                      w-2/3
+                      animate-pulse
+                      rounded
+                      bg-dw-surface
+                    "
                   />
 
-                  <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-blue-500/10 blur-2xl transition-transform duration-500 group-hover:scale-150" />
+                  <div
+                    className="
+                      h-4
+                      w-full
+                      animate-pulse
+                      rounded
+                      bg-dw-surface
+                    "
+                  />
 
-                  <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border border-white/80 bg-white shadow-xl shadow-slate-900/10 transition-transform duration-500 group-hover:scale-110 dark:border-slate-700 dark:bg-slate-800">
-                    <Icon className="h-9 w-9 text-blue-600 dark:text-blue-400" />
-                  </div>
-
-                  {/* Featured badge — translated */}
-                  {project.featured && (
-                    <span className="absolute left-5 top-5 rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold text-white shadow-lg shadow-blue-600/20">
-                      {t("realisations.featured")}
-                    </span>
-                  )}
-
-                  {/* Category — ORIGINAL PROJECT DATA */}
-                  <span className="absolute right-5 top-5 rounded-full border border-slate-200 bg-white/90 px-3 py-1 text-xs font-medium text-slate-600 backdrop-blur dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-300">
-                    {project.category}
-                  </span>
+                  <div
+                    className="
+                      h-4
+                      w-4/5
+                      animate-pulse
+                      rounded
+                      bg-dw-surface
+                    "
+                  />
                 </div>
+              </div>
+            ))}
+          </div>
+        )}
 
-                {/* Content */}
-                <div className="flex flex-col p-7 sm:p-8">
-                  <div className="flex items-start justify-between gap-5">
-                    <div>
-                      {/* Project title — ORIGINAL PROJECT DATA */}
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        {project.title}
-                      </h3>
+        {/* =================================================
+            ERROR
+        ================================================== */}
 
-                      {/* Project description — ORIGINAL PROJECT DATA */}
-                      <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-400">
-                        {project.description}
-                      </p>
-                    </div>
+        {!loading && error && (
+          <div
+            className="
+              mx-auto
+              mt-12
+              max-w-2xl
+              rounded-2xl
+              border
+              border-red-500/20
+              bg-red-500/10
+              p-5
+              text-center
+              text-sm
+              text-red-500
+            "
+          >
+            {error}
+          </div>
+        )}
 
-                    <div className="hidden shrink-0 sm:block">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-500 transition-all duration-300 group-hover:border-blue-200 group-hover:bg-blue-600 group-hover:text-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:group-hover:border-blue-500">
-                        <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                      </div>
-                    </div>
-                  </div>
+        {/* =================================================
+            EMPTY
+        ================================================== */}
 
-                  {/* Technologies — ORIGINAL PROJECT DATA */}
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {project.technologies.map((technology) => (
-                      <span
-                        key={technology}
-                        className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300"
-                      >
-                        {technology}
-                      </span>
-                    ))}
-                  </div>
+        {!loading &&
+          !error &&
+          displayedProjects.length === 0 && (
+            <div
+              className="
+                mx-auto
+                mt-12
+                max-w-xl
+                rounded-3xl
+                border
+                border-dw-border
+                bg-dw-card
+                p-10
+                text-center
+              "
+            >
+              <div
+                className="
+                  mx-auto
+                  flex
+                  h-14
+                  w-14
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-dw-primary/10
+                  text-dw-primary
+                "
+              >
+                <FolderKanban size={24} />
+              </div>
 
-                  {/* Project status / link */}
-                  {project.href ? (
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-7 inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
-                    >
-                      {t("realisations.viewProject")}
+              <h3
+                className="
+                  mt-5
+                  text-lg
+                  font-bold
+                  text-dw-text
+                "
+              >
+                {t(
+                  "realisations.empty.title",
+                  "Aucune réalisation disponible"
+                )}
+              </h3>
 
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  ) : (
-                    <div className="mt-7 inline-flex w-fit items-center gap-2 text-sm font-semibold text-slate-400 dark:text-slate-500">
-                      {t("realisations.inDevelopment")}
-                    </div>
-                  )}
-                </div>
-              </motion.article>
-            );
-          })}
-        </motion.div>
+              <p
+                className="
+                  mt-2
+                  text-sm
+                  leading-6
+                  text-dw-muted
+                "
+              >
+                {t(
+                  "realisations.empty.description",
+                  "Les projets ajoutés depuis l'administration apparaîtront ici."
+                )}
+              </p>
+            </div>
+          )}
 
-        {/* Bottom CTA */}
+        {/* =================================================
+            PROJECTS
+        ================================================== */}
+
+        {!loading &&
+          !error &&
+          displayedProjects.length > 0 && (
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{
+                once: true,
+                amount: 0.1,
+              }}
+              className="
+                mt-12
+                grid
+                gap-6
+                md:grid-cols-2
+                lg:grid-cols-3
+              "
+            >
+              {displayedProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                />
+              ))}
+            </motion.div>
+          )}
+
+        {/* =================================================
+            CTA
+        ================================================== */}
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            amount: 0.2,
+          }}
           className="mt-12 text-center"
         >
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            {t("realisations.cta.description")}
-          </p>
-
-          <a
-            href="/contact"
-            className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300"
+          <Link
+            to="/realisations"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-xl
+              border
+              border-dw-primary/20
+              bg-dw-primary/10
+              px-5
+              py-3
+              text-sm
+              font-semibold
+              text-dw-primary
+              transition-all
+              hover:border-dw-primary/40
+              hover:bg-dw-primary/15
+            "
           >
-            {t("realisations.cta.button")}
+            {t(
+              "realisations.home.viewAll",
+              "Voir toutes nos réalisations"
+            )}
 
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
+            <ArrowRight size={16} />
+          </Link>
         </motion.div>
-      </div>
+      </Container>
     </section>
+  );
+}
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+function ProjectCard({
+  project,
+}: ProjectCardProps) {
+  const { t } = useTranslation();
+
+  const [imageError, setImageError] = useState(false);
+
+  const projectLink =
+    project.demo_url ||
+    project.project_url ||
+    "";
+
+  const hasLink = Boolean(projectLink);
+
+  const imageUrl = getProjectImageUrl(
+    project.image_url
+  );
+
+  const category = getCanonicalProjectCategory(
+    project.category
+  );
+
+  return (
+    <motion.article
+      variants={itemVariants}
+      className="
+        group
+        flex
+        h-full
+        flex-col
+        overflow-hidden
+        rounded-3xl
+        border
+        border-dw-border
+        bg-dw-card
+        transition-all
+        duration-300
+        hover:-translate-y-1
+        hover:border-dw-primary/30
+        hover:shadow-xl
+        hover:shadow-dw-primary/5
+      "
+    >
+      {/* =================================================
+          IMAGE
+      ================================================== */}
+
+      <div
+        className="
+          relative
+          aspect-[16/10]
+          overflow-hidden
+          border-b
+          border-dw-border
+          bg-dw-surface
+        "
+      >
+        {imageUrl && !imageError ? (
+          <img
+            src={imageUrl}
+            alt={
+              project.title ||
+              t(
+                "realisations.card.imageAlt",
+                "Réalisation Digital Work"
+              )
+            }
+            loading="lazy"
+            className="
+              absolute
+              inset-0
+              h-full
+              w-full
+              object-cover
+              transition-transform
+              duration-500
+              group-hover:scale-105
+            "
+            onError={() => setImageError(true)}
+          />
+        ) : (
+          <div
+            className="
+              absolute
+              inset-0
+              flex
+              items-center
+              justify-center
+              bg-gradient-to-br
+              from-dw-primary/10
+              via-dw-surface
+              to-dw-background
+            "
+          >
+            <div
+              className="
+                flex
+                h-20
+                w-20
+                items-center
+                justify-center
+                rounded-2xl
+                border
+                border-dw-primary/20
+                bg-dw-primary/10
+                text-2xl
+                font-black
+                text-dw-primary
+              "
+            >
+              DW
+            </div>
+          </div>
+        )}
+
+        {/* OVERLAY */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-black/50
+            via-transparent
+            to-transparent
+          "
+        />
+
+        {/* CATEGORY */}
+
+        {category && (
+          <div
+            className="
+              absolute
+              bottom-4
+              left-4
+            "
+          >
+            <span
+              className="
+                rounded-lg
+                border
+                border-white/10
+                bg-black/40
+                px-3
+                py-1.5
+                text-xs
+                font-semibold
+                text-white
+                backdrop-blur-md
+              "
+            >
+              {category}
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* =================================================
+          CONTENT
+      ================================================== */}
+
+      <div
+        className="
+          flex
+          flex-1
+          flex-col
+          p-6
+        "
+      >
+        {/* TITLE */}
+
+        <div
+          className="
+            flex
+            items-start
+            justify-between
+            gap-4
+          "
+        >
+          <h3
+            className="
+              text-xl
+              font-bold
+              leading-tight
+              text-dw-text
+            "
+          >
+            {project.title}
+          </h3>
+
+          {hasLink && (
+            <a
+              href={projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t(
+                "realisations.home.viewProduction",
+                "Voir le projet en production"
+              )}
+              className="
+                flex
+                h-9
+                w-9
+                shrink-0
+                items-center
+                justify-center
+                rounded-lg
+                border
+                border-dw-border
+                bg-dw-surface
+                text-dw-muted
+                transition-all
+                hover:border-dw-primary/30
+                hover:bg-dw-primary/10
+                hover:text-dw-primary
+              "
+            >
+              <ExternalLink size={16} />
+            </a>
+          )}
+        </div>
+
+        {/* DESCRIPTION */}
+
+        {project.description && (
+          <p
+            className="
+              mt-4
+              line-clamp-3
+              text-sm
+              leading-7
+              text-dw-muted
+            "
+          >
+            {project.description}
+          </p>
+        )}
+
+        {/* TECHNOLOGIES */}
+
+        {project.technologies &&
+          project.technologies.length > 0 && (
+            <div
+              className="
+                mt-6
+                flex
+                flex-wrap
+                gap-2
+              "
+            >
+              {project.technologies
+                .slice(0, 5)
+                .map((technology, index) => (
+                  <span
+                    key={`${project.id}-technology-${index}`}
+                    className="
+                      rounded-lg
+                      border
+                      border-dw-border
+                      bg-dw-surface
+                      px-2.5
+                      py-1
+                      text-[11px]
+                      font-medium
+                      text-dw-muted
+                    "
+                  >
+                    {technology}
+                  </span>
+                ))}
+            </div>
+          )}
+
+        {/* BUTTON */}
+
+        <div className="mt-auto pt-7">
+          {hasLink ? (
+            <a
+              href={projectLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-xl
+                border
+                border-dw-primary/20
+                bg-dw-primary/10
+                px-4
+                py-2.5
+                text-sm
+                font-semibold
+                text-dw-primary
+                transition-all
+                hover:border-dw-primary/40
+                hover:bg-dw-primary/15
+              "
+            >
+              {t(
+                "realisations.card.view",
+                "Voir le projet"
+              )}
+
+              <ArrowRight
+                size={15}
+                className="
+                  transition-transform
+                  duration-200
+                  group-hover:translate-x-1
+                "
+              />
+            </a>
+          ) : (
+            <span
+              className="
+                inline-flex
+                items-center
+                rounded-xl
+                border
+                border-dw-border
+                bg-dw-surface
+                px-4
+                py-2.5
+                text-sm
+                font-medium
+                text-dw-muted
+              "
+            >
+              {t(
+                "realisations.card.unavailable",
+                "Projet indisponible"
+              )}
+            </span>
+          )}
+        </div>
+      </div>
+    </motion.article>
   );
 }
