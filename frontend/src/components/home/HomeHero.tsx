@@ -118,7 +118,7 @@ export default function HomeHero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.3 }}
-            className="mt-10 flex flex-wrap items-center gap-0 border-t border-[#e5e1d8] pt-6"
+            className="mt-10 grid grid-cols-3 border-t border-[#e5e1d8] pt-6"
           >
             {[
               [String(publishedProjectCount), t("hero.stats.projects", { defaultValue: "Projets réalisés" })],
@@ -127,10 +127,10 @@ export default function HomeHero() {
             ].map(([value, label], index) => (
               <div
                 key={label}
-                className={`min-w-[130px] pr-6 ${index > 0 ? "border-l border-[#e5e1d8] pl-6" : ""}`}
+                className={`min-w-0 px-3 first:pl-0 last:pr-0 sm:px-5 ${index > 0 ? "border-l border-[#e5e1d8]" : ""}`}
               >
-                <div className="text-2xl font-semibold tracking-tight">{value}</div>
-                <div className="mt-1 text-xs text-[#77736a]">{label}</div>
+                <div className="text-2xl font-semibold leading-none tracking-tight sm:text-3xl">{value}</div>
+                <div className="mt-2 text-[10px] leading-4 text-[#77736a] sm:text-xs">{label}</div>
               </div>
             ))}
           </motion.div>
