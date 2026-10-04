@@ -6,6 +6,7 @@ import {
   deleteProject,
   getProjectById,
   getProjects,
+  getPublishedProjects,
   updateProject,
 } from "../services/projects.service.js";
 
@@ -112,7 +113,7 @@ export async function listProjects(
   res: Response
 ) {
   try {
-    const projects = await getProjects();
+    const projects = await getPublishedProjects();
 
     res.status(200).json({
       success: true,
@@ -127,7 +128,32 @@ export async function listProjects(
     res.status(500).json({
       success: false,
       message:
-        "Impossible de récupérer les projets.",
+        "Impossible de récupérer les projets publiés.",
+    });
+  }
+}
+
+export async function listAdminProjects(
+  _req: Request,
+  res: Response
+) {
+  try {
+    const projects = await getProjects();
+
+    res.status(200).json({
+      success: true,
+      data: projects,
+    });
+  } catch (error) {
+    console.error(
+      "listAdminProjects:",
+      error
+    );
+
+    res.status(500).json({
+      success: false,
+      message:
+        "Impossible de récupérer les projets d'administration.",
     });
   }
 }
