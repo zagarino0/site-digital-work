@@ -26,6 +26,7 @@ export interface Project {
   demo_url: string | null;
 
   featured: boolean;
+  published: boolean;
 
   status:
     | "completed"
