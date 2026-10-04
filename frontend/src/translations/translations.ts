@@ -411,7 +411,19 @@ export const translations = {
        titleHighlight: "valeur",
         description: "Découvrez une sélection de projets et de solutions numériques développés par Digital Work, avec une approche centrée sur les besoins métier, la performance et l'évolutivité.", featured: "Projet phare", 
         viewProject: "Voir le projet", 
-        inDevelopment: "En développement", 
+        inDevelopment: "En développement",
+
+      home: {
+        title: "Des solutions conçues pour produire des résultats.",
+        description: "Découvrez quelques projets réalisés par Digital Work.",
+        viewAll: "Voir toutes nos réalisations",
+        viewProduction: "Voir le projet en production",
+      },
+      card: {
+        imageAlt: "Réalisation Digital Work",
+        view: "Voir le projet",
+        unavailable: "Projet indisponible",
+      }, 
 
            // pour page realisation 
        
@@ -430,6 +442,18 @@ export const translations = {
       "reseaux": "Réseaux",
       "automatisation": "Automatisation",
       "solution_digitale": "Solution digitale"
+      logiciel: "Logiciel",
+      reseaux_infrastructure: "Réseau & Infrastructure",
+      cybersecurite: "Cybersécurité",
+      iot_systemes_connectes: "IoT & Systèmes connectés",
+      ui_ux_design: "UI/UX Design",
+      ecommerce: "E-commerce",
+      cms_wordpress: "CMS & WordPress",
+      erp_gestion: "ERP & Gestion",
+      maintenance_informatique: "Maintenance informatique",
+      cloud_hebergement: "Cloud & Hébergement",
+      api_backend: "API & Backend",
+      autre: "Autre",
     },
     "states": {
       "loading": "Chargement des réalisations...",
@@ -977,6 +1001,18 @@ export const translations = {
 
       inDevelopment: "Eo am-pamolavolana",
 
+      home: {
+        title: "Vahaolana natao hamokatra vokatra.",
+        description: "Jereo ny sasany amin'ireo tetikasa vitan'ny Digital Work.",
+        viewAll: "Jereo ireo tetikasanay rehetra",
+        viewProduction: "Jereo ny tetikasa",
+      },
+      card: {
+        imageAlt: "Tetikasa Digital Work",
+        view: "Jereo ny tetikasa",
+        unavailable: "Tetikasa tsy misy",
+      },
+
       cta: { 
       "title": "Mety ho",
       "titleHighlight": "tetikasa manaraka vitanay ny tetikasanao.",
@@ -1001,6 +1037,18 @@ export const translations = {
       "reseaux": "Tambajotra",
       "automatisation": "Automatisation",
       "solution_digitale": "Vahaolana nomerika"
+      logiciel: "Logiciel",
+      reseaux_infrastructure: "Tambajotra & Fotodrafitrasa",
+      cybersecurite: "Fiarovana nomerika",
+      iot_systemes_connectes: "IoT & Rafitra mifandray",
+      ui_ux_design: "UI/UX Design",
+      ecommerce: "E-commerce",
+      cms_wordpress: "CMS & WordPress",
+      erp_gestion: "ERP & Fitantanana",
+      maintenance_informatique: "Fikojakojana informatika",
+      cloud_hebergement: "Cloud & Fampiantranoana",
+      api_backend: "API & Backend",
+      autre: "Hafa",
     },
     "states": {
       "loading": "Ampidirina ny tetikasa...",
@@ -1541,6 +1589,18 @@ export const translations = {
 
       inDevelopment: "Project in development",
 
+      home: {
+        title: "Solutions designed to deliver results.",
+        description: "Discover a selection of projects delivered by Digital Work.",
+        viewAll: "View all our projects",
+        viewProduction: "View project in production",
+      },
+      card: {
+        imageAlt: "Digital Work project",
+        view: "View project",
+        unavailable: "Project unavailable",
+      },
+
       //for the page of realisation 
    
     categories: {
@@ -1552,6 +1612,18 @@ export const translations = {
       reseaux: "Networks",
       automatisation: "Automation",
       solution_digitale: "Digital Solution"
+      logiciel: "Software",
+      reseaux_infrastructure: "Networks & Infrastructure",
+      cybersecurite: "Cybersecurity",
+      iot_systemes_connectes: "IoT & Connected Systems",
+      ui_ux_design: "UI/UX Design",
+      ecommerce: "E-commerce",
+      cms_wordpress: "CMS & WordPress",
+      erp_gestion: "ERP & Management",
+      maintenance_informatique: "IT Maintenance",
+      cloud_hebergement: "Cloud & Hosting",
+      api_backend: "API & Backend",
+      autre: "Other",
     },
     "states": {
       "loading": "Loading projects...",
