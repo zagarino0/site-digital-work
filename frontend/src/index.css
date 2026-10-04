@@ -130,3 +130,90 @@ select:focus-visible {
     overflow-x: hidden;
   }
 }
+
+
+/* =========================================================
+   THEME SYSTEM — PUBLIC + ADMIN
+   Keep the editorial light design in light mode while
+   allowing every existing hard-coded surface to follow the
+   global dark theme without rewriting every page at once.
+========================================================= */
+
+[data-theme="dark"] .dw-site-shell [class*="bg-white"] {
+  background-color: var(--dw-card) !important;
+}
+
+[data-theme="dark"] .dw-site-shell [class*="bg-[#faf9f6]"],
+[data-theme="dark"] .dw-site-shell [class*="bg-[#fbfaf7]"],
+[data-theme="dark"] .dw-site-shell [class*="bg-[#f7f5ef]"],
+[data-theme="dark"] .dw-site-shell [class*="bg-[#f4f1eb]"],
+[data-theme="dark"] .dw-site-shell [class*="bg-[#f3f0ea]"],
+[data-theme="dark"] .dw-site-shell [class*="bg-[#f0eee8]"],
+[data-theme="dark"] .dw-site-shell [class*="bg-[#eee9df]"],
+[data-theme="dark"] .dw-site-shell [class*="bg-[#eae5dc]"],
+[data-theme="dark"] .dw-site-shell [class*="bg-[#e8e4db]"] {
+  background-color: var(--dw-surface) !important;
+}
+
+[data-theme="dark"] .dw-site-shell [class*="bg-[#11110f]"] {
+  background-color: var(--dw-primary) !important;
+  color: var(--dw-background) !important;
+}
+
+[data-theme="dark"] .dw-site-shell [class*="text-[#11110f]"],
+[data-theme="dark"] .dw-site-shell [class*="text-[#171714]"] {
+  color: var(--dw-text) !important;
+}
+
+[data-theme="dark"] .dw-site-shell [class*="text-[#56544d]"],
+[data-theme="dark"] .dw-site-shell [class*="text-[#6e6a61]"],
+[data-theme="dark"] .dw-site-shell [class*="text-[#77736a]"],
+[data-theme="dark"] .dw-site-shell [class*="text-[#99948a]"],
+[data-theme="dark"] .dw-site-shell [class*="text-[#9a958b]"],
+[data-theme="dark"] .dw-site-shell [class*="text-[#aaa398]"] {
+  color: var(--dw-muted) !important;
+}
+
+[data-theme="dark"] .dw-site-shell [class*="border-[#dcd7cc]"],
+[data-theme="dark"] .dw-site-shell [class*="border-[#d6d0c4]"],
+[data-theme="dark"] .dw-site-shell [class*="border-[#e5e1d8]"],
+[data-theme="dark"] .dw-site-shell [class*="border-[#e3dfd7]"],
+[data-theme="dark"] .dw-site-shell [class*="border-[#ebe8e1]"],
+[data-theme="dark"] .dw-site-shell [class*="border-[#e2ded5]"],
+[data-theme="dark"] .dw-site-shell [class*="border-[#cfc7b8]"] {
+  border-color: var(--dw-border) !important;
+}
+
+[data-theme="dark"] .dw-site-shell input,
+[data-theme="dark"] .dw-site-shell textarea,
+[data-theme="dark"] .dw-site-shell select {
+  color: var(--dw-text);
+  background-color: var(--dw-surface);
+}
+
+[data-theme="dark"] .dw-site-shell input::placeholder,
+[data-theme="dark"] .dw-site-shell textarea::placeholder {
+  color: var(--dw-muted);
+}
+
+[data-theme="dark"] .dw-site-shell option {
+  color: var(--dw-text);
+  background-color: var(--dw-card);
+}
+
+[data-theme="dark"] .dw-site-shell [class*="hover:bg-[#f7f5ef]"]:hover,
+[data-theme="dark"] .dw-site-shell [class*="hover:bg-[#f4f1eb]"]:hover,
+[data-theme="dark"] .dw-site-shell [class*="hover:bg-[#eae5dc]"]:hover {
+  background-color: var(--dw-surface) !important;
+}
+
+[data-theme="dark"] .dw-site-shell [class*="hover:text-[#11110f]"]:hover {
+  color: var(--dw-text) !important;
+}
+
+/* Admin pages do not use the public Navbar, so the same
+   theme variables/overrides apply directly to their surface. */
+[data-theme="dark"] body {
+  background-color: var(--dw-background);
+  color: var(--dw-text);
+}
