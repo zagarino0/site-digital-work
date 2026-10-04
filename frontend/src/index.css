@@ -2,228 +2,102 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* =========================================================
-   DIGITAL WORK — THEME SYSTEM
-   ========================================================= */
+:root {
+  --dw-background: #f7f5ef;
+  --dw-surface: #fbfaf7;
+  --dw-card: #ffffff;
+  --dw-text: #171714;
+  --dw-muted: #706e67;
+  --dw-border: rgba(23, 23, 20, 0.11);
+  --dw-primary: #171714;
+  --dw-primary-hover: #34332e;
+  --dw-primary-dark: #0d0d0b;
+  --dw-cyan: #171714;
+  --dw-success: #2f6b4f;
+  --dw-warning: #8a641d;
+  --dw-danger: #9b3d35;
+  --dw-purple: #171714;
+  --dw-orange: #8a5b2d;
+  --dw-grid: rgba(23, 23, 20, 0.045);
+}
 
-:root,
 [data-theme="dark"] {
-  --dw-background: #0d0f14;
-  --dw-surface: #161b26;
-  --dw-card: #212836;
-
-  --dw-text: #f3f4f6;
-  --dw-muted: #9ca3af;
-
-  --dw-border: rgba(243, 244, 246, 0.08);
-
-  --dw-primary: #3b82f6;
-  --dw-primary-hover: #1d4ed8;
-
-  --dw-cyan: #06b6d4;
-
-  --dw-success: #10b981;
-  --dw-warning: #f59e0b;
-  --dw-danger: #ef4444;
-
-  --dw-purple: #8b5cf6;
-  --dw-orange: #f97316;
-
-  --dw-grid: rgba(6, 182, 212, 0.03);
+  --dw-background: #171714;
+  --dw-surface: #201f1b;
+  --dw-card: #282720;
+  --dw-text: #f5f2e9;
+  --dw-muted: #aaa69b;
+  --dw-border: rgba(245, 242, 233, 0.12);
+  --dw-primary: #f5f2e9;
+  --dw-primary-hover: #ffffff;
+  --dw-primary-dark: #ffffff;
+  --dw-cyan: #f5f2e9;
+  --dw-success: #86b79a;
+  --dw-warning: #d8b66d;
+  --dw-danger: #dc8b82;
+  --dw-purple: #f5f2e9;
+  --dw-orange: #d0a274;
+  --dw-grid: rgba(245, 242, 233, 0.04);
 }
-
-/* =========================================================
-   LIGHT THEME
-   ========================================================= */
-
-[data-theme="light"] {
-  --dw-background: #f8fafc;
-  --dw-surface: #ffffff;
-  --dw-card: #f1f5f9;
-
-  --dw-text: #0f172a;
-  --dw-muted: #64748b;
-
-  --dw-border: rgba(15, 23, 42, 0.08);
-
-  --dw-primary: #1d4ed8;
-  --dw-primary-hover: #1e40af;
-
-  --dw-cyan: #0891b2;
-
-  --dw-success: #059669;
-  --dw-warning: #d97706;
-  --dw-danger: #dc2626;
-
-  --dw-purple: #7c3aed;
-  --dw-orange: #ea580c;
-
-  --dw-grid: rgba(29, 78, 216, 0.03);
-}
-
-/* =========================================================
-   TAILWIND THEME
-   ========================================================= */
 
 @theme {
   --color-dw-background: var(--dw-background);
   --color-dw-surface: var(--dw-surface);
   --color-dw-card: var(--dw-card);
-
   --color-dw-text: var(--dw-text);
   --color-dw-muted: var(--dw-muted);
-
+  --color-dw-white: var(--dw-text);
   --color-dw-primary: var(--dw-primary);
+  --color-dw-primary-hover: var(--dw-primary-hover);
+  --color-dw-primary-dark: var(--dw-primary-dark);
   --color-dw-cyan: var(--dw-cyan);
-
   --color-dw-success: var(--dw-success);
   --color-dw-warning: var(--dw-warning);
   --color-dw-danger: var(--dw-danger);
-
   --color-dw-purple: var(--dw-purple);
   --color-dw-orange: var(--dw-orange);
 }
 
-/* =========================================================
-   BASE
-   ========================================================= */
-
-html {
-  scroll-behavior: smooth;
-}
-
-html,
-body,
-#root {
-  min-height: 100%;
-}
-
-html {
-  background-color: var(--dw-background);
-}
+html { scroll-behavior: smooth; background: var(--dw-background); }
+html, body, #root { min-height: 100%; }
 
 body {
   margin: 0;
   min-width: 320px;
-
-  background-color: var(--dw-background);
+  background: var(--dw-background);
   color: var(--dw-text);
-
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  transition:
-    background-color 300ms ease,
-    color 300ms ease;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 220ms ease, color 220ms ease;
 }
 
-/* =========================================================
-   GLOBAL
-   ========================================================= */
+* { border-color: var(--dw-border); }
 
-* {
-  border-color: var(--dw-border);
+button, a, input, textarea, select {
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, opacity 180ms ease, transform 180ms ease;
 }
-
-::selection {
-  background: var(--dw-primary);
-  color: #ffffff;
-}
-
-/* =========================================================
-   THEME TRANSITION
-   ========================================================= */
-
-html,
-body,
-#root,
-header,
-footer,
-main,
-section,
-nav,
-article,
-aside,
-div,
-button,
-a,
-input,
-textarea,
-select {
-  transition:
-    background-color 250ms ease,
-    border-color 250ms ease,
-    color 250ms ease;
-}
-
-/* =========================================================
-   GRID
-   ========================================================= */
 
 .dw-grid {
   background-image:
-    linear-gradient(
-      to right,
-      var(--dw-grid) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      var(--dw-grid) 1px,
-      transparent 1px
-    );
-
-  background-size: 40px 40px;
+    linear-gradient(to right, var(--dw-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--dw-grid) 1px, transparent 1px);
+  background-size: 44px 44px;
 }
 
-/* =========================================================
-   GRADIENT TEXT
-   ========================================================= */
-
 .dw-gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--dw-cyan),
-    var(--dw-primary),
-    var(--dw-purple)
-  );
-
+  background: linear-gradient(110deg, var(--dw-primary), var(--dw-muted));
   -webkit-background-clip: text;
   background-clip: text;
-
   color: transparent;
 }
 
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
-
-::-webkit-scrollbar {
-  width: 9px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--dw-background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--dw-border);
-  border-radius: 999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--dw-primary);
-}
-
-/* =========================================================
-   FOCUS
-   ========================================================= */
+::selection { background: var(--dw-primary); color: var(--dw-background); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--dw-background); }
+::-webkit-scrollbar-thumb { background: rgba(23, 23, 20, 0.18); border-radius: 999px; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: rgba(245, 242, 233, 0.18); }
+::-webkit-scrollbar-thumb:hover { background: var(--dw-primary); }
 
 button:focus-visible,
 a:focus-visible,
