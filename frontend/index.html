@@ -9,6 +9,16 @@
       content="Digital Work — solutions digitales, sites web et applications sur mesure à Madagascar."
     />
     <title>Digital Work — Solutions digitales</title>
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, "", redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
