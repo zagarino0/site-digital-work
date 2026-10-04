@@ -1,4 +1,5 @@
 import { ArrowRight, BarChart3, ArrowUpRight } from "lucide-react";
+import { projects } from "../../data/projects";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -7,6 +8,9 @@ const image = "/images/mahajanga-background.jpg";
 
 export default function HomeHero() {
   const { t } = useTranslation();
+  const completedProjects = projects.filter((project) => project.status === "completed").length;
+  const projectCategories = new Set(projects.map((project) => project.category)).size;
+  const technologies = new Set(projects.flatMap((project) => project.technologies)).size;
 
   return (
     <section
@@ -73,9 +77,9 @@ export default function HomeHero() {
             className="mt-10 flex flex-wrap items-center gap-0 border-t border-[#e5e1d8] pt-6"
           >
             {[
-              ["50+", t("hero.stats.projects", { defaultValue: "Projets réalisés" })],
-              ["100%", t("hero.stats.clients", { defaultValue: "Clients satisfaits" })],
-              ["3+", t("hero.stats.experience", { defaultValue: "Années d’expérience" })],
+              [String(completedProjects), t("hero.stats.projects", { defaultValue: "Projets réalisés" })],
+              [String(projectCategories), t("hero.stats.categories", { defaultValue: "Domaines couverts" })],
+              [String(technologies), t("hero.stats.technologies", { defaultValue: "Technologies utilisées" })],
             ].map(([value, label], index) => (
               <div
                 key={label}
@@ -124,7 +128,7 @@ export default function HomeHero() {
                 <BarChart3 className="h-5 w-5" />
               </span>
               <div>
-                <div className="text-lg font-semibold leading-none">50+</div>
+                <div className="text-lg font-semibold leading-none">{completedProjects}</div>
                 <div className="mt-1 text-xs text-[#77736a]">
                   {t("hero.stats.projects", { defaultValue: "Projets réalisés" })}
                 </div>
