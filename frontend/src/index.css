@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --dw-background: #f7f5ef;
+  --dw-background: #ffffff;
   --dw-surface: #fbfaf7;
   --dw-card: #ffffff;
   --dw-text: #171714;
@@ -110,37 +110,14 @@ select:focus-visible {
 
 
 /* =========================================================
-   MAHAJANGA GLOBAL VISUAL
-   Embedded generated background keeps the public pages
-   independent from external image hosts.
+   PUBLIC SITE SURFACE
+   White editorial layout. The Mahajanga image is used only
+   inside the homepage hero composition.
 ========================================================= */
 .dw-site-shell {
   position: relative;
   isolation: isolate;
-  background: transparent;
-}
-
-.dw-site-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: -30;
-  background-image: url("/images/mahajanga-background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: scale(1.02);
-}
-
-.dw-site-backdrop-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -20;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 9, 0.08),
-    rgba(10, 10, 9, 0.18)
-  );
+  background: var(--dw-background);
 }
 
 .dw-site-shell main {
@@ -148,28 +125,8 @@ select:focus-visible {
   z-index: 0;
 }
 
-.dw-site-shell main > * {
-  background-color: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-[data-theme="dark"] .dw-site-backdrop-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(8, 8, 7, 0.12),
-    rgba(8, 8, 7, 0.24)
-  );
-}
-
-[data-theme="dark"] .dw-site-shell main > * {
-  background-color: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
 @media (max-width: 768px) {
-  .dw-site-backdrop {
-    background-position: 62% center;
+  .dw-site-shell {
+    overflow-x: hidden;
   }
 }
