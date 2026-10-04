@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const image = "/images/mahajanga-background.jpg";
+const image = `${import.meta.env.BASE_URL}images/mahajanga-background.jpg`;
 
 export default function HomeHero() {
   const { t } = useTranslation();
