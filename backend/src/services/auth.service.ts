@@ -129,6 +129,70 @@ export function createAccessToken(
   );
 }
 
+export async function bootstrapAdmin(
+  username: string,
+  email: string,
+  password: string
+): Promise<"created" | "already_completed"> {
+  const client = await pool.connect();
+
+  try {
+    await client.query("BEGIN");
+
+    const bootstrapResult = await client.query<{ completed_at: Date | null }>(
+      `
+        SELECT completed_at
+        FROM admin_bootstrap
+        WHERE id = TRUE
+        FOR UPDATE
+      `
+    );
+
+    if (bootstrapResult.rows[0]?.completed_at) {
+      await client.query("ROLLBACK");
+      return "already_completed";
+    }
+
+    const passwordHash = await bcrypt.hash(password, 12);
+
+    await client.query(
+      `
+        INSERT INTO admin_users (
+          username,
+          email,
+          password_hash,
+          is_active
+        )
+        VALUES ($1, $2, $3, TRUE)
+        ON CONFLICT (username)
+        DO UPDATE SET
+          email = EXCLUDED.email,
+          password_hash = EXCLUDED.password_hash,
+          is_active = TRUE,
+          updated_at = NOW()
+      `,
+      [username.trim(), email.trim(), passwordHash]
+    );
+
+    await client.query(
+      `
+        INSERT INTO admin_bootstrap (id, completed_at)
+        VALUES (TRUE, NOW())
+        ON CONFLICT (id)
+        DO UPDATE SET completed_at = EXCLUDED.completed_at
+      `
+    );
+
+    await client.query("COMMIT");
+    return "created";
+  } catch (error) {
+    await client.query("ROLLBACK");
+    throw error;
+  } finally {
+    client.release();
+  }
+}
+
 export async function createPasswordResetToken(
   adminId: string
 ): Promise<string> {
