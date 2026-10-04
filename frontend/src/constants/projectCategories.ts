@@ -161,6 +161,36 @@ export function getUniqueProjectCategories(
   });
 }
 
+
+/**
+ * Clé i18n associée à chaque catégorie officielle.
+ * Cette table évite de dériver les clés à partir du texte français,
+ * ce qui cassait la traduction dès qu'une catégorie n'avait pas
+ * exactement le même libellé que les traductions.
+ */
+export const PROJECT_CATEGORY_TRANSLATION_KEYS: Record<string, string> = {
+  "Développement Web": "developpement_web",
+  "Application Mobile": "application_mobile",
+  "Logiciel": "logiciel",
+  "Réseau & Infrastructure": "reseaux_infrastructure",
+  "Cybersécurité": "cybersecurite",
+  "IoT & Systèmes connectés": "iot_systemes_connectes",
+  "UI/UX Design": "ui_ux_design",
+  "E-commerce": "ecommerce",
+  "CMS & WordPress": "cms_wordpress",
+  "ERP & Gestion": "erp_gestion",
+  "Automatisation": "automatisation",
+  "Maintenance informatique": "maintenance_informatique",
+  "Cloud & Hébergement": "cloud_hebergement",
+  "API & Backend": "api_backend",
+  "Autre": "autre",
+};
+
+export function getProjectCategoryTranslationKey(category: string | null | undefined): string {
+  const canonical = getCanonicalProjectCategory(category);
+  return PROJECT_CATEGORY_TRANSLATION_KEYS[canonical] ?? "autre";
+}
+
 /**
  * Retourne toutes les catégories officielles.
  *
