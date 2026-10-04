@@ -53,14 +53,8 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      <div
-        className={`border-b backdrop-blur-xl transition-colors duration-300 ${
-          isHome
-            ? "border-white/10 bg-black/10"
-            : "border-black/10 bg-dw-background/85"
-        }`}
-      >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+      <div className="border-b border-[#ebe8e1] bg-white/95 backdrop-blur-xl transition-colors duration-300">
+        <div className="mx-auto flex h-[74px] max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
           <Link
             to="/"
             onClick={(event) => {
@@ -77,18 +71,10 @@ export default function Navbar() {
             />
 
             <div className="leading-none">
-              <div
-                className={`text-lg font-bold tracking-tight ${
-                  isHome ? "text-white" : "text-dw-text"
-                }`}
-              >
-                Digital<span className={isHome ? "text-white/80" : "text-dw-primary"}>Work</span>
+              <div className="text-lg font-bold tracking-tight text-[#11110f]">
+                Digital<span className="text-[#11110f]">Work</span>
               </div>
-              <div
-                className={`mt-1 text-[9px] font-medium uppercase tracking-[0.25em] ${
-                  isHome ? "text-white/70" : "text-dw-muted"
-                }`}
-              >
+              <div className="mt-1 text-[9px] font-medium uppercase tracking-[0.25em] text-[#77736a]">
                 Solutions digitales
               </div>
             </div>
@@ -102,12 +88,8 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
                     isActive
-                      ? isHome
-                        ? "bg-white/85 text-[#171714]"
-                        : "bg-dw-primary/10 text-dw-text"
-                      : isHome
-                        ? "text-white/90 hover:bg-white/10 hover:text-white"
-                        : "text-dw-muted hover:bg-black/[0.03] hover:text-dw-text"
+                      ? "bg-[#f0eee8] text-[#11110f]"
+                      : "text-[#56544d] hover:bg-[#f7f5ef] hover:text-[#11110f]"
                   }`
                 }
               >
@@ -130,11 +112,7 @@ export default function Navbar() {
             onClick={() => setMobileOpen((value) => !value)}
             aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={mobileOpen}
-            className={`rounded-xl border p-2.5 transition lg:hidden ${
-              isHome
-                ? "border-white/20 bg-white/10 text-white hover:bg-white/20"
-                : "border-black/10 bg-white/50 text-dw-text hover:bg-white"
-            }`}
+            className="rounded-xl border border-[#e2ded5] bg-white p-2.5 text-[#11110f] transition hover:bg-[#f7f5ef] lg:hidden"
           >
             {mobileOpen ? <X size={21} /> : <Menu size={21} />}
           </button>
@@ -148,11 +126,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className={`overflow-hidden border-b backdrop-blur-xl lg:hidden ${
-              isHome
-                ? "border-white/10 bg-black/55"
-                : "border-black/10 bg-dw-surface/95"
-            }`}
+            className="overflow-hidden border-b border-[#ebe8e1] bg-white lg:hidden"
           >
             <nav className="mx-auto flex max-w-7xl flex-col px-5 py-5 sm:px-6">
               {navigation.map((item) => (
@@ -163,12 +137,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `rounded-xl px-4 py-3.5 text-sm font-medium transition-colors ${
                       isActive
-                        ? isHome
-                          ? "bg-white/85 text-[#171714]"
-                          : "bg-dw-primary/10 text-dw-text"
-                        : isHome
-                          ? "text-white/90 hover:bg-white/10"
-                          : "text-dw-muted hover:bg-black/[0.03]"
+                        ? "bg-[#f0eee8] text-[#11110f]"
+                        : "text-[#56544d] hover:bg-[#f7f5ef]"
                     }`
                   }
                 >
@@ -176,14 +146,8 @@ export default function Navbar() {
                 </NavLink>
               ))}
 
-              <div className={`mt-4 border-t pt-4 ${
-                isHome ? "border-white/10" : "border-black/10"
-              }`}>
-                <p
-                  className={`mb-3 px-1 text-[10px] font-semibold uppercase tracking-[0.15em] ${
-                    isHome ? "text-white/60" : "text-dw-muted"
-                  }`}
-                >
+              <div className="mt-4 border-t border-[#ebe8e1] pt-4">
+                <p className="mb-3 px-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#77736a]">
                   {t("common.appearance")}
                 </p>
 
