@@ -247,7 +247,7 @@ export default function Contact() {
                       />
 
                       <FormField
-                        label="Email"
+                        label={t("contactPage.form.email")}
                         name="email"
                         type="email"
                         value={formData.email}
@@ -320,7 +320,7 @@ export default function Contact() {
                         htmlFor="message"
                         className="mb-2 block text-sm font-medium text-dw-white"
                       >
-                        Décrivez votre projet
+                        {t("contactPage.form.message")}
                       </label>
 
                       <textarea
