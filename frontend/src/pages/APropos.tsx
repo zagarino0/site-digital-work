@@ -331,7 +331,7 @@ export default function APropos() {
             <MethodCard
               number="01"
               title={t("aboutPage.method.steps.listen.title")}
-              text="{t("aboutPage.objective.items.understand.title")} votre activité, vos utilisateurs et vos contraintes."
+              text={t("aboutPage.method.steps.listen.text")}
             />
 
             <MethodCard
@@ -343,7 +343,7 @@ export default function APropos() {
             <MethodCard
               number="03"
               title={t("aboutPage.method.steps.develop.title")}
-              text="{t("aboutPage.objective.items.build.title")} une solution fiable avec des technologies adaptées."
+              text={t("aboutPage.method.steps.develop.text")}
             />
 
             <MethodCard
