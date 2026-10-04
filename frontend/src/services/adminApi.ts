@@ -1,6 +1,4 @@
-const API_URL =
-  import.meta.env.VITE_API_URL ||
-  "http://localhost:4000";
+import { apiUrl } from "../config/api";
 
 const TOKEN_KEY = "digital-work-admin-token";
 
@@ -89,7 +87,7 @@ async function request<T>(
   }
 
   const response = await fetch(
-    `${API_URL}${path}`,
+    apiUrl(path),
     {
       ...options,
       headers,
@@ -104,7 +102,7 @@ async function request<T>(
       adminLogout();
 
       window.location.href =
-        "/admin/login";
+        `${import.meta.env.BASE_URL}admin/login`;
     }
 
     throw new Error(
@@ -231,7 +229,7 @@ export async function uploadProjectImage(
   );
 
   const response = await fetch(
-    `${API_URL}/api/uploads/project`,
+    apiUrl("/api/uploads/project"),
     {
       method: "POST",
       headers: {
