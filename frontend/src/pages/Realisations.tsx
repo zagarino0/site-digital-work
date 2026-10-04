@@ -20,6 +20,7 @@ import {
 import {
   fetchProjects,
   getProjectImageUrl,
+  getSafeProjectTitle,
   type Project,
 } from "../services/projectsApi";
 import { useTranslation } from "react-i18next";
