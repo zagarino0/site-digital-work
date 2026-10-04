@@ -408,7 +408,7 @@ function SolutionCard({ solution }: SolutionCardProps) {
         {/* Features */}
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-          {t(`solutionsPage.cards.${solution.key}.features`, { returnObjects: true }).map((feature: string) => (
+          {(t(`solutionsPage.cards.${solution.key}.features`, { returnObjects: true }) as string[]).map((feature: string) => (
             <div
               key={feature}
               className="flex items-center gap-2 text-sm text-dw-muted"
