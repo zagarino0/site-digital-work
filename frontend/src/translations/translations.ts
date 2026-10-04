@@ -443,6 +443,12 @@ export const translations = {
           }
         }
       },
+      "solutions": {
+        "eyebrow": "Nos solutions",
+        "title": "Des solutions digitales",
+        "titleHighlight": "conçues pour votre activité.",
+        "description": "Des solutions numériques concrètes pour améliorer votre présence, simplifier votre gestion et accompagner le développement de votre entreprise."
+      },
       "cards": {
         "presence": {
           "title": "Présence digitale",
@@ -1407,6 +1413,12 @@ export const translations = {
             "text": "Hanohana ny fitomboana"
           }
         }
+      },
+      "solutions": {
+        "eyebrow": "Ny vahaolanay",
+        "title": "Vahaolana nomerika",
+        "titleHighlight": "natao ho an'ny asanao.",
+        "description": "Vahaolana nomerika azo ampiharina hanatsarana ny fisianao an-tserasera, hanamorana ny fitantanana ary hanohanana ny fivoaran'ny orinasanao."
       },
       "cards": {
         "presence": {
@@ -2622,6 +2634,12 @@ export const translations = {
             "text": "Support growth"
           }
         }
+      },
+      "solutions": {
+        "eyebrow": "Our solutions",
+        "title": "Digital solutions",
+        "titleHighlight": "designed for your business.",
+        "description": "Practical digital solutions to strengthen your online presence, simplify your operations and support your business growth."
       },
       "cards": {
         "presence": {
