@@ -226,12 +226,13 @@ select:focus-visible {
   color: #11110f !important;
 }
 
-[data-theme="dark"] .dw-icon-tile {
+/* Explicit dark-mode override must outrank the generic hard-coded bg-* compatibility rules above. */
+[data-theme="dark"] .dw-site-shell .dw-icon-tile {
   background-color: #2a2924 !important;
   color: #f5f2e9 !important;
 }
 
-[data-theme="dark"] .dw-icon-tile svg {
+[data-theme="dark"] .dw-site-shell .dw-icon-tile svg {
   color: #f5f2e9 !important;
   stroke: currentColor;
 }
