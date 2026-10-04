@@ -133,7 +133,7 @@ export function getProject(
   id: string
 ) {
   return request<Project>(
-    `/api/projects/${encodeURIComponent(id)}`
+    `/api/projects/admin/${encodeURIComponent(id)}`
   );
 }
 
