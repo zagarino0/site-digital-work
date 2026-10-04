@@ -13,6 +13,7 @@ import Container from "../ui/Container";
 import {
   fetchProjects,
   getProjectImageUrl,
+  getSafeProjectTitle,
   type Project,
 } from "../../services/projectsApi";
 
@@ -122,6 +123,7 @@ export default function HomeRealisations() {
   const normalizedProjects = useMemo(() => {
     return projects.map((project) => ({
       ...project,
+      title: getSafeProjectTitle(project.title, project.short_title),
       category: getCanonicalProjectCategory(
         project.category
       ),
