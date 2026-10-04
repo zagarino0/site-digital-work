@@ -795,9 +795,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               text-dw-text
             "
           >
-            aria-label={t("realisations.project.viewProduction", {
-                title: project.title,
-              })}
+            {project.title}
          
           </h3>
 
