@@ -240,7 +240,7 @@ export default function Footer() {
               {/* Social */}
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a
-                  href="https://www.facebook.com/search/top?q=zagarino%20Razafindrafita"
+                  href="https://www.facebook.com/zagarino.ride"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook — Zagarino Razafindrafita"
