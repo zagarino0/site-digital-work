@@ -303,7 +303,7 @@ export default function Solutions() {
             <ProcessStep
               number="02"
               title={t("solutionsPage.process.steps.design.title")}
-              text="Nous définissons l'architecture, les fonctionnalités et l'expérience utilisateur."
+              text={t("solutionsPage.process.steps.design.text")}
             />
 
             <ProcessStep
@@ -369,6 +369,7 @@ interface SolutionCardProps {
 }
 
 function SolutionCard({ solution }: SolutionCardProps) {
+  const { t } = useTranslation();
   const Icon = solution.icon;
 
   return (
