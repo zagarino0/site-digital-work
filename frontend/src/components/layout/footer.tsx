@@ -214,16 +214,13 @@ export default function Footer() {
                 {t("footer.contact.title")}
               </h3>
 
-              <div className="mt-5 grid grid-cols-2 gap-x-6 gap-y-8">
+              <div className="mt-5 space-y-4">
                 <a
                   href={`mailto:${t("footer.contact.email")}`}
                   className="flex min-w-0 items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
                 >
                   <Mail className="mt-0.5 h-4 w-4 shrink-0" />
-
-                  <span className="break-all">
-                    {t("footer.contact.email")}
-                  </span>
+                  <span className="min-w-0 break-all">{t("footer.contact.email")}</span>
                 </a>
 
                 <a
@@ -231,20 +228,17 @@ export default function Footer() {
                   className="flex items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
                 >
                   <Phone className="mt-0.5 h-4 w-4 shrink-0" />
-
                   <span className="min-w-0 break-words">{t("footer.contact.phone")}</span>
                 </a>
 
                 <div className="flex items-start gap-3 text-sm text-[#6e6a61] dark:text-[#77736a]">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-
                   <span className="min-w-0 break-words">{t("footer.madagascar")}</span>
                 </div>
               </div>
 
-              <div className="col-start-2 row-start-1">
-                {/* Social */}
-                <div className="flex flex-wrap items-center gap-3">
+              {/* Social */}
+              <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a
                   href="https://www.facebook.com/search/top?q=zagarino%20Razafindrafita"
                   target="_blank"
@@ -285,12 +279,12 @@ export default function Footer() {
               </div>
 
               {/* Language */}
-              <div className="col-start-2 row-start-2">
+              <div className="mt-7">
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
                   {t("footer.language")}
                 </p>
 
-                <div className="mt-3 flex gap-2">
+                <div className="mt-3 flex flex-wrap gap-2">
                   {languages.map((language) => {
                     const active = i18n.language.startsWith(language.code);
 
@@ -312,10 +306,8 @@ export default function Footer() {
                   })}
                 </div>
               </div>
-              </div>
             </div>
-            </div>
-        </div>
+
           {/* Bottom */}
           <div className="mt-14 border-t border-[#e5e1d8] pt-8 dark:border-[#e5e1d8]">
             <div className="flex flex-col gap-5 text-sm sm:flex-row sm:items-center sm:justify-between">
