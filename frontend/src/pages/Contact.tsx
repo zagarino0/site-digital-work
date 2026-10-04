@@ -537,6 +537,8 @@ function SelectField({
   required,
   onChange,
 }: SelectFieldProps) {
+  const { t } = useTranslation();
+
   return (
     <div>
       <label
@@ -582,6 +584,8 @@ interface SuccessMessageProps {
 function SuccessMessage({
   onReset,
 }: SuccessMessageProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="flex min-h-[560px] flex-col items-center justify-center text-center">
       <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-400">
