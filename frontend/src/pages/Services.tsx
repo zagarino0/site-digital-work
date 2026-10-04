@@ -135,7 +135,7 @@ export default function Services() {
       <section className="border-t border-white/[0.06] py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="{t("servicesPage.intro.eyebrow")}"
+            eyebrow={t("servicesPage.intro.eyebrow")}
             title={
               <>
                 {t("servicesPage.intro.title")}
@@ -143,7 +143,7 @@ export default function Services() {
                 {t("servicesPage.intro.titleHighlight")}
               </>
             }
-            description="{t("servicesPage.intro.description")}"
+            description={t("servicesPage.intro.description")}
           />
 
           {/* Services grid */}
@@ -222,7 +222,7 @@ export default function Services() {
       <section className="py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="{t("servicesPage.process.eyebrow")}"
+            eyebrow={t("servicesPage.process.eyebrow")}
             title={
               <>
                 {t("servicesPage.process.title")}
@@ -230,32 +230,32 @@ export default function Services() {
                 {t("servicesPage.process.titleHighlight")}
               </>
             }
-            description="{t("servicesPage.process.description")}"
+            description={t("servicesPage.process.description")}
           />
 
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             <ProcessCard
               number="01"
-              title="{t("servicesPage.process.steps.analysis.title")}"
-              text="{t("servicesPage.process.steps.analysis.text")}"
+              title={t("servicesPage.process.steps.analysis.title")}
+              text={t("servicesPage.process.steps.analysis.text")}
             />
 
             <ProcessCard
               number="02"
-              title="{t("servicesPage.process.steps.design.title")}"
+              title={t("servicesPage.process.steps.design.title")}
               text="Nous définissons l'expérience utilisateur et l'architecture de la solution."
             />
 
             <ProcessCard
               number="03"
-              title="{t("servicesPage.process.steps.development.title")}"
-              text="{t("servicesPage.process.steps.development.text")}"
+              title={t("servicesPage.process.steps.development.title")}
+              text={t("servicesPage.process.steps.development.text")}
             />
 
             <ProcessCard
               number="04"
-              title="{t("servicesPage.process.steps.delivery.title")}"
-              text="{t("servicesPage.process.steps.delivery.text")}"
+              title={t("servicesPage.process.steps.delivery.title")}
+              text={t("servicesPage.process.steps.delivery.text")}
             />
           </div>
         </Container>
