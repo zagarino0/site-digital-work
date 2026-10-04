@@ -67,7 +67,7 @@ export default function HomeProblems() {
                 className="group relative min-h-[170px] rounded-[14px] border border-[#e3dfd7] bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:border-[#cfc7b8] sm:p-6"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[#f3f0ea] text-[#11110f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[#f3f0ea] text-[#11110f] dark:bg-[#2a2924] dark:text-[#f5f2e9]">
                     <Icon className="h-5 w-5" strokeWidth={1.7} />
                   </div>
 
@@ -84,7 +84,7 @@ export default function HomeProblems() {
                   {content.description}
                 </p>
 
-                <span className="absolute bottom-6 right-6 flex h-9 w-9 items-center justify-center rounded-full border border-[#ddd8ce] text-[#11110f] transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-[#11110f] group-hover:text-white">
+                <span className="absolute bottom-6 right-6 flex h-9 w-9 items-center justify-center rounded-full border border-[#ddd8ce] text-[#11110f] dark:border-[#5a574f] dark:text-[#f5f2e9] transition duration-300 group-hover:-translate-y-0.5 group-hover:bg-[#f5f2e9] group-hover:text-[#11110f] dark:group-hover:bg-[#f5f2e9] dark:group-hover:text-[#11110f]">
                   <ArrowRightIcon />
                 </span>
               </motion.article>
