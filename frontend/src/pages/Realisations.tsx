@@ -177,7 +177,6 @@ const categories = useMemo(() => {
           relative
           isolate
           overflow-hidden
-          bg-dw-background
           pt-32
           pb-20
           sm:pb-24
