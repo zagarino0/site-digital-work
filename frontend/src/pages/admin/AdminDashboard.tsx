@@ -127,35 +127,44 @@ export default function AdminDashboard() {
           className="
             mx-auto
             flex
-            h-20
             max-w-7xl
-            items-center
-            justify-between
+            flex-col
+            gap-4
             px-5
+            py-4
+            sm:h-20
+            sm:flex-row
+            sm:items-center
+            sm:justify-between
+            sm:gap-4
             sm:px-6
+            sm:py-0
             lg:px-8
           "
         >
 
           {/* Logo + titre */}
-          <div className="flex items-center gap-3">
+          <div className="flex min-w-0 items-center gap-3">
 
             <img
               src={logo}
               alt="Digital Work"
               className="
-                h-11
-                w-11
+                h-10
+                w-10
+                shrink-0
+                sm:h-11
+                sm:w-11
                 object-contain
               "
             />
 
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-dw-primary">
+            <div className="min-w-0">
+              <p className="truncate text-[10px] font-semibold uppercase tracking-[0.15em] text-dw-primary sm:text-xs">
                 Digital Work
               </p>
 
-              <h1 className="mt-1 text-xl font-bold text-dw-text">
+              <h1 className="mt-1 truncate text-lg font-bold text-dw-text sm:text-xl">
                 Administration
               </h1>
             </div>
@@ -163,7 +172,7 @@ export default function AdminDashboard() {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex w-full items-center justify-end gap-2 sm:w-auto">
 
             <ThemeSwitcher />
 
@@ -173,8 +182,9 @@ export default function AdminDashboard() {
               onClick={handleBackHome}
               className="
                 flex
-                h-10
-                w-10
+                h-11
+                w-11
+                shrink-0
                 items-center
                 justify-center
                 rounded-xl
@@ -198,15 +208,20 @@ export default function AdminDashboard() {
               onClick={handleLogout}
               className="
                 flex
+                min-w-0
+                flex-1
                 items-center
+                justify-center
                 gap-2
                 rounded-xl
                 border
                 border-dw-border
                 bg-dw-card
-                px-4
+                px-3
                 py-2.5
                 text-sm
+                sm:flex-none
+                sm:px-4
                 font-medium
                 text-dw-muted
                 transition
