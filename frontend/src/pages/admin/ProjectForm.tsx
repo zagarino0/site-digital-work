@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 
 import Container from "../../components/ui/Container";
+import ThemeSwitcher from "../../components/ui/ThemeSwitcher";
 
 import {
   createProject,
@@ -866,6 +867,8 @@ export default function ProjectForm() {
                 : "Ajoutez une nouvelle réalisation à votre portfolio."}
             </p>
           </div>
+
+          <ThemeSwitcher />
         </div>
 
         {/* ERROR */}
