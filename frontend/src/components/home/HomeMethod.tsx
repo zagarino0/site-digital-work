@@ -80,8 +80,8 @@ export default function HomeMethod() {
 
         <div className="mx-auto mt-14 max-w-4xl border-y border-[#dcd7cc] py-6">
           <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#f4f1eb]">
-              <CheckCircle2 className="h-5 w-5 text-[#11110f]" />
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#f4f1eb] dark:bg-[#2a2924]">
+              <CheckCircle2 className="h-5 w-5 text-[#11110f] dark:text-[#f5f2e9]" />
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-semibold">{t("method.reassurance.title")}</h3>
