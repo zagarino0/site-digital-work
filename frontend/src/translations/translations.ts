@@ -2305,11 +2305,6 @@ export const translations = {
           "completed": "Completed",
           "in-progress": "In progress",
           "maintenance": "Maintenance"
-        },
-        "status": {
-          "completed": "Completed",
-          "in-progress": "In progress",
-          "maintenance": "Maintenance"
         }
       },
       "cta": {
