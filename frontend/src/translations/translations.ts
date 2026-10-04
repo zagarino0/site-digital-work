@@ -404,6 +404,374 @@ export const translations = {
     // RÉALISATIONS
     // =======================================================
 
+    // =======================================================
+    // PAGES PUBLIQUES — À PROPOS / SOLUTIONS / SERVICES
+    // =======================================================
+    aboutPage: {
+      hero: {
+        badge: "À propos de Digital Work",
+        title: "Construire le digital",
+        titleHighlight: "qui fait avancer votre activité.",
+        description: "Digital Work accompagne les entreprises dans la conception, le développement et la digitalisation de leurs activités.",
+        primary: "Démarrer un projet",
+        secondary: "Voir nos réalisations",
+      },
+      intro: {
+        badge: "Notre approche",
+        title: "Le digital doit être un outil de croissance.",
+        p1: "Un site web ou une application n'a de valeur que s'il répond à un besoin concret.",
+        p2: "Chez Digital Work, nous partons du problème métier avant de choisir la technologie. Nous cherchons à créer des solutions simples, performantes et réellement utilisables.",
+        p3: "Notre objectif est de transformer la technologie en un véritable avantage pour votre entreprise.",
+      },
+      objective: {
+        label: "Notre objectif",
+        title: "Créer de la valeur",
+        items: {
+          understand: { title: "Comprendre", text: "Identifier le vrai problème avant de développer." },
+          build: { title: "Construire", text: "Créer une solution adaptée aux besoins réels." },
+          evolve: { title: "Développer", text: "Faire évoluer l'outil avec votre activité." },
+        },
+      },
+      vision: {
+        mission: { title: "Notre mission", text: "Rendre la transformation digitale accessible aux entreprises en construisant des solutions utiles, modernes et adaptées à leurs réalités." },
+        vision: { title: "Notre vision", text: "Créer un écosystème digital où la technologie simplifie les opérations, améliore l'expérience client et accélère la croissance." },
+        ambition: { title: "Notre ambition", text: "Devenir un partenaire technologique de référence pour les entreprises qui souhaitent moderniser leurs activités." },
+      },
+      expertise: {
+        eyebrow: "Notre expertise",
+        title: "Design, développement",
+        titleHighlight: "et stratégie digitale.",
+        description: "Nous réunissons plusieurs compétences pour éviter de multiplier les prestataires sur un même projet.",
+        items: {
+          web: { title: "Développement web", text: "Sites vitrines, plateformes métier, dashboards et applications web modernes." },
+          mobile: { title: "Applications mobiles", text: "Applications Android et iOS avec une expérience utilisateur moderne." },
+          digital: { title: "Digitalisation", text: "Transformation des processus manuels en outils numériques efficaces." },
+          network: { title: "Solutions réseau", text: "Conception et intégration de solutions Wi-Fi, hotspot et gestion réseau." },
+          ux: { title: "Expérience utilisateur", text: "Interfaces modernes pensées pour être simples, rapides et intuitives." },
+          support: { title: "Accompagnement", text: "Nous accompagnons le projet de la réflexion jusqu'à la mise en production." },
+        },
+      },
+      method: {
+        eyebrow: "Notre méthode",
+        title: "Une méthode simple.",
+        titleHighlight: "Un résultat concret.",
+        description: "Nous privilégions une approche pragmatique afin de limiter les développements inutiles.",
+        steps: {
+          listen: { title: "Écouter", text: "Comprendre votre activité, vos utilisateurs et vos contraintes." },
+          design: { title: "Concevoir", text: "Définir l'expérience, les fonctionnalités et l'architecture." },
+          develop: { title: "Développer", text: "Construire une solution fiable avec des technologies adaptées." },
+          evolve: { title: "Évoluer", text: "Mesurer, améliorer et faire évoluer la solution." },
+        },
+      },
+      values: {
+        eyebrow: "Nos engagements",
+        title: "Des principes simples pour construire mieux.",
+        description: "Chaque projet Digital Work repose sur des choix techniques et business cohérents.",
+        items: {
+          simplicity: { title: "Simplicité", text: "Nous évitons la complexité inutile." },
+          performance: { title: "Performance", text: "Nous construisons des outils rapides et efficaces." },
+          transparency: { title: "Transparence", text: "Les choix techniques et les étapes sont clairement expliqués." },
+          scalability: { title: "Évolutivité", text: "Nous anticipons les besoins futurs du projet." },
+        },
+      },
+      cta: {
+        title: "Construisons quelque chose d'utile.",
+        description: "Vous avez une idée, un problème ou un processus à digitaliser ? Parlons-en.",
+        button: "Démarrer une discussion",
+      },
+    },
+
+    solutionsPage: {
+      hero: {
+        badge: "Solutions Digital Work",
+        title: "Des solutions digitales",
+        titleHighlight: "pensées pour votre activité.",
+        description: "Digital Work analyse vos besoins et construit des outils numériques adaptés à vos objectifs, votre secteur et vos utilisateurs.",
+        primary: "Définir mon besoin",
+        secondary: "Voir nos réalisations",
+      },
+      positioning: {
+        badge: "Notre philosophie",
+        title: "La technologie doit résoudre un problème.",
+        p1: "Nous commençons par comprendre votre activité avant de proposer une solution technique.",
+        p2: "L'objectif n'est pas de multiplier les outils, mais de construire un système digital cohérent, utile et capable d'évoluer avec votre entreprise.",
+        button: "Découvrir nos expertises",
+        stats: {
+          visibility: { title: "Visibilité", text: "Attirer plus de clients" },
+          management: { title: "Pilotage", text: "Décider avec vos données" },
+          automation: { title: "Automatisation", text: "Réduire les tâches répétitives" },
+          evolution: { title: "Évolution", text: "Accompagner la croissance" },
+        },
+      },
+      cards: {
+        presence: { title: "Présence digitale", subtitle: "Soyez visible. Soyez crédible.", description: "Nous construisons une présence digitale professionnelle permettant à votre entreprise d'être trouvée, comprise et contactée facilement.", features: ["Site web professionnel","Landing pages","Référencement naturel","Google Business","Responsive mobile","Optimisation des performances"] },
+        management: { title: "Gestion d'entreprise", subtitle: "Pilotez votre activité depuis un seul endroit.", description: "Nous développons des plateformes permettant de centraliser vos données, vos utilisateurs, vos opérations et vos indicateurs.", features: ["Dashboards","Gestion utilisateurs","Statistiques","Gestion clients","Gestion des opérations","Rapports"] },
+        processes: { title: "Digitalisation des processus", subtitle: "Moins de tâches manuelles. Plus d'efficacité.", description: "Nous transformons vos processus papier ou Excel en workflows numériques simples, automatisés et traçables.", features: ["Workflows métier","Automatisation","Formulaires numériques","Notifications","Gestion documentaire","Suivi des opérations"] },
+        hospitality: { title: "Hôtellerie & restauration", subtitle: "Une expérience digitale adaptée à votre établissement.", description: "Nous créons des solutions digitales pour les hôtels, restaurants et établissements touristiques afin d'améliorer leur visibilité et leur gestion.", features: ["Site hôtelier","Menu digital","Réservation","Galerie photos","WhatsApp Business","Gestion de contenu"] },
+        network: { title: "Réseaux & Wi-Fi", subtitle: "Connectez vos utilisateurs et contrôlez votre réseau.", description: "Nous développons et intégrons des solutions de gestion Wi-Fi et réseau pour les entreprises, hôtels, espaces publics et zones communautaires.", features: ["Hotspot Wi-Fi","Gestion vouchers","MikroTik","Gestion utilisateurs","Statistiques réseau","Portail captif"] },
+      },
+      sectors: {
+        eyebrow: "Secteurs",
+        title: "Des solutions adaptées",
+        titleHighlight: "à votre environnement.",
+        description: "Notre approche s'adapte aux contraintes et aux objectifs de votre secteur d'activité.",
+        items: {
+          hotel: { title: "Hôtellerie", text: "Visibilité, réservation, présence digitale et outils de gestion." },
+          sme: { title: "PME", text: "Digitalisation des processus et centralisation des opérations." },
+          retail: { title: "Commerces", text: "Solutions web et mobiles pour améliorer la relation client." },
+          network: { title: "Réseaux", text: "Hotspot, Wi-Fi, gestion utilisateurs et supervision." },
+        },
+      },
+      process: {
+        eyebrow: "Comment ça fonctionne",
+        title: "Votre besoin devient",
+        titleHighlight: "une solution concrète.",
+        description: "Un processus simple pour éviter les développements inutiles et concentrer les efforts sur ce qui crée réellement de la valeur.",
+        steps: {
+          explain: { title: "Vous nous expliquez", text: "Nous échangeons sur votre activité, votre problème et vos objectifs." },
+          design: { title: "Nous concevons", text: "Nous définissons l'architecture, les fonctionnalités et l'expérience utilisateur." },
+          build: { title: "Nous construisons", text: "Nous développons et mettons en production votre solution." },
+        },
+      },
+      cta: {
+        title: "Vous avez un problème à digitaliser ?",
+        description: "Décrivez-nous votre situation. Nous vous aiderons à identifier la solution digitale la plus adaptée.",
+        button: "Parler de mon projet",
+      },
+    },
+
+    servicesPage: {
+      hero: {
+        badge: "Nos expertises",
+        title: "Des solutions digitales",
+        titleHighlight: "conçues pour votre croissance.",
+        description: "Digital Work accompagne les entreprises dans leur transformation digitale, de la conception d'un site web au développement de solutions métier complètes.",
+        primary: "Démarrer un projet",
+        secondary: "Voir nos réalisations",
+      },
+      intro: {
+        eyebrow: "Ce que nous faisons",
+        title: "Une expertise digitale",
+        titleHighlight: "orientée résultats.",
+        description: "Nous ne développons pas simplement des interfaces. Nous concevons des outils numériques capables de répondre à vos objectifs commerciaux et opérationnels.",
+      },
+      cards: {
+        web: { title: "Création de sites web", description: "Nous concevons des sites web modernes, rapides et adaptés à votre activité pour améliorer votre visibilité et transformer vos visiteurs en clients.", features: ["Site vitrine professionnel","Landing page","Site institutionnel","Responsive mobile","Optimisation SEO","Performance web"], technologies: ["React","TypeScript","Tailwind CSS"] },
+        applications: { title: "Applications web", description: "Des applications métier sur mesure pour centraliser vos données, automatiser vos processus et piloter votre activité.", features: ["Dashboard administrateur","Gestion utilisateurs","Gestion des données","Système d'authentification","API REST","Base de données"], technologies: ["React","Node.js","PostgreSQL"] },
+        mobile: { title: "Applications mobiles", description: "Nous développons des applications mobiles modernes pour Android et iOS avec une expérience utilisateur fluide.", features: ["Application Android","Application iOS","Interface moderne","Notifications","Authentification","Connexion API"], technologies: ["React Native","Expo","Firebase"] },
+        digitalization: { title: "Digitalisation", description: "Nous transformons vos processus manuels en workflows digitaux afin de réduire les tâches répétitives et gagner en efficacité.", features: ["Analyse des processus","Digitalisation métier","Automatisation","Workflows","Gestion documentaire","Tableaux de bord"], technologies: ["Node.js","React","Automation"] },
+        customSoftware: { title: "Logiciels sur mesure", description: "Des solutions logicielles conçues spécifiquement pour répondre aux besoins opérationnels de votre entreprise.", features: ["Analyse des besoins","Architecture technique","Développement personnalisé","Gestion des utilisateurs","Sécurité","Maintenance"], technologies: ["TypeScript","Node.js","PostgreSQL"] },
+        modernization: { title: "Modernisation digitale", description: "Nous améliorons vos outils existants pour les rendre plus modernes, performants, sécurisés et faciles à utiliser.", features: ["Refonte UI/UX","Modernisation technique","Optimisation performance","Responsive design","Migration","Maintenance évolutive"], technologies: ["React","TypeScript","Tailwind CSS"] },
+      },
+      technologies: {
+        eyebrow: "Technologies",
+        title: "Une stack moderne pour des produits performants.",
+        description: "Nous privilégions des technologies modernes, maintenables et adaptées aux besoins réels de chaque projet.",
+        button: "Discuter de votre projet",
+      },
+      process: {
+        eyebrow: "Notre méthode",
+        title: "Du besoin au produit",
+        titleHighlight: "opérationnel.",
+        description: "Une méthode simple et structurée pour transformer votre idée en solution digitale concrète.",
+        steps: {
+          analysis: { title: "Analyse", text: "Nous comprenons votre activité, vos utilisateurs et vos objectifs." },
+          design: { title: "Conception", text: "Nous définissons l'expérience utilisateur et l'architecture de la solution." },
+          development: { title: "Développement", text: "Nous développons votre solution avec une stack moderne et évolutive." },
+          delivery: { title: "Livraison", text: "Nous mettons votre solution en production et assurons son évolution." },
+        },
+      },
+      cta: {
+        title: "Vous avez un projet digital ?",
+        description: "Parlons de votre besoin et construisons ensemble la solution adaptée à votre activité.",
+        button: "Parlons de votre projet",
+      },
+    },
+
+    // =======================================================
+    // PAGES PUBLIQUES — À PROPOS / SOLUTIONS / SERVICES
+    // =======================================================
+    aboutPage: {
+      hero: {
+        badge: "About Digital Work",
+        title: "Building digital solutions",
+        titleHighlight: "that move your business forward.",
+        description: "Digital Work helps businesses design, build and digitize their operations.",
+        primary: "Start a project",
+        secondary: "View our work",
+      },
+      intro: {
+        badge: "Our approach",
+        title: "Digital should be a growth tool.",
+        p1: "A website or application only creates value when it solves a real need.",
+        p2: "At Digital Work, we start with the business problem before choosing the technology. We build solutions that are simple, performant and genuinely useful.",
+        p3: "Our goal is to turn technology into a real advantage for your business.",
+      },
+      objective: {
+        label: "Our objective",
+        title: "Create value",
+        items: {
+          understand: { title: "Understand", text: "Identify the real problem before building." },
+          build: { title: "Build", text: "Create a solution adapted to real needs." },
+          evolve: { title: "Evolve", text: "Evolve the tool with your business." },
+        },
+      },
+      vision: {
+        mission: { title: "Our mission", text: "Make digital transformation accessible by building useful, modern solutions adapted to each business." },
+        vision: { title: "Our vision", text: "Create a digital ecosystem where technology simplifies operations, improves customer experience and accelerates growth." },
+        ambition: { title: "Our ambition", text: "Become a trusted technology partner for businesses modernizing their operations." },
+      },
+      expertise: {
+        eyebrow: "Our expertise",
+        title: "Design, development",
+        titleHighlight: "and digital strategy.",
+        description: "We combine multiple skills so you do not need several providers for the same project.",
+        items: {
+          web: { title: "Web development", text: "Professional websites, business platforms, dashboards and modern web applications." },
+          mobile: { title: "Mobile applications", text: "Android and iOS applications with a modern user experience." },
+          digital: { title: "Digital transformation", text: "Turn manual processes into efficient digital tools." },
+          network: { title: "Network solutions", text: "Design and integration of Wi-Fi, hotspot and network management solutions." },
+          ux: { title: "User experience", text: "Modern interfaces designed to be simple, fast and intuitive." },
+          support: { title: "Support", text: "We support the project from planning through production." },
+        },
+      },
+      method: {
+        eyebrow: "Our method",
+        title: "A simple method.",
+        titleHighlight: "A concrete result.",
+        description: "We use a pragmatic approach to avoid unnecessary development.",
+        steps: {
+          listen: { title: "Listen", text: "Understand votre activité, vos utilisateurs et vos contraintes." },
+          design: { title: "Design", text: "Define the experience, features and architecture." },
+          develop: { title: "Evolve", text: "Build une solution fiable avec des technologies adaptées." },
+          evolve: { title: "Évoluer", text: "Measure, improve and evolve the solution." },
+        },
+      },
+      values: {
+        eyebrow: "Our commitments",
+        title: "Simple principles for building better.",
+        description: "Every Digital Work project relies on coherent technical and business choices.",
+        items: {
+          simplicity: { title: "Simplicity", text: "We avoid unnecessary complexity." },
+          performance: { title: "Performance", text: "We build fast and effective tools." },
+          transparency: { title: "Transparency", text: "Technical choices and project steps are clearly explained." },
+          scalability: { title: "Scalability", text: "We anticipate future project needs." },
+        },
+      },
+      cta: {
+        title: "Let's build something useful.",
+        description: "Have an idea, a problem or a process to digitize? Let's talk.",
+        button: "Start a conversation",
+      },
+    },
+
+    solutionsPage: {
+      hero: {
+        badge: "Digital Work solutions",
+        title: "Digital solutions",
+        titleHighlight: "designed for your business.",
+        description: "Digital Work analyzes your needs and builds digital tools adapted to your goals, sector and users.",
+        primary: "Define my need",
+        secondary: "View our work",
+      },
+      positioning: {
+        badge: "Our philosophy",
+        title: "Technology should solve a problem.",
+        p1: "We first understand your business before proposing a technical solution.",
+        p2: "The goal is not to add more tools, but to build a coherent, useful digital system that can evolve with your business.",
+        button: "Discover our expertise",
+        stats: {
+          visibility: { title: "Visibility", text: "Attract more customers" },
+          management: { title: "Control", text: "Make decisions with your data" },
+          automation: { title: "Automation", text: "Reduce repetitive tasks" },
+          evolution: { title: "Growth", text: "Support growth" },
+        },
+      },
+      cards: {
+        presence: { title: "Présence digitale", subtitle: "Soyez visible. Soyez crédible.", description: "We build une présence digitale professionnelle permettant à votre entreprise d'être trouvée, comprise et contactée facilement.", features: ["Site web professionnel","Landing pages","Référencement naturel","Google Business","Responsive mobile","Optimisation des performances"] },
+        management: { title: "Gestion d'entreprise", subtitle: "Pilotez votre activité depuis un seul endroit.", description: "Nous développons des plateformes permettant de centraliser vos données, vos utilisateurs, vos opérations et vos indicateurs.", features: ["Dashboards","Gestion utilisateurs","Statistiques","Gestion clients","Gestion des opérations","Rapports"] },
+        processes: { title: "Digital transformation des processus", subtitle: "Moins de tâches manuelles. Plus d'efficacité.", description: "Nous transformons vos processus papier ou Excel en workflows numériques simples, automatisés et traçables.", features: ["Workflows métier","Automation","Formulaires numériques","Notifications","Gestion documentaire","Suivi des opérations"] },
+        hospitality: { title: "Hospitality & restauration", subtitle: "Une expérience digitale adaptée à votre établissement.", description: "Nous créons des solutions digitales pour les hôtels, restaurants et établissements touristiques afin d'améliorer leur visibilité et leur gestion.", features: ["Site hôtelier","Menu digital","Réservation","Galerie photos","WhatsApp Business","Gestion de contenu"] },
+        network: { title: "Networks & Wi-Fi", subtitle: "Connectez vos utilisateurs et contrôlez votre réseau.", description: "Nous développons et intégrons des solutions de gestion Wi-Fi et réseau pour les entreprises, hôtels, espaces publics et zones communautaires.", features: ["Hotspot Wi-Fi","Gestion vouchers","MikroTik","Gestion utilisateurs","Statistiques réseau","Portail captif"] },
+      },
+      sectors: {
+        eyebrow: "Sectors",
+        title: "Solutions adapted",
+        titleHighlight: "to your environment.",
+        description: "Our approach s'adapte aux contraintes et aux objectifs de votre secteur d'activité.",
+        items: {
+          hotel: { title: "Hospitality", text: "Visibility, réservation, présence digitale et outils de gestion." },
+          sme: { title: "SMEs", text: "Digital transformation des processus et centralisation des opérations." },
+          retail: { title: "Retail", text: "Web and mobile solutions to improve customer relationships." },
+          network: { title: "Networks", text: "Hotspot, Wi-Fi, user management and monitoring." },
+        },
+      },
+      process: {
+        eyebrow: "How it works",
+        title: "Your need becomes",
+        titleHighlight: "a concrete solution.",
+        description: "A simple process that avoids unnecessary development and focuses effort on what creates real value.",
+        steps: {
+          explain: { title: "You explain", text: "We discuss your business, problem and goals." },
+          design: { title: "We design", text: "We define the architecture, features and user experience." },
+          build: { title: "We build", text: "We develop and deploy your solution." },
+        },
+      },
+      cta: {
+        title: "Have a problem to digitize?",
+        description: "Tell us about your situation. We will help identify the most suitable digital solution.",
+        button: "Discuss my project",
+      },
+    },
+
+    servicesPage: {
+      hero: {
+        badge: "Our expertise",
+        title: "Digital solutions",
+        titleHighlight: "designed for your growth.",
+        description: "Digital Work supports businesses through digital transformation, from website design to complete business solutions.",
+        primary: "Start a project",
+        secondary: "View our work",
+      },
+      intro: {
+        eyebrow: "What we do",
+        title: "Digital expertise",
+        titleHighlight: "focused on results.",
+        description: "Nous ne développons pas simplement des interfaces. We design des outils numériques capables de répondre à vos objectifs commerciaux et opérationnels.",
+      },
+      cards: {
+        web: { title: "Website development", description: "We design des sites web modernes, rapides et adaptés à votre activité pour améliorer votre visibilité et transformer vos visiteurs en clients.", features: ["Site vitrine professionnel","Landing page","Site institutionnel","Responsive mobile","Optimisation SEO","Performance web"], technologies: ["React","TypeScript","Tailwind CSS"] },
+        applications: { title: "Web applications", description: "Des applications métier sur mesure pour centraliser vos données, automatiser vos processus et piloter votre activité.", features: ["Dashboard administrateur","Gestion utilisateurs","Gestion des données","Système d'authentification","API REST","Base de données"], technologies: ["React","Node.js","PostgreSQL"] },
+        mobile: { title: "Mobile applications", description: "Nous développons des applications mobiles modernes pour Android et iOS avec une expérience utilisateur fluide.", features: ["Application Android","Application iOS","Interface moderne","Notifications","Authentification","Connexion API"], technologies: ["React Native","Expo","Firebase"] },
+        digitalization: { title: "Digital transformation", description: "Nous transformons vos processus manuels en workflows digitaux afin de réduire les tâches répétitives et gagner en efficacité.", features: ["Analysis des processus","Digital transformation métier","Automation","Workflows","Gestion documentaire","Tableaux de bord"], technologies: ["Node.js","React","Automation"] },
+        customSoftware: { title: "Custom software", description: "Des solutions logicielles conçues spécifiquement pour répondre aux besoins opérationnels de votre entreprise.", features: ["Analysis des besoins","Architecture technique","Development personnalisé","Gestion des utilisateurs","Sécurité","Maintenance"], technologies: ["TypeScript","Node.js","PostgreSQL"] },
+        modernization: { title: "Digital modernization", description: "Nous améliorons vos outils existants pour les rendre plus modernes, performants, sécurisés et faciles à utiliser.", features: ["Refonte UI/UX","Modernisation technique","Optimisation performance","Responsive design","Migration","Maintenance évolutive"], technologies: ["React","TypeScript","Tailwind CSS"] },
+      },
+      technologies: {
+        eyebrow: "Technologies",
+        title: "A modern stack for high-performing products.",
+        description: "We choose modern, maintainable technologies adapted to each project's real needs.",
+        button: "Discuss your project",
+      },
+      process: {
+        eyebrow: "Our method",
+        title: "From need to product",
+        titleHighlight: "ready for operation.",
+        description: "A simple, structured method to turn your idea into a concrete digital solution.",
+        steps: {
+          analysis: { title: "Analysis", text: "We understand your business, users and goals." },
+          design: { title: "Design", text: "We define the user experience and solution architecture." },
+          development: { title: "Development", text: "We develop your solution with a modern, scalable stack." },
+          delivery: { title: "Delivery", text: "We deploy your solution and support its evolution." },
+        },
+      },
+      cta: {
+        title: "Have a digital project?",
+        description: "Let's discuss your needs and build the right solution for your business.",
+        button: "Let's discuss your project",
+      },
+    },
+
     realisations: { 
       //pour page accueil
       eyebrow: "Nos réalisations",
@@ -983,6 +1351,190 @@ export const translations = {
       },
 
       cta: "Andao hiresaka momba ny tetikasanao",
+    },
+
+    // =======================================================
+    // PAGES PUBLIQUES — À PROPOS / SOLUTIONS / SERVICES
+    // =======================================================
+    aboutPage: {
+      hero: {
+        badge: "Momba ny Digital Work",
+        title: "Manorina ny tontolo nomerika",
+        titleHighlight: "izay mampandroso ny asanao.",
+        description: "Manampy ny orinasa amin'ny famolavolana, fampandrosoana ary fanovana nomerika ny Digital Work.",
+        primary: "Hanomboka tetikasa",
+        secondary: "Hijery ny tetikasanay",
+      },
+      intro: {
+        badge: "Ny fomba fiasanay",
+        title: "Tokony ho fitaovana hampitomboana ny asanao ny nomerika.",
+        p1: "Manana lanja ny tranonkala na application rehefa mamaly filàna mazava.",
+        p2: "Ao amin'ny Digital Work, ny olana ara-barotra no dinihinay voalohany alohan'ny hisafidianana teknolojia. Mamorona vahaolana tsotra, mahomby ary tena azo ampiasaina izahay.",
+        p3: "Ny tanjonay dia ny hanova ny teknolojia ho tombony tena izy ho an'ny orinasanao.",
+      },
+      objective: {
+        label: "Ny tanjonay",
+        title: "Mamorona lanja",
+        items: {
+          understand: { title: "Mahafantatra", text: "Fantaro aloha ny tena olana vao manomboka mamolavola." },
+          build: { title: "Manangana", text: "Mamorona vahaolana mifanaraka amin'ny filàna tena izy." },
+          evolve: { title: "Mampivoatra", text: "Ampivoaro miaraka amin'ny fivoaran'ny asanao ny fitaovana." },
+        },
+      },
+      vision: {
+        mission: { title: "Ny iraka", text: "Ataonay mora azon'ny orinasa ny fanovana nomerika amin'ny alalan'ny vahaolana mahasoa, maoderina ary mifanaraka amin'ny zava-misy." },
+        vision: { title: "Ny vina", text: "Mamorona tontolo nomerika izay manamora ny asa, manatsara ny traikefan'ny mpanjifa ary manafaingana ny fitomboana." },
+        ambition: { title: "Ny tanjonay lehibe", text: "Ho mpiara-miombon'antoka ara-teknolojia itokisan'ny orinasa te hanavao ny asany." },
+      },
+      expertise: {
+        eyebrow: "Ny fahaiza-manaonay",
+        title: "Famolavolana, fampandrosoana",
+        titleHighlight: "ary paikady nomerika.",
+        description: "Ampifandraisinay ny fahaiza-manao samihafa mba tsy hampitomboana mpanome tolotra amin'ny tetikasa iray.",
+        items: {
+          web: { title: "Fampandrosoana web", text: "Tranonkala matihanina, plateforme métier, dashboard ary application web maoderina." },
+          mobile: { title: "Application mobile", text: "Application Android sy iOS manana traikefa mpampiasa maoderina." },
+          digital: { title: "Fanovana nomerika", text: "Fanovana ny asa atao tanana ho fitaovana nomerika mahomby." },
+          network: { title: "Vahaolana tambajotra", text: "Famolavolana sy fampidirana vahaolana Wi-Fi, hotspot ary fitantanana tambajotra." },
+          ux: { title: "Traikefan'ny mpampiasa", text: "Interface maoderina natao ho tsotra, haingana ary mora ampiasaina." },
+          support: { title: "Fanohanana", text: "Manohana ny tetikasa izahay manomboka amin'ny hevitra ka hatramin'ny famoahana azy." },
+        },
+      },
+      method: {
+        eyebrow: "Ny fomba fiasanay",
+        title: "Fomba tsotra.",
+        titleHighlight: "Vokatra azo tsapain-tanana.",
+        description: "Mampiasa fomba fiasa azo ampiharina izahay mba hialana amin'ny fampandrosoana tsy ilaina.",
+        steps: {
+          listen: { title: "Mihaino", text: "Mahafantatra votre activité, vos utilisateurs et vos contraintes." },
+          design: { title: "Mamolavola", text: "Mamaritra ny traikefa, ny fonctionnalités ary ny rafitra." },
+          develop: { title: "Mampivoatra", text: "Manangana une solution fiable avec des technologies adaptées." },
+          evolve: { title: "Évoluer", text: "Mandrefy, manatsara ary mampivoatra ny vahaolana." },
+        },
+      },
+      values: {
+        eyebrow: "Ny fanoloran-tenanay",
+        title: "Fitsipika tsotra hananganana vahaolana tsara kokoa.",
+        description: "Ny tetikasa Digital Work tsirairay dia mifototra amin'ny safidy ara-teknika sy ara-barotra mifanaraka.",
+        items: {
+          simplicity: { title: "Tsotra", text: "Halavirinay ny fahasarotana tsy ilaina." },
+          performance: { title: "Performance", text: "Manangana fitaovana haingana sy mahomby izahay." },
+          transparency: { title: "Mangarahara", text: "Hazavaina mazava ny safidy ara-teknika sy ny dingana." },
+          scalability: { title: "Fahafahana mivoatra", text: "Efa dinihinay mialoha ny filàna ho avy." },
+        },
+      },
+      cta: {
+        title: "Andao hanangana zavatra mahasoa.",
+        description: "Manana hevitra, olana na processus tianao avadika ho nomerika ve ianao? Andao hiresaka.",
+        button: "Hanomboka resaka",
+      },
+    },
+
+    solutionsPage: {
+      hero: {
+        badge: "Vahaolana Digital Work",
+        title: "Vahaolana nomerika",
+        titleHighlight: "natao ho an'ny asanao.",
+        description: "Dinihin'ny Digital Work ny filànao ary manangana fitaovana nomerika mifanaraka amin'ny tanjonao, ny sehatra misy anao ary ny mpampiasa.",
+        primary: "Farito ny filàko",
+        secondary: "Hijery ny tetikasanay",
+      },
+      positioning: {
+        badge: "Ny filozofianay",
+        title: "Tokony hamaha olana ny teknolojia.",
+        p1: "Fantatray aloha ny asanao vao manolotra vahaolana ara-teknika.",
+        p2: "Tsy ny hampitombo fitaovana no tanjona, fa ny hanangana rafitra nomerika mirindra, mahasoa ary afaka mivoatra miaraka amin'ny orinasa.",
+        button: "Hijery ny fahaiza-manaonay",
+        stats: {
+          visibility: { title: "Fahitana", text: "Hisarihana mpanjifa bebe kokoa" },
+          management: { title: "Fitantanana", text: "Handray fanapahan-kevitra amin'ny angon-drakitra" },
+          automation: { title: "Automation", text: "Hampihena ny asa miverimberina" },
+          evolution: { title: "Fivoarana", text: "Hanohana ny fitomboana" },
+        },
+      },
+      cards: {
+        presence: { title: "Présence digitale", subtitle: "Soyez visible. Soyez crédible.", description: "Manangana izahay une présence digitale professionnelle permettant à votre entreprise d'être trouvée, comprise et contactée facilement.", features: ["Site web professionnel","Landing pages","Référencement naturel","Google Business","Responsive mobile","Optimisation des performances"] },
+        management: { title: "Gestion d'entreprise", subtitle: "Pilotez votre activité depuis un seul endroit.", description: "Nous développons des plateformes permettant de centraliser vos données, vos utilisateurs, vos opérations et vos indicateurs.", features: ["Dashboards","Gestion utilisateurs","Statistiques","Gestion clients","Gestion des opérations","Rapports"] },
+        processes: { title: "Fanovana nomerika des processus", subtitle: "Moins de tâches manuelles. Plus d'efficacité.", description: "Nous transformons vos processus papier ou Excel en workflows numériques simples, automatisés et traçables.", features: ["Workflows métier","Automation","Formulaires numériques","Notifications","Gestion documentaire","Suivi des opérations"] },
+        hospitality: { title: "Hotely & restauration", subtitle: "Une expérience digitale adaptée à votre établissement.", description: "Nous créons des solutions digitales pour les hôtels, restaurants et établissements touristiques afin d'améliorer leur visibilité et leur gestion.", features: ["Site hôtelier","Menu digital","Réservation","Galerie photos","WhatsApp Business","Gestion de contenu"] },
+        network: { title: "Tambajotra & Wi-Fi", subtitle: "Connectez vos utilisateurs et contrôlez votre réseau.", description: "Nous développons et intégrons des solutions de gestion Wi-Fi et réseau pour les entreprises, hôtels, espaces publics et zones communautaires.", features: ["Hotspot Wi-Fi","Gestion vouchers","MikroTik","Gestion utilisateurs","Statistiques réseau","Portail captif"] },
+      },
+      sectors: {
+        eyebrow: "Sehatra",
+        title: "Vahaolana mifanaraka",
+        titleHighlight: "amin'ny tontolo iasanao.",
+        description: "Ny fomba fiasanay s'adapte aux contraintes et aux objectifs de votre secteur d'activité.",
+        items: {
+          hotel: { title: "Hotely", text: "Fahitana, réservation, présence digitale et outils de gestion." },
+          sme: { title: "Orinasa madinika sy salantsalany", text: "Fanovana nomerika des processus et centralisation des opérations." },
+          retail: { title: "Varotra", text: "Vahaolana web sy mobile hanatsarana ny fifandraisana amin'ny mpanjifa." },
+          network: { title: "Tambajotra", text: "Hotspot, Wi-Fi, fitantanana mpampiasa ary fanaraha-maso." },
+        },
+      },
+      process: {
+        eyebrow: "Ahoana no fiasany",
+        title: "Ny filànao dia lasa",
+        titleHighlight: "vahaolana azo ampiharina.",
+        description: "Dingana tsotra hialana amin'ny fampandrosoana tsy ilaina ary hifantohana amin'izay mamorona lanja.",
+        steps: {
+          explain: { title: "Manazava aminay ianao", text: "Miresaka momba ny asanao, ny olanao ary ny tanjonao izahay." },
+          design: { title: "Mamolavola izahay", text: "Faritanay ny rafitra, ny fonctionnalités ary ny traikefan'ny mpampiasa." },
+          build: { title: "Manangana izahay", text: "Amboarinay ary avoakanay amin'ny production ny vahaolana." },
+        },
+      },
+      cta: {
+        title: "Manana olana tianao avadika ho nomerika ve ianao?",
+        description: "Lazao anay ny toe-javatra misy anao. Hanampy anao izahay hamantatra ny vahaolana nomerika mety indrindra.",
+        button: "Hiresaka momba ny tetikasako",
+      },
+    },
+
+    servicesPage: {
+      hero: {
+        badge: "Ny fahaiza-manaonay",
+        title: "Vahaolana nomerika",
+        titleHighlight: "natao hampitomboana ny asanao.",
+        description: "Manampy ny orinasa amin'ny fanovana nomerika ny Digital Work, manomboka amin'ny famolavolana tranonkala ka hatramin'ny vahaolana métier feno.",
+        primary: "Hanomboka tetikasa",
+        secondary: "Hijery ny tetikasanay",
+      },
+      intro: {
+        eyebrow: "Izay ataonay",
+        title: "Fahaiza-manao nomerika",
+        titleHighlight: "mifantoka amin'ny vokatra.",
+        description: "Nous ne développons pas simplement des interfaces. Mamolavola izahay des outils numériques capables de répondre à vos objectifs commerciaux et opérationnels.",
+      },
+      cards: {
+        web: { title: "Famoronana tranonkala", description: "Mamolavola izahay des sites web modernes, rapides et adaptés à votre activité pour améliorer votre visibilité et transformer vos visiteurs en clients.", features: ["Site vitrine professionnel","Landing page","Site institutionnel","Responsive mobile","Optimisation SEO","Performance web"], technologies: ["React","TypeScript","Tailwind CSS"] },
+        applications: { title: "Application web", description: "Des applications métier sur mesure pour centraliser vos données, automatiser vos processus et piloter votre activité.", features: ["Dashboard administrateur","Gestion utilisateurs","Gestion des données","Système d'authentification","API REST","Base de données"], technologies: ["React","Node.js","PostgreSQL"] },
+        mobile: { title: "Application mobile", description: "Nous développons des applications mobiles modernes pour Android et iOS avec une expérience utilisateur fluide.", features: ["Application Android","Application iOS","Interface moderne","Notifications","Authentification","Connexion API"], technologies: ["React Native","Expo","Firebase"] },
+        digitalization: { title: "Fanovana nomerika", description: "Nous transformons vos processus manuels en workflows digitaux afin de réduire les tâches répétitives et gagner en efficacité.", features: ["Famakafakana des processus","Fanovana nomerika métier","Automation","Workflows","Gestion documentaire","Tableaux de bord"], technologies: ["Node.js","React","Automation"] },
+        customSoftware: { title: "Logiciel natao manokana", description: "Des solutions logicielles conçues spécifiquement pour répondre aux besoins opérationnels de votre entreprise.", features: ["Famakafakana des besoins","Architecture technique","Fampandrosoana personnalisé","Gestion des utilisateurs","Sécurité","Maintenance"], technologies: ["TypeScript","Node.js","PostgreSQL"] },
+        modernization: { title: "Fanavaozana nomerika", description: "Nous améliorons vos outils existants pour les rendre plus modernes, performants, sécurisés et faciles à utiliser.", features: ["Refonte UI/UX","Modernisation technique","Optimisation performance","Responsive design","Migration","Maintenance évolutive"], technologies: ["React","TypeScript","Tailwind CSS"] },
+      },
+      technologies: {
+        eyebrow: "Teknolojia",
+        title: "Stack maoderina ho an'ny vokatra mahomby.",
+        description: "Misafidy teknolojia maoderina, mora tazomina ary mifanaraka amin'ny filàna tena izy amin'ny tetikasa tsirairay izahay.",
+        button: "Hiresaka momba ny tetikasanao",
+      },
+      process: {
+        eyebrow: "Ny fomba fiasanay",
+        title: "Avy amin'ny filàna mankany amin'ny vokatra",
+        titleHighlight: "azo ampiasaina.",
+        description: "Fomba tsotra sy voalamina hanovana ny hevitrao ho vahaolana nomerika azo ampiharina.",
+        steps: {
+          analysis: { title: "Famakafakana", text: "Fantatray ny asanao, ny mpampiasa ary ny tanjonao." },
+          design: { title: "Famolavolana", text: "Faritanay ny traikefan'ny mpampiasa sy ny rafitry ny vahaolana." },
+          development: { title: "Fampandrosoana", text: "Amboarinay amin'ny stack maoderina sy mora mivoatra ny vahaolanao." },
+          delivery: { title: "Fandefasana", text: "Avoakanay amin'ny production ny vahaolanao ary tohizanay ny fampivoarana azy." },
+        },
+      },
+      cta: {
+        title: "Manana tetikasa nomerika ve ianao?",
+        description: "Andao hiresaka momba ny filànao ary hanangana miaraka ny vahaolana mifanaraka amin'ny asanao.",
+        button: "Andao hiresaka momba ny tetikasanao",
+      },
     },
 
     realisations: {
