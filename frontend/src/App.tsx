@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminProtectedRoute from "./pages/admin/AdminProtectedRoute";
+import { MessageCircle } from "lucide-react";
 import ProjectForm from "./pages/admin/ProjectForm";
 
 function App() {
@@ -73,6 +74,19 @@ function App() {
       </main>
 
       {!isAdminRoute && <Footer />}
+
+      {!isAdminRoute && (
+        <a
+          href="https://wa.me/2610348428652"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Contacter Digital Work sur WhatsApp"
+          title="Contacter Digital Work sur WhatsApp"
+          className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-[0_12px_30px_rgba(16,185,129,0.35)] transition duration-200 hover:scale-105 hover:bg-emerald-600 focus:outline-none focus:ring-4 focus:ring-emerald-500/30 sm:bottom-6 sm:right-6"
+        >
+          <MessageCircle size={25} strokeWidth={2.2} />
+        </a>
+      )}
     </div>
   );
 }
