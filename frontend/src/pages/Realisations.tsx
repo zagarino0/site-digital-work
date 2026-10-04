@@ -750,6 +750,12 @@ function ProjectCard({ project }: ProjectCardProps) {
           "
         />
 
+        {/* STATUS */}
+
+        <div className="absolute right-4 top-4">
+          <ProjectStatusBadge status={project.status} />
+        </div>
+
         {/* CATEGORY */}
 
         <div
@@ -1031,6 +1037,47 @@ function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
     </motion.article>
+  );
+}
+
+/* =========================================================
+   PROJECT STATUS
+========================================================= */
+
+function ProjectStatusBadge({
+  status,
+}: {
+  status: Project["status"];
+}) {
+  const { t } = useTranslation();
+
+  const config = {
+    completed: {
+      label: t("realisations.project.status.completed"),
+      className:
+        "border-emerald-400/25 bg-emerald-500/15 text-emerald-100",
+    },
+    "in-progress": {
+      label: t("realisations.project.status.in-progress"),
+      className:
+        "border-amber-400/25 bg-amber-500/15 text-amber-100",
+    },
+    maintenance: {
+      label: t("realisations.project.status.maintenance"),
+      className:
+        "border-orange-400/25 bg-orange-500/15 text-orange-100",
+    },
+  } as const;
+
+  const current = config[status] ?? config.completed;
+
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-bold backdrop-blur-md ${current.className}`}
+    >
+      <span className="h-1.5 w-1.5 rounded-full bg-current" />
+      {current.label}
+    </span>
   );
 }
 
