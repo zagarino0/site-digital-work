@@ -1053,17 +1053,17 @@ function ProjectStatusBadge({
     completed: {
       label: t("realisations.project.status.completed"),
       className:
-        "border-emerald-400/25 bg-emerald-500/15 text-emerald-100",
+        "dw-status-completed",
     },
     "in-progress": {
       label: t("realisations.project.status.in-progress"),
       className:
-        "border-amber-400/25 bg-amber-500/15 text-amber-100",
+        "dw-status-in-progress",
     },
     maintenance: {
       label: t("realisations.project.status.maintenance"),
       className:
-        "border-orange-400/25 bg-orange-500/15 text-orange-100",
+        "dw-status-maintenance",
     },
   } as const;
 
