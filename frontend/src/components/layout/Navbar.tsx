@@ -125,19 +125,21 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="overflow-hidden border-b border-[#ebe8e1] bg-white lg:hidden"
           >
-            <nav className="mx-auto flex max-w-7xl flex-col px-5 py-5 sm:px-6">
+            <nav className="dw-mobile-nav mx-auto flex max-w-7xl flex-col px-5 py-5 sm:px-6">
               {navigation.map((item) => (
                 <NavLink
                   key={item.to}
                   to={item.to}
                   onClick={closeMobileMenu}
                   className={({ isActive }) =>
-                    `px-4 py-3.5 text-sm font-medium transition-colors ${
+                    `dw-mobile-nav-item px-4 py-3.5 text-sm font-medium transition-colors ${
                       isActive
                         ? "text-[#11110f]"
                         : "text-[#56544d] hover:text-[#11110f]"
                     }`
-                  }                >
+                  }
+                  style={{ background: "transparent", borderRadius: 0 }}
+                >
                   {t(`nav.${item.key}`)}
                 </NavLink>
               ))}
