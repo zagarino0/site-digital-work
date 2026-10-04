@@ -121,7 +121,7 @@ async function request<T>(
 
 export function getProjects() {
   return request<Project[]>(
-    "/api/projects"
+    "/api/projects/admin"
   );
 }
 
