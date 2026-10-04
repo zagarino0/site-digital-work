@@ -236,3 +236,16 @@ select:focus-visible {
   color: #f5f2e9 !important;
   stroke: currentColor;
 }
+
+/* Mobile navbar: menu items must remain completely transparent. */
+.dw-mobile-nav .dw-mobile-nav-item,
+.dw-mobile-nav .dw-mobile-nav-item:hover,
+.dw-mobile-nav .dw-mobile-nav-item:focus,
+.dw-mobile-nav .dw-mobile-nav-item:active,
+.dw-mobile-nav .dw-mobile-nav-item[aria-current="page"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
