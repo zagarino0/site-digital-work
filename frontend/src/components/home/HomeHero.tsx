@@ -16,7 +16,7 @@ export default function HomeHero() {
   return (
     <section
       id="home"
-      className="relative min-h-[760px] overflow-hidden bg-black text-white sm:min-h-[820px] lg:min-h-screen"
+      className="relative min-h-[760px] overflow-hidden bg-transparent text-white sm:min-h-[820px] lg:min-h-screen"
     >
       <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
