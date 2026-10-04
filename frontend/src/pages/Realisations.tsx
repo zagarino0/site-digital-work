@@ -755,8 +755,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               backdrop-blur-md
             "
           >
-            //esssaye
-           {t(
+            {t(
               `realisations.categories.${getCanonicalProjectCategory(
                 project.category
               )
