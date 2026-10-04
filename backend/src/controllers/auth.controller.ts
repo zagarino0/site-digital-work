@@ -1,7 +1,9 @@
 import type { Request, Response } from "express";
+import { timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 
 import {
+  bootstrapAdmin,
   createAccessToken,
   createPasswordResetToken,
   findAdminByUsername,
@@ -23,6 +25,79 @@ const resetPasswordSchema = z.object({
   token: z.string().min(32).max(200),
   password: z.string().min(8).max(200),
 });
+
+const bootstrapAdminSchema = z.object({
+  username: z.string().min(1).max(100),
+  email: z.string().email().max(255),
+  password: z.string().min(8).max(200),
+});
+
+function hasValidBootstrapToken(requestToken: string | undefined): boolean {
+  const configuredToken = process.env.ADMIN_BOOTSTRAP_TOKEN?.trim();
+
+  if (!configuredToken || !requestToken) {
+    return false;
+  }
+
+  const expected = Buffer.from(configuredToken, "utf8");
+  const received = Buffer.from(requestToken.trim(), "utf8");
+
+  return (
+    expected.length === received.length &&
+    timingSafeEqual(expected, received)
+  );
+}
+
+export async function bootstrapAdminAccount(
+  req: Request,
+  res: Response
+) {
+  if (!hasValidBootstrapToken(req.header("x-admin-bootstrap-token"))) {
+    res.status(404).json({
+      success: false,
+      message: "Ressource introuvable.",
+    });
+    return;
+  }
+
+  try {
+    const data = bootstrapAdminSchema.parse(req.body);
+    const result = await bootstrapAdmin(
+      data.username,
+      data.email,
+      data.password
+    );
+
+    if (result === "already_completed") {
+      res.status(410).json({
+        success: false,
+        message: "L'initialisation administrateur a déjà été effectuée.",
+      });
+      return;
+    }
+
+    res.status(201).json({
+      success: true,
+      message: "Administrateur initialisé. Vous pouvez maintenant vous connecter.",
+    });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      res.status(400).json({
+        success: false,
+        message: "Username, e-mail ou mot de passe invalide.",
+        errors: error.flatten(),
+      });
+      return;
+    }
+
+    console.error("bootstrapAdminAccount:", error);
+
+    res.status(500).json({
+      success: false,
+      message: "Impossible d'initialiser le compte administrateur.",
+    });
+  }
+}
 
 const RESET_REQUEST_MESSAGE =
   "Si un compte administrateur correspond à ces informations, un lien de réinitialisation a été envoyé à son adresse e-mail.";
