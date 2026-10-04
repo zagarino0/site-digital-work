@@ -6,13 +6,6 @@ import { useTranslation } from "react-i18next";
 export default function HomeHero() {
   const { t } = useTranslation();
 
-  const stats = [
-    { value: "50+", label: t("hero.stats.projects"), icon: BriefcaseBusiness },
-    { value: "30+", label: t("hero.stats.clients"), icon: Users },
-    { value: "5+", label: t("hero.stats.experience"), icon: Clock3 },
-    { value: "Majunga", label: t("hero.stats.location"), icon: MapPin },
-  ];
-
   return (
     <section
       id="home"
@@ -77,8 +70,6 @@ export default function HomeHero() {
             </motion.div>
           </div>
         </div>
-
-
       </div>
     </section>
   );
