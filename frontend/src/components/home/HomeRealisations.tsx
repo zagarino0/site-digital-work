@@ -18,6 +18,7 @@ import {
 
 import {
   getCanonicalProjectCategory,
+  getProjectCategoryTranslationKey,
 } from "../../constants/projectCategories";
 
 /* =========================================================
@@ -177,7 +178,7 @@ export default function HomeRealisations() {
         >
           <motion.div variants={itemVariants} className="mb-5 flex items-center justify-center gap-4 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#77736a]">
             <span className="h-px w-10 bg-[#cfc7b8]" />
-            <span>{t("realisations.badge", "Nos réalisations")}</span>
+            <span>{t("realisations.eyebrow", "Nos réalisations")}</span>
             <span className="h-px w-10 bg-[#cfc7b8]" />
           </motion.div>
 
@@ -613,7 +614,10 @@ function ProjectCard({
                 backdrop-blur-md
               "
             >
-              {category}
+              {t(
+                `realisations.categories.${getProjectCategoryTranslationKey(category)}`,
+                { defaultValue: category }
+              )}
             </span>
           </div>
         )}
@@ -658,7 +662,7 @@ function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t(
-                "realisations.home.viewProduction",
+                "realisations.home.card.viewProduction",
                 "Voir le projet en production"
               )}
               className="
@@ -762,7 +766,7 @@ function ProjectCard({
               "
             >
               {t(
-                "realisations.card.view",
+                "realisations.home.card.view",
                 "Voir le projet"
               )}
 
@@ -792,7 +796,7 @@ function ProjectCard({
               "
             >
               {t(
-                "realisations.card.unavailable",
+                "realisations.home.card.unavailable",
                 "Projet indisponible"
               )}
             </span>
