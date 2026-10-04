@@ -7,7 +7,6 @@ import {
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/footer";
-import ScrollControls from "./components/ui/ScrollControls";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Solutions from "./pages/Solutions";
@@ -73,7 +72,6 @@ function App() {
         </Routes>
       </main>
 
-      {!isAdminRoute && <ScrollControls />}
       {!isAdminRoute && <Footer />}
     </div>
   );
