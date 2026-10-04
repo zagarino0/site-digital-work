@@ -135,7 +135,7 @@ export default function HomeHero() {
               <span className="font-serif text-2xl italic text-[#11110f]">Mahajanga</span>
               <span className="h-px w-14 bg-[#b7a98d]" />
               <span className="max-w-[120px] text-[9px] font-medium uppercase leading-4 tracking-[0.18em] text-[#77736a]">
-                Notre inspiration<br />notre territoire
+                {t("hero.stats.localTagline")}
               </span>
               <ArrowUpRight className="h-4 w-4 text-[#b7a98d]" />
             </div>
