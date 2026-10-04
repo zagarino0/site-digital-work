@@ -22,74 +22,22 @@ import ProjectForm from "./pages/admin/ProjectForm";
 
 function App() {
   const location = useLocation();
-
-  const isAdminRoute =
-    location.pathname.startsWith("/admin");
+  const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
     <div className="dw-site-shell flex min-h-screen flex-col text-dw-text">
-      {!isAdminRoute && (
-        <>
-          <div aria-hidden="true" className="dw-site-backdrop" />
-          <div aria-hidden="true" className="dw-site-backdrop-overlay" />
-        </>
-      )}
-      {/* =====================================================
-          PUBLIC NAVBAR
-      ===================================================== */}
       {!isAdminRoute && <Navbar />}
 
-      {/* =====================================================
-          MAIN CONTENT
-      ===================================================== */}
       <main className="flex-1">
         <Routes>
-          {/* =================================================
-              PUBLIC ROUTES
-          ================================================== */}
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/realisations" element={<Realisations />} />
+          <Route path="/a-propos" element={<APropos />} />
+          <Route path="/contact" element={<Contact />} />
 
-          <Route
-            path="/"
-            element={<Home />}
-          />
-
-          <Route
-            path="/services"
-            element={<Services />}
-          />
-
-          <Route
-            path="/solutions"
-            element={<Solutions />}
-          />
-
-          <Route
-            path="/realisations"
-            element={<Realisations />}
-          />
-
-          <Route
-            path="/a-propos"
-            element={<APropos />}
-          />
-
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
-
-          {/* =================================================
-              ADMIN LOGIN
-          ================================================== */}
-
-          <Route
-            path="/admin/login"
-            element={<AdminLogin />}
-          />
-
-          {/* =================================================
-              ADMIN DASHBOARD
-          ================================================== */}
+          <Route path="/admin/login" element={<AdminLogin />} />
 
           <Route
             path="/admin"
@@ -100,10 +48,6 @@ function App() {
             }
           />
 
-          {/* =================================================
-              CREATE PROJECT
-          ================================================== */}
-
           <Route
             path="/admin/projects/new"
             element={
@@ -112,13 +56,6 @@ function App() {
               </AdminProtectedRoute>
             }
           />
-
-          {/* =================================================
-              EDIT PROJECT
-
-              ProjectForm récupère lui-même l'id avec
-              useParams().
-          ================================================== */}
 
           <Route
             path="/admin/projects/:id/edit"
@@ -129,30 +66,14 @@ function App() {
             }
           />
 
-          {/* =================================================
-              FALLBACK
-          ================================================== */}
-
           <Route
             path="*"
-            element={
-              <Navigate
-                to="/"
-                replace
-              />
-            }
+            element={<Navigate to="/" replace />}
           />
         </Routes>
       </main>
 
-      {/* =====================================================
-          SCROLL CONTROLS
-      ===================================================== */}
-      <ScrollControls />
-
-      {/* =====================================================
-          PUBLIC FOOTER
-      ===================================================== */}
+      {!isAdminRoute && <ScrollControls />}
       {!isAdminRoute && <Footer />}
     </div>
   );
