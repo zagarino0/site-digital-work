@@ -1,6 +1,6 @@
-export const API_URL =
-  import.meta.env.VITE_API_URL ||
-  "http://localhost:4000";
+import { apiUrl, API_URL } from "../config/api";
+
+export { API_URL };
 
 /* =========================================================
    TYPES
@@ -237,7 +237,7 @@ export async function fetchProjects(): Promise<
   Project[]
 > {
   const response = await fetch(
-    `${API_URL}/api/projects`,
+    apiUrl("/api/projects"),
     {
       method: "GET",
       headers: {
@@ -265,7 +265,7 @@ export async function fetchProjectById(
   }
 
   const response = await fetch(
-    `${API_URL}/api/projects/${encodeURIComponent(id)}`,
+    apiUrl(`/api/projects/${encodeURIComponent(id)}`),
     {
       method: "GET",
       headers: {
@@ -287,7 +287,7 @@ export async function createProject(
   payload: ProjectPayload
 ): Promise<Project> {
   const response = await fetch(
-    `${API_URL}/api/projects`,
+    apiUrl("/api/projects`,
     {
       method: "POST",
       headers: getJsonHeaders(),
@@ -315,7 +315,7 @@ export async function updateProject(
   }
 
   const response = await fetch(
-    `${API_URL}/api/projects/${encodeURIComponent(id)}`,
+    apiUrl(`/api/projects/${encodeURIComponent(id)}`),
     {
       method: "PUT",
       headers: getJsonHeaders(),
@@ -342,7 +342,7 @@ export async function deleteProject(
   }
 
   const response = await fetch(
-    `${API_URL}/api/projects/${encodeURIComponent(id)}`,
+    apiUrl("/api/projects/${encodeURIComponent(id)}`,
     {
       method: "DELETE",
       headers: getJsonHeaders(),
@@ -389,7 +389,7 @@ export async function uploadProjectImage(
   formData.append("image", file);
 
   const response = await fetch(
-    `${API_URL}/api/uploads/project`,
+    apiUrl("/api/uploads/project"),
     {
       method: "POST",
       headers: getAuthHeaders(),
