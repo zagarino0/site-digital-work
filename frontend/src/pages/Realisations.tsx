@@ -128,7 +128,10 @@ export default function Realisations() {
   const normalizedProjects = useMemo(() => {
     return projects.map((project) => ({
       ...project,
-      title: getSafeProjectTitle(\n        cleanProjectText(project.title),\n        cleanProjectText(project.short_title)\n      ),
+      title: getSafeProjectTitle(
+        cleanProjectText(project.title),
+        cleanProjectText(project.short_title)
+      ),
       category: getCanonicalProjectCategory(
         cleanProjectText(project.category)
       ),
