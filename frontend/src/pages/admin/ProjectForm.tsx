@@ -28,7 +28,6 @@ import ThemeSwitcher from "../../components/ui/ThemeSwitcher";
 
 import {
   createProject,
-  getProject,
   getProjectImageUrl,
   updateProject,
   uploadProjectImage,
