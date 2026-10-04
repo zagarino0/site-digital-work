@@ -287,7 +287,7 @@ export async function createProject(
   payload: ProjectPayload
 ): Promise<Project> {
   const response = await fetch(
-    apiUrl("/api/projects`,
+    apiUrl("/api/projects"),
     {
       method: "POST",
       headers: getJsonHeaders(),
@@ -342,7 +342,7 @@ export async function deleteProject(
   }
 
   const response = await fetch(
-    apiUrl("/api/projects/${encodeURIComponent(id)}`,
+    apiUrl(`/api/projects/${encodeURIComponent(id)}`),
     {
       method: "DELETE",
       headers: getJsonHeaders(),
