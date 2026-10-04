@@ -2544,7 +2544,7 @@ export const translations = {
         "steps": {
           "listen": {
             "title": "Listen",
-            "text": "Understand your business, vos users et vos contraintes."
+            "text": "Understand your business, your users and your constraints."
           },
           "design": {
             "title": "Design",
@@ -2552,7 +2552,7 @@ export const translations = {
           },
           "develop": {
             "title": "Evolve",
-            "text": "Build a solution fiable avec des technologies adaptées."
+            "text": "Build a reliable solution with suitable technologies."
           },
           "evolve": {
             "title": "Évoluer",
@@ -2627,46 +2627,46 @@ export const translations = {
         "presence": {
           "title": "Digital presence",
           "subtitle": "Soyez visible. Soyez crédible.",
-          "description": "We build une digital presence professionnelle permettant à votre business d'être trouvée, comprise et contactée facilement.",
+          "description": "We build a professional digital presence that makes your business easy to find, understand and contact.",
           "features": [
             "Site web professionnel",
             "Landing pages",
             "Référencement naturel",
             "Google Business",
             "Responsive mobile",
-            "Optimization des performances"
+            "Performance optimization"
           ]
         },
         "management": {
           "title": "Management d'business",
-          "subtitle": "Pilotez votre business depuis un seul endroit.",
-          "description": "Nous développons des plateformes permettant de centraliser vos data, vos users, vos operations et vos indicateurs.",
+          "subtitle": "Run your business from one place.",
+          "description": "We build platforms that centralize your data, users, operations and business indicators.",
           "features": [
             "Dashboards",
             "Management users",
             "Statistiques",
             "Management clients",
-            "Management des operations",
+            "Operations management",
             "Rapports"
           ]
         },
         "processes": {
-          "title": "Digital transformation des processes",
+          "title": "Digital transformation of processes",
           "subtitle": "Moins de tâches manuelles. Plus d'efficacité.",
-          "description": "Nous transformons vos processes papier ou Excel en workflows numériques simples, automatisés et traçables.",
+          "description": "We turn paper or spreadsheet processes into simple, automated and traceable digital workflows.",
           "features": [
             "Workflows métier",
             "Automation",
             "Formulaires numériques",
             "Notifications",
             "Management documentaire",
-            "Suivi des operations"
+            "Operations tracking"
           ]
         },
         "hospitality": {
-          "title": "Hospitality & restauration",
-          "subtitle": "Une experience digitale adaptée à votre établissement.",
-          "description": "Nous créons des solutions digitales pour les hotels, restaurants et établissements touristiques afin d'améliorer leur visibilité et leur management.",
+          "title": "Hospitality & dining",
+          "subtitle": "A digital experience tailored to your business.",
+          "description": "We create digital solutions for hotels, restaurants and tourism businesses to improve visibility and management.",
           "features": [
             "Site hotelier",
             "Menu digital",
@@ -2678,8 +2678,8 @@ export const translations = {
         },
         "network": {
           "title": "Networks & Wi-Fi",
-          "subtitle": "Connectez vos users et contrôlez votre réseau.",
-          "description": "Nous développons et intégrons des solutions de management Wi-Fi et réseau pour les businesss, hotels, espaces publics et zones communautaires.",
+          "subtitle": "Connect your users and control your network.",
+          "description": "We develop and integrate Wi-Fi and network management solutions for businesses, hotels, public spaces and community areas.",
           "features": [
             "Hotspot Wi-Fi",
             "Management vouchers",
@@ -2694,15 +2694,15 @@ export const translations = {
         "eyebrow": "Sectors",
         "title": "Solutions adapted",
         "titleHighlight": "to your environment.",
-        "description": "Our approach s'adapte aux contraintes et aux goals de votre secteur d'business.",
+        "description": "Our approach adapts to the constraints and goals of your industry.",
         "items": {
           "hotel": {
             "title": "Hospitality",
-            "text": "Visibility, booking, digital presence et outils de management."
+            "text": "Visibility, booking, digital presence and management tools."
           },
           "sme": {
             "title": "SMEs",
-            "text": "Digital transformation des processes et centralisation des operations."
+            "text": "Digital transformation of processes et centralisation des operations."
           },
           "retail": {
             "title": "Retail",
@@ -2753,12 +2753,12 @@ export const translations = {
         "eyebrow": "What we do",
         "title": "Digital expertise",
         "titleHighlight": "focused on results.",
-        "description": "Nous ne développons pas simplement des interfaces. We design des outils numériques capables de répondre à vos goals commerciaux et opérationnels."
+        "description": "We do not simply build interfaces. We design digital tools that meet your commercial and operational goals."
       },
       "cards": {
         "web": {
           "title": "Website development",
-          "description": "We design des sites web modernes, rapides et adaptés à votre business pour améliorer votre visibilité et transformer vos visiteurs en clients.",
+          "description": "We design modern, fast websites adapted to your business to improve visibility and turn visitors into customers.",
           "features": [
             "Site vitrine professionnel",
             "Landing page",
@@ -2775,7 +2775,7 @@ export const translations = {
         },
         "applications": {
           "title": "Web applications",
-          "description": "Des applications métier sur mesure pour centraliser vos data, automatiser vos processes et piloter votre business.",
+          "description": "Custom business applications pour centraliser vos data, automatiser vos processes et piloter votre business.",
           "features": [
             "Dashboard administrateur",
             "Management users",
@@ -2792,7 +2792,7 @@ export const translations = {
         },
         "mobile": {
           "title": "Mobile applications",
-          "description": "Nous développons des applications mobiles modernes pour Android et iOS avec une experience utilisateur fluide.",
+          "description": "We develop modern mobile applications pour Android et iOS avec une experience utilisateur fluide.",
           "features": [
             "Application Android",
             "Application iOS",
@@ -2826,7 +2826,7 @@ export const translations = {
         },
         "customSoftware": {
           "title": "Custom software",
-          "description": "Des solutions logicielles conçues spécifiquement pour répondre aux needs opérationnels de votre business.",
+          "description": "Custom software solutions designed pour répondre aux needs opérationnels de votre business.",
           "features": [
             "Analysis des needs",
             "Architecture technical",
@@ -2843,7 +2843,7 @@ export const translations = {
         },
         "modernization": {
           "title": "Digital modernization",
-          "description": "Nous améliorons vos outils existants pour les rendre plus modernes, performants, sécurisés et faciles à utiliser.",
+          "description": "We improve your existing tools pour les rendre plus modernes, performants, sécurisés et faciles à utiliser.",
           "features": [
             "Redesign UI/UX",
             "Modernisation technical",
