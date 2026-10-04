@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
   Code2,
@@ -49,6 +50,8 @@ const itemVariants: Variants = {
 ========================================================= */
 
 export default function APropos() {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* =====================================================
@@ -68,17 +71,17 @@ export default function APropos() {
             className="mx-auto max-w-4xl text-center"
           >
             <motion.div variants={itemVariants}>
-              <Badge>À propos de Digital Work</Badge>
+              <Badge>{t("aboutPage.hero.badge")}</Badge>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
               className="mt-7 text-5xl font-black leading-[1.02] tracking-[-0.04em] text-dw-white sm:text-6xl lg:text-7xl"
             >
-              Construire le digital
+              {t("aboutPage.hero.title")}
               <br />
               <span className="dw-gradient-text">
-                qui fait avancer votre activité.
+                {t("aboutPage.hero.titleHighlight")}
               </span>
             </motion.h1>
 
@@ -86,9 +89,7 @@ export default function APropos() {
               variants={itemVariants}
               className="mx-auto mt-7 max-w-2xl text-base leading-8 text-dw-muted sm:text-lg"
             >
-              Digital Work accompagne les entreprises dans
-              la conception, le développement et la
-              digitalisation de leurs activités.
+              {t("aboutPage.hero.description")}
             </motion.p>
 
             <motion.div
@@ -96,7 +97,7 @@ export default function APropos() {
               className="mt-9 flex flex-col justify-center gap-3 sm:flex-row"
             >
               <Button to="/contact">
-                Démarrer un projet
+                {t("aboutPage.hero.primary")}
                 <ArrowRight size={17} />
               </Button>
 
@@ -104,7 +105,7 @@ export default function APropos() {
                 to="/realisations"
                 variant="secondary"
               >
-                Voir nos réalisations
+                {t("aboutPage.hero.secondary")}
               </Button>
             </motion.div>
           </motion.div>
@@ -119,27 +120,22 @@ export default function APropos() {
         <Container>
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <Badge>Notre approche</Badge>
+              <Badge>{t("aboutPage.intro.badge")}</Badge>
 
               <h2 className="mt-6 text-3xl font-bold tracking-tight text-dw-white sm:text-4xl">
-                Le digital doit être un outil de croissance.
+                {t("aboutPage.intro.title")}
               </h2>
 
               <p className="mt-6 max-w-xl text-base leading-8 text-dw-muted">
-                Un site web ou une application n'a de valeur
-                que s'il répond à un besoin concret.
+                {t("aboutPage.intro.p1")}
               </p>
 
               <p className="mt-4 max-w-xl text-base leading-8 text-dw-muted">
-                Chez Digital Work, nous partons du problème
-                métier avant de choisir la technologie.
-                Nous cherchons à créer des solutions simples,
-                performantes et réellement utilisables.
+                {t("aboutPage.intro.p2")}
               </p>
 
               <p className="mt-4 max-w-xl text-base leading-8 text-dw-muted">
-                Notre objectif est de transformer la technologie
-                en un véritable avantage pour votre entreprise.
+                {t("aboutPage.intro.p3")}
               </p>
             </div>
 
@@ -154,11 +150,11 @@ export default function APropos() {
 
                   <div>
                     <p className="text-xs uppercase tracking-[0.15em] text-dw-muted">
-                      Notre objectif
+                      {t("aboutPage.objective.label")}
                     </p>
 
                     <h3 className="mt-1 text-xl font-bold text-dw-white">
-                      Créer de la valeur
+                      {t("aboutPage.objective.title")}
                     </h3>
                   </div>
                 </div>
@@ -166,20 +162,20 @@ export default function APropos() {
                 <div className="mt-8 space-y-5">
                   <ValueLine
                     icon={Lightbulb}
-                    title="Comprendre"
-                    text="Identifier le vrai problème avant de développer."
+                    title="{t("aboutPage.objective.items.understand.title")}"
+                    text="{t("aboutPage.objective.items.understand.text")}"
                   />
 
                   <ValueLine
                     icon={Code2}
-                    title="Construire"
-                    text="Créer une solution adaptée aux besoins réels."
+                    title="{t("aboutPage.objective.items.build.title")}"
+                    text="{t("aboutPage.objective.items.build.text")}"
                   />
 
                   <ValueLine
                     icon={Rocket}
-                    title="Développer"
-                    text="Faire évoluer l'outil avec votre activité."
+                    title="{t("aboutPage.method.steps.develop.title")}"
+                    text="{t("aboutPage.objective.items.evolve.text")}"
                   />
                 </div>
               </div>
@@ -197,20 +193,20 @@ export default function APropos() {
           <div className="grid gap-6 lg:grid-cols-3 text-dw-white">
             <VisionCard
               icon={Target}
-              title="Notre mission"
-              text="Rendre la transformation digitale accessible aux entreprises en construisant des solutions utiles, modernes et adaptées à leurs réalités."
+              title="{t("aboutPage.vision.mission.title")}"
+              text="{t("aboutPage.vision.mission.text")}"
             />
 
             <VisionCard
               icon={Lightbulb}
-              title="Notre vision"
+              title="{t("aboutPage.vision.vision.title")}"
               text="Créer un écosystème digital où la technologie simplifie les opérations, améliore l'expérience client et accélère la croissance."
             />
 
             <VisionCard
               icon={Rocket}
-              title="Notre ambition"
-              text="Devenir un partenaire technologique de référence pour les entreprises qui souhaitent moderniser leurs activités."
+              title="{t("aboutPage.vision.ambition.title")}"
+              text="{t("aboutPage.vision.ambition.text")}"
             />
           </div>
         </Container>
@@ -223,15 +219,15 @@ export default function APropos() {
       <section className="py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="Notre expertise"
+            eyebrow="{t("aboutPage.expertise.eyebrow")}"
             title={
               <>
-                Design, développement
+                {t("aboutPage.expertise.title")}
                 <br />
-                et stratégie digitale.
+                {t("aboutPage.expertise.titleHighlight")}
               </>
             }
-            description="Nous réunissons plusieurs compétences pour éviter de multiplier les prestataires sur un même projet."
+            description="{t("aboutPage.expertise.description")}"
           />
 
           <motion.div
@@ -246,8 +242,8 @@ export default function APropos() {
           >
             <ExpertiseCard
               icon={Code2}
-              title="Développement web"
-              text="Sites vitrines, plateformes métier, dashboards et applications web modernes."
+              title="{t("aboutPage.expertise.items.web.title")}"
+              text="{t("aboutPage.expertise.items.web.text")}"
               tags={[
                 "React",
                 "TypeScript",
@@ -257,8 +253,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={Users2}
-              title="Applications mobiles"
-              text="Applications Android et iOS avec une expérience utilisateur moderne."
+              title="{t("aboutPage.expertise.items.mobile.title")}"
+              text="{t("aboutPage.expertise.items.mobile.text")}"
               tags={[
                 "React Native",
                 "Expo",
@@ -268,8 +264,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={Zap}
-              title="Digitalisation"
-              text="Transformation des processus manuels en outils numériques efficaces."
+              title="{t("aboutPage.expertise.items.digital.title")}"
+              text="{t("aboutPage.expertise.items.digital.text")}"
               tags={[
                 "Automation",
                 "Workflow",
@@ -279,8 +275,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={ShieldCheck}
-              title="Solutions réseau"
-              text="Conception et intégration de solutions Wi-Fi, hotspot et gestion réseau."
+              title="{t("aboutPage.expertise.items.network.title")}"
+              text="{t("aboutPage.expertise.items.network.text")}"
               tags={[
                 "MikroTik",
                 "Hotspot",
@@ -290,8 +286,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={Sparkles}
-              title="Expérience utilisateur"
-              text="Interfaces modernes pensées pour être simples, rapides et intuitives."
+              title="{t("aboutPage.expertise.items.ux.title")}"
+              text="{t("aboutPage.expertise.items.ux.text")}"
               tags={[
                 "UI",
                 "UX",
@@ -301,8 +297,8 @@ export default function APropos() {
 
             <ExpertiseCard
               icon={Rocket}
-              title="Accompagnement"
-              text="Nous accompagnons le projet de la réflexion jusqu'à la mise en production."
+              title="{t("aboutPage.expertise.items.support.title")}"
+              text="{t("aboutPage.expertise.items.support.text")}"
               tags={[
                 "Conseil",
                 "Déploiement",
@@ -320,40 +316,40 @@ export default function APropos() {
       <section className="border-y border-white/[0.06] bg-white/[0.015] py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="Notre méthode"
+            eyebrow="{t("aboutPage.method.eyebrow")}"
             title={
               <>
-                Une méthode simple.
+                {t("aboutPage.method.title")}
                 <br />
-                Un résultat concret.
+                {t("aboutPage.method.titleHighlight")}
               </>
             }
-            description="Nous privilégions une approche pragmatique afin de limiter les développements inutiles."
+            description="{t("aboutPage.method.description")}"
           />
 
           <div className="mt-14 grid gap-5 md:grid-cols-4">
             <MethodCard
               number="01"
-              title="Écouter"
-              text="Comprendre votre activité, vos utilisateurs et vos contraintes."
+              title="{t("aboutPage.method.steps.listen.title")}"
+              text="{t("aboutPage.objective.items.understand.title")} votre activité, vos utilisateurs et vos contraintes."
             />
 
             <MethodCard
               number="02"
-              title="Concevoir"
+              title="{t("aboutPage.method.steps.design.title")}"
               text="Définir l'expérience, les fonctionnalités et l'architecture."
             />
 
             <MethodCard
               number="03"
-              title="Développer"
-              text="Construire une solution fiable avec des technologies adaptées."
+              title="{t("aboutPage.method.steps.develop.title")}"
+              text="{t("aboutPage.objective.items.build.title")} une solution fiable avec des technologies adaptées."
             />
 
             <MethodCard
               number="04"
-              title="Évoluer"
-              text="Mesurer, améliorer et faire évoluer la solution."
+              title="{t("aboutPage.method.steps.evolve.title")}"
+              text="{t("aboutPage.method.steps.evolve.text")}"
             />
           </div>
         </Container>
@@ -367,37 +363,36 @@ export default function APropos() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <Badge>Nos engagements</Badge>
+              <Badge>{t("aboutPage.values.eyebrow")}</Badge>
 
               <h2 className="mt-6 text-3xl font-bold tracking-tight text-dw-white sm:text-4xl">
-                Des principes simples pour construire mieux.
+                {t("aboutPage.values.title")}
               </h2>
 
               <p className="mt-5 max-w-lg text-base leading-8 text-dw-muted">
-                Chaque projet Digital Work repose sur des
-                choix techniques et business cohérents.
+                {t("aboutPage.values.description")}
               </p>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <ValueCard
-                title="Simplicité"
-                text="Nous évitons la complexité inutile."
+                title="{t("aboutPage.values.items.simplicity.title")}"
+                text="{t("aboutPage.values.items.simplicity.text")}"
               />
 
               <ValueCard
-                title="Performance"
-                text="Nous construisons des outils rapides et efficaces."
+                title="{t("aboutPage.values.items.performance.title")}"
+                text="{t("aboutPage.values.items.performance.text")}"
               />
 
               <ValueCard
-                title="Transparence"
-                text="Les choix techniques et les étapes sont clairement expliqués."
+                title="{t("aboutPage.values.items.transparency.title")}"
+                text="{t("aboutPage.values.items.transparency.text")}"
               />
 
               <ValueCard
-                title="Évolutivité"
-                text="Nous anticipons les besoins futurs du projet."
+                title="{t("aboutPage.values.items.scalability.title")}"
+                text="{t("aboutPage.values.items.scalability.text")}"
               />
             </div>
           </div>
@@ -419,17 +414,16 @@ export default function APropos() {
               </div>
 
               <h2 className="mx-auto mt-6 max-w-3xl text-3xl font-bold tracking-tight text-dw-white sm:text-4xl">
-                Construisons quelque chose d'utile.
+                {t("aboutPage.cta.title")}
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dw-muted">
-                Vous avez une idée, un problème ou un
-                processus à digitaliser ? Parlons-en.
+                {t("aboutPage.cta.description")}
               </p>
 
               <div className="mt-8">
                 <Button to="/contact">
-                  Démarrer une discussion
+                  {t("aboutPage.cta.button")}
                   <ArrowRight size={17} />
                 </Button>
               </div>
