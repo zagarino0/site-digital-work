@@ -200,7 +200,7 @@ export default function APropos() {
             <VisionCard
               icon={Lightbulb}
               title={t("aboutPage.vision.vision.title")}
-              text="Créer un écosystème digital où la technologie simplifie les opérations, améliore l'expérience client et accélère la croissance."
+              text={t("aboutPage.vision.vision.text")}
             />
 
             <VisionCard
@@ -300,9 +300,9 @@ export default function APropos() {
               title={t("aboutPage.expertise.items.support.title")}
               text={t("aboutPage.expertise.items.support.text")}
               tags={[
-                "Conseil",
-                "Déploiement",
-                "Support",
+                t("aboutPage.expertise.tags.advice"),
+                t("aboutPage.expertise.tags.deployment"),
+                t("aboutPage.expertise.tags.support"),
               ]}
             />
           </motion.div>
@@ -337,7 +337,7 @@ export default function APropos() {
             <MethodCard
               number="02"
               title={t("aboutPage.method.steps.design.title")}
-              text="Définir l'expérience, les fonctionnalités et l'architecture."
+              text={t("aboutPage.method.steps.design.text")}
             />
 
             <MethodCard
