@@ -27,6 +27,12 @@ router.get(
   listAdminProjects
 );
 
+router.get(
+  "/admin/:id",
+  requireAdmin,
+  showProject
+);
+
 router.get("/:id", showProject);
 
 /*
