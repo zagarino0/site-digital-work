@@ -107,6 +107,7 @@ export const translations = {
         clients: "Clients satisfaits",
         experience: "Années d'expérience",
         location: "Notre ancrage local",
+        localTagline: "Notre inspiration • notre territoire",
       },
     },
 
@@ -1150,6 +1151,7 @@ export const translations = {
         clients: "Mpanjifa afa-po",
         experience: "Taona niasana",
         location: "Fototra eto an-toerana",
+        localTagline: "Ny aingam-panahinay • ny faritaninay",
       },
     },
 
@@ -1991,6 +1993,7 @@ export const translations = {
         clients: "Satisfied clients",
         experience: "Years of experience",
         location: "Local roots",
+        localTagline: "Our inspiration • our territory",
       },
     },
     pillars: {
