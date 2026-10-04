@@ -16,395 +16,117 @@ export default function HomeResults() {
   const { t } = useTranslation();
 
   const results = [
-    {
-      icon: resultIcons[0],
-      value: "+40%",
-      label: t("results.performance.label"),
-      description: t("results.performance.description"),
-    },
-    {
-      icon: resultIcons[1],
-      value: "2×",
-      label: t("results.productivity.label"),
-      description: t("results.productivity.description"),
-    },
-    {
-      icon: resultIcons[2],
-      value: "+60%",
-      label: t("results.engagement.label"),
-      description: t("results.engagement.description"),
-    },
-    {
-      icon: resultIcons[3],
-      value: "100%",
-      label: t("results.custom.label"),
-      description: t("results.custom.description"),
-    },
+    { icon: resultIcons[0], value: "+40%", label: t("results.performance.label"), description: t("results.performance.description") },
+    { icon: resultIcons[1], value: "2×", label: t("results.productivity.label"), description: t("results.productivity.description") },
+    { icon: resultIcons[2], value: "+60%", label: t("results.engagement.label"), description: t("results.engagement.description") },
+    { icon: resultIcons[3], value: "100%", label: t("results.custom.label"), description: t("results.custom.description") },
   ];
 
-  const benefits = t("results.benefits", {
-    returnObjects: true,
-  }) as string[];
+  const benefits = t("results.benefits", { returnObjects: true }) as string[];
 
   return (
-    <section
-      id="results"
-      className="
-        relative overflow-hidden
-        bg-slate-50 py-24
-        dark:bg-slate-950
-        sm:py-28
-      "
-    >
-      {/* Background decoration */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div
-          className="
-            absolute -right-40 top-20
-            h-80 w-80 rounded-full
-            bg-blue-500/10 blur-3xl
-          "
-        />
-
-        <div
-          className="
-            absolute -left-40 bottom-20
-            h-80 w-80 rounded-full
-            bg-indigo-500/10 blur-3xl
-          "
-        />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
+    <section id="results" className="bg-[#faf9f6] py-24 text-[#11110f] sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <motion.header
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.55 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <div
-            className="
-              mb-5 inline-flex items-center gap-2
-              rounded-full border border-blue-200
-              bg-blue-50 px-4 py-2
-              text-sm font-semibold text-blue-700
-              dark:border-blue-900/60
-              dark:bg-blue-950/40
-              dark:text-blue-400
-            "
-          >
-            <BarChart3 className="h-4 w-4" />
-
-            {t("results.eyebrow")}
-          </div>
-
-          <h2
-            className="
-              text-3xl font-bold tracking-tight
-              text-slate-900
-              sm:text-4xl lg:text-5xl
-              dark:text-white
-            "
-          >
-            {t("results.title")}{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              {t("results.titleHighlight")}
+          <div className="mb-5 flex items-center justify-center gap-4 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#77736a]">
+            <span className="h-px w-10 bg-[#cfc7b8]" />
+            <span className="inline-flex items-center gap-2">
+              <BarChart3 className="h-3.5 w-3.5 text-[#c99a4d]" />
+              {t("results.eyebrow")}
             </span>
+            <span className="h-px w-10 bg-[#cfc7b8]" />
+          </div>
+          <h2 className="font-serif text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-[3.4rem]">
+            {t("results.title")}{" "}
+            <span className="text-[#c99a4d]">{t("results.titleHighlight")}</span>
           </h2>
-
-          <p
-            className="
-              mt-6 text-base leading-8
-              text-slate-600
-              sm:text-lg
-              dark:text-slate-400
-            "
-          >
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#6e6a61] sm:text-lg">
             {t("results.description")}
           </p>
-        </motion.div>
+        </motion.header>
 
-        {/* Results cards */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-0 border-y border-[#dcd7cc] sm:grid-cols-2 lg:grid-cols-4">
           {results.map((result, index) => {
             const Icon = result.icon;
-
             return (
               <motion.article
                 key={result.label}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-                whileHover={{ y: -6 }}
-                className="
-                  group relative overflow-hidden
-                  rounded-2xl border border-slate-200
-                  bg-white p-7 shadow-sm
-                  transition-shadow duration-300
-                  hover:shadow-xl
-                  dark:border-slate-800
-                  dark:bg-slate-900
-                "
+                transition={{ duration: 0.45, delay: index * 0.06 }}
+                className="group border-b border-[#dcd7cc] px-6 py-8 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0"
               >
-                {/* Card glow */}
-                <div
-                  aria-hidden="true"
-                  className="
-                    absolute -right-10 -top-10
-                    h-24 w-24 rounded-full
-                    bg-blue-500/10 blur-2xl
-                    transition-all duration-500
-                    group-hover:bg-blue-500/20
-                  "
-                />
-
-                <div className="relative">
-                  <div className="flex items-center justify-between">
-                    <div
-                      className="
-                        flex h-12 w-12 items-center justify-center
-                        rounded-xl bg-blue-50 text-blue-600
-                        dark:bg-blue-950/50
-                        dark:text-blue-400
-                      "
-                    >
-                      <Icon className="h-6 w-6" />
-                    </div>
-
-                    <ArrowUpRight
-                      className="
-                        h-5 w-5 text-slate-300
-                        transition-all duration-300
-                        group-hover:-translate-y-1
-                        group-hover:translate-x-1
-                        group-hover:text-blue-500
-                        dark:text-slate-700
-                      "
-                    />
-                  </div>
-
-                  <div className="mt-7">
-                    <p
-                      className="
-                        text-4xl font-bold tracking-tight
-                        text-slate-900
-                        dark:text-white
-                      "
-                    >
-                      {result.value}
-                    </p>
-
-                    <h3
-                      className="
-                        mt-2 text-lg font-semibold
-                        text-slate-900
-                        dark:text-white
-                      "
-                    >
-                      {result.label}
-                    </h3>
-
-                    <p
-                      className="
-                        mt-3 text-sm leading-6
-                        text-slate-600
-                        dark:text-slate-400
-                      "
-                    >
-                      {result.description}
-                    </p>
-                  </div>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-[#aaa398]">
+                    0{index + 1}
+                  </span>
+                  <Icon className="h-5 w-5 text-[#11110f]" strokeWidth={1.6} />
                 </div>
+                <p className="mt-8 font-serif text-4xl font-semibold tracking-tight">{result.value}</p>
+                <h3 className="mt-2 text-sm font-semibold">{result.label}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#6e6a61]">{result.description}</p>
+                <ArrowUpRight className="mt-6 h-4 w-4 text-[#c99a4d] transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
               </motion.article>
             );
           })}
         </div>
 
-        {/* Bottom section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="
-            mt-16 overflow-hidden rounded-3xl
-            border border-slate-200 bg-white
-            dark:border-slate-800
-            dark:bg-slate-900
-          "
+          transition={{ duration: 0.55 }}
+          className="mt-14 grid overflow-hidden border border-[#dcd7cc] bg-white lg:grid-cols-[1.1fr_0.9fr]"
         >
-          <div className="grid lg:grid-cols-2">
-            {/* Text */}
-            <div className="p-8 sm:p-10 lg:p-12">
-              <div
-                className="
-                  flex h-12 w-12 items-center justify-center
-                  rounded-xl bg-slate-900 text-white
-                  dark:bg-white dark:text-slate-900
-                "
-              >
-                <CheckCircle2 className="h-6 w-6" />
-              </div>
-
-              <h3
-                className="
-                  mt-6 text-2xl font-bold tracking-tight
-                  text-slate-900
-                  sm:text-3xl
-                  dark:text-white
-                "
-              >
-                {t("results.impact.title")}
-              </h3>
-
-              <p
-                className="
-                  mt-4 max-w-xl leading-7
-                  text-slate-600
-                  dark:text-slate-400
-                "
-              >
-                {t("results.impact.description")}
-              </p>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                {Array.isArray(benefits) &&
-                  benefits.map((benefit) => (
-                    <div
-                      key={benefit}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle2
-                        className="
-                          mt-0.5 h-5 w-5 shrink-0
-                          text-blue-600
-                          dark:text-blue-400
-                        "
-                      />
-
-                      <span
-                        className="
-                          text-sm leading-6
-                          text-slate-700
-                          dark:text-slate-300
-                        "
-                      >
-                        {benefit}
-                      </span>
-                    </div>
-                  ))}
-              </div>
+          <div className="p-8 sm:p-10 lg:p-12">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#11110f] text-white">
+              <CheckCircle2 className="h-5 w-5" />
             </div>
-
-            {/* Visual */}
-            <div
-              className="
-                relative flex min-h-[320px]
-                items-center justify-center
-                overflow-hidden
-                bg-slate-900 p-8
-                dark:bg-slate-950
-              "
-            >
-              <div
-                aria-hidden="true"
-                className="
-                  absolute inset-0
-                  bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.18),transparent_60%)]
-                "
-              />
-
-              <div className="relative w-full max-w-sm">
-                <div
-                  className="
-                    rounded-2xl
-                    border border-white/10
-                    bg-white/5 p-6
-                    shadow-2xl backdrop-blur-sm
-                  "
-                >
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-slate-400">
-                        {t("results.visual.performance")}
-                      </p>
-
-                      <p className="mt-1 text-3xl font-bold text-white">
-                        +87%
-                      </p>
-                    </div>
-
-                    <div
-                      className="
-                        flex h-11 w-11
-                        items-center justify-center
-                        rounded-xl
-                        bg-blue-500/20
-                        text-blue-400
-                      "
-                    >
-                      <TrendingUp className="h-5 w-5" />
-                    </div>
-                  </div>
-
-                  <div className="mt-8 h-2 overflow-hidden rounded-full bg-white/10">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "87%" }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 1.2,
-                        delay: 0.3,
-                        ease: "easeOut",
-                      }}
-                      className="h-full rounded-full bg-blue-500"
-                    />
-                  </div>
-
-                  <div className="mt-4 flex items-center justify-between text-xs text-slate-500">
-                    <span>{t("results.visual.before")}</span>
-                    <span>{t("results.visual.after")}</span>
-                  </div>
+            <h3 className="mt-6 font-serif text-3xl font-semibold tracking-tight">
+              {t("results.impact.title")}
+            </h3>
+            <p className="mt-4 max-w-xl text-base leading-7 text-[#6e6a61]">
+              {t("results.impact.description")}
+            </p>
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              {Array.isArray(benefits) && benefits.map((benefit) => (
+                <div key={benefit} className="flex items-start gap-2.5 text-sm text-[#56544d]">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#c99a4d]" />
+                  <span>{benefit}</span>
                 </div>
+              ))}
+            </div>
+          </div>
 
-                <div
-                  className="
-                    absolute -bottom-5 -right-5
-                    rounded-xl border border-white/10
-                    bg-white/10 px-4 py-3
-                    shadow-xl backdrop-blur-md
-                  "
-                >
-                  <div className="flex items-center gap-2">
-                    <div
-                      className="
-                        flex h-8 w-8 items-center justify-center
-                        rounded-lg
-                        bg-emerald-500/20
-                      "
-                    >
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                    </div>
-
-                    <div>
-                      <p className="text-xs text-slate-400">
-                        {t("results.visual.optimized")}
-                      </p>
-
-                      <p className="text-sm font-semibold text-white">
-                        {t("results.visual.goals")}
-                      </p>
-                    </div>
+          <div className="flex min-h-[300px] items-center justify-center bg-[#11110f] p-8 text-white">
+            <div className="w-full max-w-sm">
+              <div className="border border-white/15 p-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.18em] text-white/50">{t("results.visual.performance")}</p>
+                    <p className="mt-2 font-serif text-4xl">+87%</p>
                   </div>
+                  <TrendingUp className="h-6 w-6 text-[#c99a4d]" />
+                </div>
+                <div className="mt-8 h-1 overflow-hidden bg-white/10">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: "87%" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.1, ease: "easeOut" }}
+                    className="h-full bg-[#c99a4d]"
+                  />
+                </div>
+                <div className="mt-3 flex justify-between text-[10px] uppercase tracking-[0.15em] text-white/40">
+                  <span>{t("results.visual.before")}</span>
+                  <span>{t("results.visual.after")}</span>
                 </div>
               </div>
             </div>
