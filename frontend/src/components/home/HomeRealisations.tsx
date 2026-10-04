@@ -662,7 +662,7 @@ function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={t(
-                "realisations.home.card.viewProduction",
+                "realisations.home.viewProduction",
                 "Voir le projet en production"
               )}
               className="
