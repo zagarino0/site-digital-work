@@ -163,25 +163,25 @@ export default function Solutions() {
                 <div className="grid grid-cols-2 gap-4">
                   <MiniStat
                     icon={Globe2}
-                    title="{t("solutionsPage.positioning.stats.visibility.title")}"
-                    text="{t("solutionsPage.positioning.stats.visibility.text")}"
+                    title={t("solutionsPage.positioning.stats.visibility.title")}
+                    text={t("solutionsPage.positioning.stats.visibility.text")}
                   />
 
                   <MiniStat
                     icon={BarChart3}
-                    title="{t("solutionsPage.positioning.stats.management.title")}"
-                    text="{t("solutionsPage.positioning.stats.management.text")}"
+                    title={t("solutionsPage.positioning.stats.management.title")}
+                    text={t("solutionsPage.positioning.stats.management.text")}
                   />
 
                   <MiniStat
                     icon={Workflow}
-                    title="{t("solutionsPage.positioning.stats.automation.title")}"
+                    title={t("solutionsPage.positioning.stats.automation.title")}
                     text="Gagner du temps"
                   />
 
                   <MiniStat
                     icon={Settings2}
-                    title="{t("solutionsPage.positioning.stats.evolution.title")}"
+                    title={t("solutionsPage.positioning.stats.evolution.title")}
                     text="Grandir avec vos outils"
                   />
                 </div>
@@ -236,7 +236,7 @@ export default function Solutions() {
       <section className="py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="{t("solutionsPage.sectors.eyebrow")}"
+            eyebrow={t("solutionsPage.sectors.eyebrow")}
             title={
               <>
                 {t("solutionsPage.sectors.title")}
@@ -244,32 +244,32 @@ export default function Solutions() {
                 {t("solutionsPage.sectors.titleHighlight")}
               </>
             }
-            description="{t("solutionsPage.sectors.description")}"
+            description={t("solutionsPage.sectors.description")}
           />
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <SectorCard
               icon={Hotel}
-              title="{t("solutionsPage.sectors.items.hotel.title")}"
+              title={t("solutionsPage.sectors.items.hotel.title")}
               text="{t("solutionsPage.positioning.stats.visibility.title")}, réservation, présence digitale et outils de gestion."
             />
 
             <SectorCard
               icon={Layers3}
-              title="{t("solutionsPage.sectors.items.sme.title")}"
-              text="{t("solutionsPage.sectors.items.sme.text")}"
+              title={t("solutionsPage.sectors.items.sme.title")}
+              text={t("solutionsPage.sectors.items.sme.text")}
             />
 
             <SectorCard
               icon={Smartphone}
-              title="{t("solutionsPage.sectors.items.retail.title")}"
-              text="{t("solutionsPage.sectors.items.retail.text")}"
+              title={t("solutionsPage.sectors.items.retail.title")}
+              text={t("solutionsPage.sectors.items.retail.text")}
             />
 
             <SectorCard
               icon={Network}
-              title="{t("solutionsPage.sectors.items.network.title")}"
-              text="{t("solutionsPage.sectors.items.network.text")}"
+              title={t("solutionsPage.sectors.items.network.title")}
+              text={t("solutionsPage.sectors.items.network.text")}
             />
           </div>
         </Container>
@@ -282,7 +282,7 @@ export default function Solutions() {
       <section className="border-y border-white/[0.06] bg-white/[0.015] py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="{t("solutionsPage.process.eyebrow")}"
+            eyebrow={t("solutionsPage.process.eyebrow")}
             title={
               <>
                 {t("solutionsPage.process.title")}
@@ -290,26 +290,26 @@ export default function Solutions() {
                 {t("solutionsPage.process.titleHighlight")}
               </>
             }
-            description="{t("solutionsPage.process.description")}"
+            description={t("solutionsPage.process.description")}
           />
 
           <div className="mt-14 grid gap-5 md:grid-cols-3">
             <ProcessStep
               number="01"
-              title="{t("solutionsPage.process.steps.explain.title")}"
-              text="{t("solutionsPage.process.steps.explain.text")}"
+              title={t("solutionsPage.process.steps.explain.title")}
+              text={t("solutionsPage.process.steps.explain.text")}
             />
 
             <ProcessStep
               number="02"
-              title="{t("solutionsPage.process.steps.design.title")}"
+              title={t("solutionsPage.process.steps.design.title")}
               text="Nous définissons l'architecture, les fonctionnalités et l'expérience utilisateur."
             />
 
             <ProcessStep
               number="03"
-              title="{t("solutionsPage.process.steps.build.title")}"
-              text="{t("solutionsPage.process.steps.build.text")}"
+              title={t("solutionsPage.process.steps.build.title")}
+              text={t("solutionsPage.process.steps.build.text")}
             />
           </div>
         </Container>
