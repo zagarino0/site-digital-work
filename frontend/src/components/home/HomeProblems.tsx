@@ -67,7 +67,7 @@ export default function HomeProblems() {
                 className="group relative min-h-[170px] rounded-[14px] border border-[#e3dfd7] bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:border-[#cfc7b8] sm:p-6"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[#f3f0ea] text-[#11110f] dark:bg-[#2a2924] dark:text-[#f5f2e9]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[#f3f0ea] text-[#11110f] dark:bg-[#2a2924] dark:text-[#f5f2e9] dw-icon-tile">
                     <Icon className="h-5 w-5" strokeWidth={1.7} />
                   </div>
 
