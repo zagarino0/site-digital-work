@@ -358,10 +358,7 @@ export default function Solutions() {
 interface Solution {
   number: string;
   icon: typeof Globe2;
-  title: string;
-  subtitle: string;
-  description: string;
-  features: string[];
+  key: string;
 }
 
 interface SolutionCardProps {
