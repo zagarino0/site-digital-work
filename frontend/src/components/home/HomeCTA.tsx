@@ -6,540 +6,106 @@ import { useTranslation } from "react-i18next";
 export default function HomeCTA() {
   const { t } = useTranslation();
 
-  const rawBenefits = t("cta.benefits", {
-    returnObjects: true,
-  });
-
+  const rawBenefits = t("cta.benefits", { returnObjects: true });
   const benefits = Array.isArray(rawBenefits)
-    ? rawBenefits.filter(
-        (benefit): benefit is string => typeof benefit === "string",
-      )
+    ? rawBenefits.filter((benefit): benefit is string => typeof benefit === "string")
     : [];
 
   return (
-    <section
-      id="contact"
-      className="
-        relative overflow-hidden
-        border-t border-slate-200/80
-        bg-white
-        py-24 sm:py-28 lg:py-32
-        dark:border-slate-800
-        dark:bg-slate-950
-      "
-    >
-      {/* Background decoration */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div
-          className="
-            absolute left-1/2 top-0
-            h-[500px] w-[900px]
-            -translate-x-1/2 -translate-y-1/2
-            rounded-full
-            bg-blue-500/10
-            blur-3xl
-            dark:bg-blue-500/10
-          "
-        />
-
-        <div
-          className="
-            absolute bottom-0 right-0
-            h-[350px] w-[350px]
-            translate-x-1/4 translate-y-1/4
-            rounded-full
-            bg-indigo-500/10
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            absolute left-0 top-1/2
-            h-[250px] w-[250px]
-            -translate-x-1/2
-            rounded-full
-            bg-cyan-500/5
-            blur-3xl
-          "
-        />
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="contact" className="bg-white py-24 text-[#11110f] sm:py-28 lg:py-32">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="
-            relative overflow-hidden
-            rounded-[2rem]
-            border border-slate-200
-            bg-slate-50
-            px-6 py-12
-            shadow-xl shadow-slate-900/5
-            sm:px-10 sm:py-16
-            lg:px-16 lg:py-20
-            dark:border-slate-800
-            dark:bg-slate-900/70
-            dark:shadow-black/20
-          "
+          transition={{ duration: 0.65 }}
+          className="relative overflow-hidden border-y border-[#dcd7cc] bg-[#faf9f6] px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20"
         >
-          {/* Inner glow */}
-          <div
-            aria-hidden="true"
-            className="
-              pointer-events-none absolute
-              -right-32 -top-32
-              h-80 w-80
-              rounded-full
-              bg-blue-500/10
-              blur-3xl
-            "
-          />
+          <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#ead8b9]/35" />
 
-          <div
-            aria-hidden="true"
-            className="
-              pointer-events-none absolute
-              -bottom-40 -left-32
-              h-96 w-96
-              rounded-full
-              bg-indigo-500/10
-              blur-3xl
-            "
-          />
-
-          <div
-            className="
-              relative grid items-center gap-12
-              lg:grid-cols-[1.25fr_0.75fr]
-            "
-          >
-            {/* Main content */}
+          <div className="relative grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
             <div>
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="
-                  mb-6 inline-flex items-center gap-2
-                  rounded-full
-                  border border-blue-200
-                  bg-blue-50
-                  px-4 py-2
-                  text-sm font-medium text-blue-700
-                  dark:border-blue-900/70
-                  dark:bg-blue-950/40
-                  dark:text-blue-300
-                "
-              >
-                <Sparkles className="h-4 w-4" aria-hidden="true" />
+              <div className="mb-6 flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#77736a]">
+                <span className="h-px w-10 bg-[#c99a4d]" />
+                <Sparkles className="h-3.5 w-3.5 text-[#c99a4d]" />
                 <span>{t("cta.badge")}</span>
-              </motion.div>
+              </div>
 
-              {/* Title */}
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="
-                  max-w-3xl
-                  text-4xl font-bold
-                  tracking-tight
-                  text-slate-950
-                  sm:text-5xl
-                  lg:text-6xl
-                  dark:text-white
-                "
-              >
-                {t("cta.title")}
+              <h2 className="max-w-3xl font-serif text-4xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-[4rem]">
+                {t("cta.title")}{" "}
+                <span className="text-[#c99a4d]">{t("cta.highlight")}</span>
+              </h2>
 
-                <span
-                  className="
-                    bg-gradient-to-r
-                    from-blue-600
-                    via-indigo-600
-                    to-violet-600
-                    bg-clip-text
-                    text-transparent
-                    dark:from-blue-400
-                    dark:via-indigo-400
-                    dark:to-violet-400
-                  "
-                >
-                  {t("cta.highlight")}
-                </span>
-              </motion.h2>
-
-              {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="
-                  mt-6
-                  max-w-2xl
-                  text-lg
-                  leading-8
-                  text-slate-600
-                  dark:text-slate-300
-                "
-              >
+              <p className="mt-6 max-w-2xl text-base leading-7 text-[#6e6a61] sm:text-lg">
                 {t("cta.description")}
-              </motion.p>
+              </p>
 
-              {/* Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.25 }}
-                className="
-                  mt-8
-                  flex flex-col gap-3
-                  sm:flex-row
-                "
-              >
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to="/contact"
-                  className="
-                    group inline-flex
-                    items-center justify-center
-                    gap-2
-                    rounded-xl
-                    bg-slate-950
-                    px-6 py-3.5
-                    text-sm font-semibold
-                    text-white
-                    shadow-lg shadow-slate-900/20
-                    transition-all duration-300
-                    hover:-translate-y-0.5
-                    hover:bg-blue-600
-                    hover:shadow-blue-600/25
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-blue-500
-                    focus:ring-offset-2
-                    dark:bg-white
-                    dark:text-slate-950
-                    dark:hover:bg-blue-400
-                    dark:focus:ring-offset-slate-950
-                  "
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#11110f] px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#2b2925]"
                 >
                   {t("cta.primaryCta")}
-
-                  <ArrowRight
-                    className="
-                      h-4 w-4
-                      transition-transform duration-300
-                      group-hover:translate-x-1
-                    "
-                    aria-hidden="true"
-                  />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
 
                 <Link
                   to="/realisations"
-                  className="
-                    inline-flex
-                    items-center justify-center
-                    gap-2
-                    rounded-xl
-                    border
-                    border-slate-300
-                    bg-white
-                    px-6 py-3.5
-                    text-sm font-semibold
-                    text-slate-800
-                    transition-all duration-300
-                    hover:-translate-y-0.5
-                    hover:border-slate-400
-                    hover:bg-slate-100
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-blue-500
-                    focus:ring-offset-2
-                    dark:border-slate-700
-                    dark:bg-slate-800/70
-                    dark:text-white
-                    dark:hover:border-slate-600
-                    dark:hover:bg-slate-800
-                    dark:focus:ring-offset-slate-950
-                  "
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#d6d0c4] bg-white px-6 py-3.5 text-sm font-semibold transition hover:-translate-y-0.5 hover:border-[#11110f]"
                 >
                   {t("cta.secondaryCta")}
                 </Link>
-              </motion.div>
+              </div>
 
-              {/* Benefits */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.35 }}
-                className="
-                  mt-8
-                  flex flex-col gap-3
-                  sm:flex-row sm:flex-wrap
-                  sm:gap-x-6
-                "
-              >
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-6">
                 {benefits.map((benefit, index) => (
-                  <div
-                    key={`${benefit}-${index}`}
-                    className="
-                      flex items-center gap-2
-                      text-sm
-                      text-slate-600
-                      dark:text-slate-300
-                    "
-                  >
-                    <CheckCircle2
-                      className="
-                        h-4 w-4 shrink-0
-                        text-blue-600
-                        dark:text-blue-400
-                      "
-                      aria-hidden="true"
-                    />
-
+                  <div key={`${benefit}-${index}`} className="flex items-center gap-2 text-sm text-[#6e6a61]">
+                    <CheckCircle2 className="h-4 w-4 text-[#c99a4d]" />
                     <span>{benefit}</span>
                   </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
 
-            {/* Response card */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
-              className="
-                relative
-                mx-auto w-full max-w-md
-                lg:max-w-none
-              "
-            >
-              <div
-                className="
-                  relative overflow-hidden
-                  rounded-3xl
-                  border border-slate-200
-                  bg-white
-                  p-7
-                  shadow-2xl shadow-slate-900/10
-                  dark:border-slate-700
-                  dark:bg-slate-950
-                  dark:shadow-black/30
-                "
-              >
-                {/* Decorative icon */}
-                <div
-                  className="
-                    mb-6
-                    flex h-14 w-14
-                    items-center justify-center
-                    rounded-2xl
-                    bg-blue-600
-                    text-white
-                    shadow-lg shadow-blue-600/25
-                  "
-                >
-                  <ArrowRight
-                    className="h-7 w-7"
-                    aria-hidden="true"
-                  />
+            <div className="border border-[#dcd7cc] bg-white p-6 sm:p-8">
+              <div className="flex items-center justify-between border-b border-[#e5e1d8] pb-5">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#77736a]">
+                    {t("cta.response")}
+                  </p>
+                  <p className="mt-2 font-serif text-3xl font-semibold">Digital Work</p>
                 </div>
-
-                <h3
-                  className="
-                    text-2xl font-bold
-                    text-slate-950
-                    dark:text-white
-                  "
-                >
-                  {t("cta.response")}
-                </h3>
-
-                <p
-                  className="
-                    mt-3
-                    text-sm
-                    leading-6
-                    text-slate-600
-                    dark:text-slate-400
-                  "
-                >
-                  {t("cta.responseDescription")}
-                </p>
-
-                {/* Progress / process visual */}
-                <div className="mt-8 space-y-4">
-                  {/* Analysis */}
-                  <div>
-                    <div
-                      className="
-                        mb-2 flex items-center
-                        justify-between text-xs
-                      "
-                    >
-                      <span
-                        className="
-                          font-medium
-                          text-slate-700
-                          dark:text-slate-300
-                        "
-                      >
-                        {t("cta.process.analysis")}
-                      </span>
-
-                      <CheckCircle2
-                        className="
-                          h-4 w-4
-                          text-blue-600
-                          dark:text-blue-400
-                        "
-                        aria-hidden="true"
-                      />
-                    </div>
-
-                    <div
-                      className="
-                        h-1.5 overflow-hidden
-                        rounded-full
-                        bg-slate-200
-                        dark:bg-slate-800
-                      "
-                    >
-                      <div className="h-full w-full rounded-full bg-blue-600" />
-                    </div>
-                  </div>
-
-                  {/* Design */}
-                  <div>
-                    <div
-                      className="
-                        mb-2 flex items-center
-                        justify-between text-xs
-                      "
-                    >
-                      <span
-                        className="
-                          font-medium
-                          text-slate-700
-                          dark:text-slate-300
-                        "
-                      >
-                        {t("cta.process.design")}
-                      </span>
-
-                      <CheckCircle2
-                        className="
-                          h-4 w-4
-                          text-indigo-600
-                          dark:text-indigo-400
-                        "
-                        aria-hidden="true"
-                      />
-                    </div>
-
-                    <div
-                      className="
-                        h-1.5 overflow-hidden
-                        rounded-full
-                        bg-slate-200
-                        dark:bg-slate-800
-                      "
-                    >
-                      <div className="h-full w-[85%] rounded-full bg-indigo-600" />
-                    </div>
-                  </div>
-
-                  {/* Development */}
-                  <div>
-                    <div
-                      className="
-                        mb-2 flex items-center
-                        justify-between text-xs
-                      "
-                    >
-                      <span
-                        className="
-                          font-medium
-                          text-slate-700
-                          dark:text-slate-300
-                        "
-                      >
-                        {t("cta.process.development")}
-                      </span>
-
-                      <span
-                        className="text-slate-400"
-                        aria-hidden="true"
-                      >
-                        →
-                      </span>
-                    </div>
-
-                    <div
-                      className="
-                        h-1.5 overflow-hidden
-                        rounded-full
-                        bg-slate-200
-                        dark:bg-slate-800
-                      "
-                    >
-                      <div className="h-full w-[65%] rounded-full bg-violet-600" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom label */}
-                <div
-                  className="
-                    mt-8
-                    rounded-2xl
-                    border border-blue-100
-                    bg-blue-50
-                    p-4
-                    dark:border-blue-900/50
-                    dark:bg-blue-950/30
-                  "
-                >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className="
-                        mt-0.5
-                        h-2 w-2 shrink-0
-                        rounded-full
-                        bg-blue-600
-                        dark:bg-blue-400
-                      "
-                      aria-hidden="true"
-                    />
-
-                    <p
-                      className="
-                        text-xs leading-5
-                        text-blue-800
-                        dark:text-blue-300
-                      "
-                    >
-                      {t("cta.footerText")}
-                    </p>
-                  </div>
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#11110f] text-white">
+                  <ArrowRight className="h-5 w-5" />
                 </div>
               </div>
-            </motion.div>
+
+              <p className="mt-5 text-sm leading-6 text-[#6e6a61]">
+                {t("cta.responseDescription")}
+              </p>
+
+              <div className="mt-7 space-y-5">
+                {[
+                  ["analysis", "100%"],
+                  ["design", "85%"],
+                  ["development", "65%"],
+                ].map(([key, width]) => (
+                  <div key={key}>
+                    <div className="mb-2 flex items-center justify-between text-xs">
+                      <span className="font-medium">{t(`cta.process.${key}`)}</span>
+                      <span className="text-[#99948a]">{width}</span>
+                    </div>
+                    <div className="h-1 bg-[#e8e4db]">
+                      <div className="h-full bg-[#c99a4d]" style={{ width }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-7 border-t border-[#e5e1d8] pt-5">
+                <p className="text-xs leading-5 text-[#77736a]">{t("cta.footerText")}</p>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
