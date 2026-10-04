@@ -24,7 +24,7 @@ export default function HomeProblems() {
   return (
     <section
       id="problems"
-      className="relative overflow-hidden bg-[#faf9f6] py-24 text-[#11110f] sm:py-28"
+      className="relative overflow-hidden bg-[#faf9f6] py-20 text-[#11110f] sm:py-24"
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.div
@@ -50,7 +50,7 @@ export default function HomeProblems() {
           </p>
         </motion.div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {problems.map((problem, index) => {
             const Icon = problem.icon;
             const content = t(`problems.items.${problem.key}`, {
@@ -64,10 +64,10 @@ export default function HomeProblems() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="group relative min-h-[190px] rounded-2xl border border-[#e5e1d8] bg-white p-6 shadow-[0_8px_30px_rgba(17,17,15,0.035)] transition duration-300 hover:-translate-y-1 hover:border-[#cfc7b8] hover:shadow-[0_18px_45px_rgba(17,17,15,0.08)] sm:p-7"
+                className="group relative min-h-[170px] rounded-[14px] border border-[#e3dfd7] bg-white p-6 transition duration-300 hover:-translate-y-0.5 hover:border-[#cfc7b8] sm:p-6"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f3f0ea] text-[#11110f]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[#f3f0ea] text-[#11110f]">
                     <Icon className="h-5 w-5" strokeWidth={1.7} />
                   </div>
 
@@ -76,7 +76,7 @@ export default function HomeProblems() {
                   </span>
                 </div>
 
-                <h3 className="mt-6 text-lg font-semibold tracking-tight text-[#11110f]">
+                <h3 className="mt-5 text-lg font-semibold tracking-tight text-[#11110f]">
                   {content.title}
                 </h3>
 
