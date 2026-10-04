@@ -1,16 +1,7 @@
-import {
-  ArrowRight,
-  BriefcaseBusiness,
-  Clock3,
-  MapPin,
-  Users,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
-const MAHAJANGA_IMAGE =
-  "https://commons.wikimedia.org/wiki/Special:Redirect/file/Grand_Baobab_du_bord_de_la_mer_mahajanga.jpg";
 
 export default function HomeHero() {
   const { t } = useTranslation();
@@ -27,20 +18,9 @@ export default function HomeHero() {
       id="home"
       className="relative min-h-[760px] overflow-hidden bg-black text-white sm:min-h-[820px] lg:min-h-screen"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url("${MAHAJANGA_IMAGE}")` }}
-      />
-
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/15"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/25"
-      />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/30" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/20" />
 
       <div className="relative mx-auto flex min-h-[760px] max-w-7xl flex-col px-5 pb-8 pt-28 sm:min-h-[820px] sm:px-6 sm:pt-32 lg:min-h-screen lg:px-8 lg:pt-36">
         <div className="flex flex-1 items-center">
@@ -98,27 +78,7 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, delay: 0.4 }}
-          className="grid overflow-hidden rounded-[1.75rem] border border-white/25 bg-white/80 text-[#171714] shadow-2xl shadow-black/20 backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4"
-        >
-          {stats.map(({ value, label, icon: Icon }, index) => (
-            <div
-              key={label}
-              className={`flex items-center gap-4 px-5 py-5 sm:px-7 ${
-                index > 0 ? "border-t border-black/10 sm:border-l sm:border-t-0" : ""
-              }`}
-            >
-              <Icon className="h-5 w-5 shrink-0" strokeWidth={1.8} />
-              <div>
-                <div className="text-xl font-semibold tracking-tight">{value}</div>
-                <div className="mt-0.5 text-xs text-black/60">{label}</div>
-              </div>
-            </div>
-          ))}
-        </motion.div>
+
       </div>
     </section>
   );
