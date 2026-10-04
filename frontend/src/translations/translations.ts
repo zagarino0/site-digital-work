@@ -1611,7 +1611,7 @@ export const translations = {
       solution_metier: "Business Solution",
       reseaux: "Networks",
       automatisation: "Automation",
-      solution_digitale: "Digital Solution"
+      solution_digitale: "Digital Solution",
       logiciel: "Software",
       "reseaux_infrastructure": "Networks & Infrastructure",
       "cybersecurite": "Cybersecurity",
