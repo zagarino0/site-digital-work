@@ -13,8 +13,7 @@ import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import Button from "../../components/ui/Button";
 import ThemeSwitcher from "../../components/ui/ThemeSwitcher";
-
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+import { apiUrl } from "../../config/api";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -38,7 +37,7 @@ export default function AdminLogin() {
 
     try {
       const response = await fetch(
-        `${API_URL}/api/auth/login`,
+        apiUrl("/api/auth/login"),
         {
           method: "POST",
           headers: {
