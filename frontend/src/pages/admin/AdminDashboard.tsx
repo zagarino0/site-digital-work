@@ -20,6 +20,7 @@ import {
 import logo from "../../assets/logo.png";
 
 import Button from "../../components/ui/Button";
+import ThemeSwitcher from "../../components/ui/ThemeSwitcher";
 
 import {
   adminLogout,
@@ -163,6 +164,8 @@ export default function AdminDashboard() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
+
+            <ThemeSwitcher />
 
             {/* Retour accueil */}
             <button
