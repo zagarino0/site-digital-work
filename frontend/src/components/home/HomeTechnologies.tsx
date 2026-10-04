@@ -45,7 +45,7 @@ export default function HomeTechnologies() {
             return (
               <article key={technology.name} className="group bg-white p-6 transition-colors hover:bg-[#faf9f6] dark:bg-[#24231f] dark:hover:bg-[#2a2924]">
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-[#f4f1eb] text-[#11110f] transition-colors group-hover:bg-[#11110f] group-hover:text-white dark:bg-[#2a2924] dark:text-[#f5f2e9] dark:group-hover:bg-[#f5f2e9] dark:group-hover:text-[#11110f] dw-icon-tile">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#f4f1eb] text-[#11110f] transition-colors group-hover:bg-[#11110f] group-hover:text-white dark:bg-[#2a2924] dark:text-[#f5f2e9] dark:group-hover:bg-[#f5f2e9] dark:group-hover:text-[#11110f] dw-icon-tile">
                     <Icon size={20} strokeWidth={1.6} />
                   </div>
                   <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-[#9a958b]">
