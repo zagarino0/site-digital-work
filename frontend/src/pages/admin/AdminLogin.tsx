@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 import logo from "../../assets/logo.png";
 import Button from "../../components/ui/Button";
+import ThemeSwitcher from "../../components/ui/ThemeSwitcher";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 
@@ -122,6 +123,10 @@ export default function AdminLogin() {
         py-16
       "
     >
+      <div className="fixed right-5 top-5 z-10">
+        <ThemeSwitcher />
+      </div>
+
       <div className="w-full max-w-md">
 
         {/* ===================================================
