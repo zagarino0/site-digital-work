@@ -14,6 +14,7 @@ import Button from "../components/ui/Button";
 import {
   getUniqueProjectCategories,
   getCanonicalProjectCategory,
+  getProjectCategoryTranslationKey,
 } from "../constants/projectCategories";
 
 import {
@@ -333,7 +334,12 @@ const categories = useMemo(() => {
                     }
                   `}
                 >
-                  {category}
+                  {category === "Tous"
+                    ? t("realisations.categories.all")
+                    : t(
+                        `realisations.categories.${getProjectCategoryTranslationKey(category)}`,
+                        { defaultValue: category }
+                      )}
                 </button>
               );
             })}
@@ -977,7 +983,7 @@ function ProjectCard({ project }: ProjectCardProps) {
                 hover:bg-dw-primary/15
               "
             >
-              Voir le projet
+              {t("realisations.project.view")}
 
               <ArrowRight
                 size={15}
@@ -1004,7 +1010,7 @@ function ProjectCard({ project }: ProjectCardProps) {
                 text-dw-muted
               "
             >
-              Projet indisponible
+              {t("realisations.project.unavailable")}
             </span>
           )}
         </div>
