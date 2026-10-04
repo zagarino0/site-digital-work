@@ -33,10 +33,9 @@ const __dirname = path.dirname(__filename);
  * ../uploads
  */
 
-const uploadsPath = path.resolve(
-  __dirname,
-  "../uploads"
-);
+const uploadsPath = process.env.UPLOADS_DIR
+  ? path.resolve(process.env.UPLOADS_DIR)
+  : path.resolve(__dirname, "../uploads");
 
 console.log(
   "[UPLOAD] Static uploads directory:",
