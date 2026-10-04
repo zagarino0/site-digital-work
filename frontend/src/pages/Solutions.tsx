@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
   BarChart3,
@@ -51,86 +52,11 @@ const itemVariants: Variants = {
 ========================================================= */
 
 const solutions = [
-  {
-    number: "01",
-    icon: Globe2,
-    title: "Présence digitale",
-    subtitle: "Soyez visible. Soyez crédible.",
-    description:
-      "Nous construisons une présence digitale professionnelle permettant à votre entreprise d'être trouvée, comprise et contactée facilement.",
-    features: [
-      "Site web professionnel",
-      "Landing pages",
-      "Référencement naturel",
-      "Google Business",
-      "Responsive mobile",
-      "Optimisation des performances",
-    ],
-  },
-  {
-    number: "02",
-    icon: BarChart3,
-    title: "Gestion d'entreprise",
-    subtitle: "Pilotez votre activité depuis un seul endroit.",
-    description:
-      "Nous développons des plateformes permettant de centraliser vos données, vos utilisateurs, vos opérations et vos indicateurs.",
-    features: [
-      "Dashboards",
-      "Gestion utilisateurs",
-      "Statistiques",
-      "Gestion clients",
-      "Gestion des opérations",
-      "Rapports",
-    ],
-  },
-  {
-    number: "03",
-    icon: Workflow,
-    title: "Digitalisation des processus",
-    subtitle: "Moins de tâches manuelles. Plus d'efficacité.",
-    description:
-      "Nous transformons vos processus papier ou Excel en workflows numériques simples, automatisés et traçables.",
-    features: [
-      "Workflows métier",
-      "Automatisation",
-      "Formulaires numériques",
-      "Notifications",
-      "Gestion documentaire",
-      "Suivi des opérations",
-    ],
-  },
-  {
-    number: "04",
-    icon: Hotel,
-    title: "Hôtellerie & restauration",
-    subtitle: "Une expérience digitale adaptée à votre établissement.",
-    description:
-      "Nous créons des solutions digitales pour les hôtels, restaurants et établissements touristiques afin d'améliorer leur visibilité et leur gestion.",
-    features: [
-      "Site hôtelier",
-      "Menu digital",
-      "Réservation",
-      "Galerie photos",
-      "WhatsApp Business",
-      "Gestion de contenu",
-    ],
-  },
-  {
-    number: "05",
-    icon: Network,
-    title: "Réseaux & Wi-Fi",
-    subtitle: "Connectez vos utilisateurs et contrôlez votre réseau.",
-    description:
-      "Nous développons et intégrons des solutions de gestion Wi-Fi et réseau pour les entreprises, hôtels, espaces publics et zones communautaires.",
-    features: [
-      "Hotspot Wi-Fi",
-      "Gestion vouchers",
-      "MikroTik",
-      "Gestion utilisateurs",
-      "Statistiques réseau",
-      "Portail captif",
-    ],
-  },
+  { number: "01", icon: Globe2, key: "presence" },
+  { number: "02", icon: BarChart3, key: "management" },
+  { number: "03", icon: Workflow, key: "processes" },
+  { number: "04", icon: Hotel, key: "hospitality" },
+  { number: "05", icon: Network, key: "network" },
 ];
 
 /* =========================================================
@@ -138,6 +64,8 @@ const solutions = [
 ========================================================= */
 
 export default function Solutions() {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* =====================================================
@@ -157,17 +85,17 @@ export default function Solutions() {
             className="mx-auto max-w-4xl text-center"
           >
             <motion.div variants={itemVariants}>
-              <Badge>Solutions Digital Work</Badge>
+              <Badge>{t("solutionsPage.hero.badge")}</Badge>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
               className="mt-7 text-5xl font-black leading-[1.02] tracking-[-0.04em] text-dw-white sm:text-6xl lg:text-7xl"
             >
-              Des solutions digitales
+              {t("solutionsPage.hero.title")}
               <br />
               <span className="dw-gradient-text">
-                pensées pour votre activité.
+                {t("solutionsPage.hero.titleHighlight")}
               </span>
             </motion.h1>
 
@@ -175,9 +103,7 @@ export default function Solutions() {
               variants={itemVariants}
               className="mx-auto mt-7 max-w-2xl text-base leading-8 text-dw-muted sm:text-lg"
             >
-              Digital Work analyse vos besoins et construit
-              des outils numériques adaptés à vos objectifs,
-              votre secteur et vos utilisateurs.
+              {t("solutionsPage.hero.description")}
             </motion.p>
 
             <motion.div
@@ -185,7 +111,7 @@ export default function Solutions() {
               className="mt-9 flex flex-col justify-center gap-3 sm:flex-row"
             >
               <Button to="/contact">
-                Définir mon besoin
+                {t("solutionsPage.hero.primary")}
                 <ArrowRight size={17} />
               </Button>
 
@@ -193,7 +119,7 @@ export default function Solutions() {
                 to="/realisations"
                 variant="secondary"
               >
-                Voir nos réalisations
+                {t("solutionsPage.hero.secondary")}
               </Button>
             </motion.div>
           </motion.div>
@@ -208,26 +134,23 @@ export default function Solutions() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <Badge>Notre philosophie</Badge>
+              <Badge>{t("solutionsPage.positioning.badge")}</Badge>
 
               <h2 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                La technologie doit résoudre un problème.
+                {t("solutionsPage.positioning.title")}
               </h2>
 
               <p className="mt-5 max-w-xl text-base leading-8 text-dw-muted">
-                Nous commençons par comprendre votre activité
-                avant de proposer une solution technique.
+                {t("solutionsPage.positioning.p1")}
               </p>
 
               <p className="mt-4 max-w-xl text-base leading-8 text-dw-muted">
-                L'objectif n'est pas de multiplier les outils,
-                mais de construire un système digital cohérent,
-                utile et capable d'évoluer avec votre entreprise.
+                {t("solutionsPage.positioning.p2")}
               </p>
 
               <div className="mt-8">
                 <Button to="/services">
-                  Découvrir nos expertises
+                  {t("solutionsPage.positioning.button")}
                   <ArrowRight size={16} />
                 </Button>
               </div>
@@ -240,25 +163,25 @@ export default function Solutions() {
                 <div className="grid grid-cols-2 gap-4">
                   <MiniStat
                     icon={Globe2}
-                    title="Visibilité"
-                    text="Attirer plus de clients"
+                    title="{t("solutionsPage.positioning.stats.visibility.title")}"
+                    text="{t("solutionsPage.positioning.stats.visibility.text")}"
                   />
 
                   <MiniStat
                     icon={BarChart3}
-                    title="Pilotage"
-                    text="Décider avec vos données"
+                    title="{t("solutionsPage.positioning.stats.management.title")}"
+                    text="{t("solutionsPage.positioning.stats.management.text")}"
                   />
 
                   <MiniStat
                     icon={Workflow}
-                    title="Automatisation"
+                    title="{t("solutionsPage.positioning.stats.automation.title")}"
                     text="Gagner du temps"
                   />
 
                   <MiniStat
                     icon={Settings2}
-                    title="Évolution"
+                    title="{t("solutionsPage.positioning.stats.evolution.title")}"
                     text="Grandir avec vos outils"
                   />
                 </div>
@@ -313,40 +236,40 @@ export default function Solutions() {
       <section className="py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="Secteurs"
+            eyebrow="{t("solutionsPage.sectors.eyebrow")}"
             title={
               <>
-                Des solutions adaptées
+                {t("solutionsPage.sectors.title")}
                 <br />
-                à votre environnement.
+                {t("solutionsPage.sectors.titleHighlight")}
               </>
             }
-            description="Notre approche s'adapte aux contraintes et aux objectifs de votre secteur d'activité."
+            description="{t("solutionsPage.sectors.description")}"
           />
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <SectorCard
               icon={Hotel}
-              title="Hôtellerie"
-              text="Visibilité, réservation, présence digitale et outils de gestion."
+              title="{t("solutionsPage.sectors.items.hotel.title")}"
+              text="{t("solutionsPage.positioning.stats.visibility.title")}, réservation, présence digitale et outils de gestion."
             />
 
             <SectorCard
               icon={Layers3}
-              title="PME"
-              text="Digitalisation des processus et centralisation des opérations."
+              title="{t("solutionsPage.sectors.items.sme.title")}"
+              text="{t("solutionsPage.sectors.items.sme.text")}"
             />
 
             <SectorCard
               icon={Smartphone}
-              title="Commerces"
-              text="Solutions web et mobiles pour améliorer la relation client."
+              title="{t("solutionsPage.sectors.items.retail.title")}"
+              text="{t("solutionsPage.sectors.items.retail.text")}"
             />
 
             <SectorCard
               icon={Network}
-              title="Réseaux"
-              text="Hotspot, Wi-Fi, gestion utilisateurs et supervision."
+              title="{t("solutionsPage.sectors.items.network.title")}"
+              text="{t("solutionsPage.sectors.items.network.text")}"
             />
           </div>
         </Container>
@@ -359,34 +282,34 @@ export default function Solutions() {
       <section className="border-y border-white/[0.06] bg-white/[0.015] py-24 sm:py-32">
         <Container>
           <SectionTitle
-            eyebrow="Comment ça fonctionne"
+            eyebrow="{t("solutionsPage.process.eyebrow")}"
             title={
               <>
-                Votre besoin devient
+                {t("solutionsPage.process.title")}
                 <br />
-                une solution concrète.
+                {t("solutionsPage.process.titleHighlight")}
               </>
             }
-            description="Un processus simple pour éviter les développements inutiles et concentrer les efforts sur ce qui crée réellement de la valeur."
+            description="{t("solutionsPage.process.description")}"
           />
 
           <div className="mt-14 grid gap-5 md:grid-cols-3">
             <ProcessStep
               number="01"
-              title="Vous nous expliquez"
-              text="Nous échangeons sur votre activité, votre problème et vos objectifs."
+              title="{t("solutionsPage.process.steps.explain.title")}"
+              text="{t("solutionsPage.process.steps.explain.text")}"
             />
 
             <ProcessStep
               number="02"
-              title="Nous concevons"
+              title="{t("solutionsPage.process.steps.design.title")}"
               text="Nous définissons l'architecture, les fonctionnalités et l'expérience utilisateur."
             />
 
             <ProcessStep
               number="03"
-              title="Nous construisons"
-              text="Nous développons et mettons en production votre solution."
+              title="{t("solutionsPage.process.steps.build.title")}"
+              text="{t("solutionsPage.process.steps.build.text")}"
             />
           </div>
         </Container>
@@ -407,18 +330,16 @@ export default function Solutions() {
               </div>
 
               <h2 className="mx-auto mt-6 max-w-3xl text-3xl font-bold tracking-tight text-dw-white sm:text-4xl">
-                Vous avez un problème à digitaliser ?
+                {t("solutionsPage.cta.title")}
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-dw-muted">
-                Décrivez-nous votre situation. Nous vous
-                aiderons à identifier la solution digitale la
-                plus adaptée.
+                {t("solutionsPage.cta.description")}
               </p>
 
               <div className="mt-8">
                 <Button to="/contact">
-                  Parler de mon projet
+                  {t("solutionsPage.cta.button")}
                   <ArrowRight size={17} />
                 </Button>
               </div>
@@ -472,22 +393,22 @@ function SolutionCard({ solution }: SolutionCardProps) {
 
         <div>
           <h3 className="text-2xl font-bold text-dw-white">
-            {solution.title}
+            {t(`solutionsPage.cards.${solution.key}.title`)}
           </h3>
 
           <p className="mt-2 text-sm font-medium text-dw-primary">
-            {solution.subtitle}
+            {t(`solutionsPage.cards.${solution.key}.subtitle`)}
           </p>
 
           <p className="mt-4 max-w-xl text-sm leading-7 text-dw-muted">
-            {solution.description}
+            {t(`solutionsPage.cards.${solution.key}.description`)}
           </p>
         </div>
 
         {/* Features */}
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-          {solution.features.map((feature) => (
+          {t(`solutionsPage.cards.${solution.key}.features`, { returnObjects: true }).map((feature: string) => (
             <div
               key={feature}
               className="flex items-center gap-2 text-sm text-dw-muted"
