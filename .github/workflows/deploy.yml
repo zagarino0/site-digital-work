@@ -44,7 +44,40 @@ jobs:
 
       - name: Prepare SPA fallback
         working-directory: frontend
-        run: cp dist/index.html dist/404.html
+        shell: bash
+        run: |
+          cat > dist/404.html <<'EOF'
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <script>
+                (function () {
+                  var base = "/site-digital-work/";
+                  var path = window.location.pathname;
+                  var search = window.location.search;
+                  var hash = window.location.hash;
+                  var relativePath = path.indexOf(base) === 0
+                    ? path.slice(base.length)
+                    : path.replace(/^\//, "");
+
+                  sessionStorage.redirect =
+                    window.location.origin +
+                    base +
+                    relativePath +
+                    search +
+                    hash;
+
+                  window.location.replace(
+                    window.location.origin +
+                    base
+                  );
+                })();
+              </script>
+            </head>
+            <body></body>
+          </html>
+          EOF
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
