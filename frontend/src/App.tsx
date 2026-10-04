@@ -27,7 +27,13 @@ function App() {
     location.pathname.startsWith("/admin");
 
   return (
-    <div className="flex min-h-screen flex-col bg-dw-background text-dw-text">
+    <div className="dw-site-shell flex min-h-screen flex-col text-dw-text">
+      {!isAdminRoute && (
+        <>
+          <div aria-hidden="true" className="dw-site-backdrop" />
+          <div aria-hidden="true" className="dw-site-backdrop-overlay" />
+        </>
+      )}
       {/* =====================================================
           PUBLIC NAVBAR
       ===================================================== */}
