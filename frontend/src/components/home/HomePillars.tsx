@@ -35,7 +35,7 @@ export default function HomePillars() {
   const { t } = useTranslation();
 
   return (
-    <section id="pillars" className="bg-white py-24 text-[#11110f] sm:py-28">
+    <section id="pillars" className="bg-white py-24 text-[#11110f] dark:bg-[#1f1e1b] dark:text-[#f5f2e9] sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <motion.header
           initial={{ opacity: 0, y: 18 }}
@@ -91,7 +91,7 @@ export default function HomePillars() {
                   {t(`pillars.items.${index}.title`)}
                 </h3>
 
-                <p className="mt-3 text-sm leading-6 text-[#6e6a61]">
+                <p className="mt-3 text-sm leading-6 text-[#6e6a61] dark:text-[#b9b5ac]">
                   {t(`pillars.items.${index}.description`)}
                 </p>
 
@@ -114,7 +114,7 @@ export default function HomePillars() {
           })}
         </motion.div>
 
-        <div className="mx-auto mt-16 flex max-w-3xl flex-col items-center justify-between gap-5 border-y border-[#ded9cf] py-6 sm:flex-row">
+        <div className="mx-auto mt-16 flex max-w-3xl flex-col items-center justify-between gap-5 border-y border-[#ded9cf] dark:border-[#4b4942] py-6 sm:flex-row">
           <div>
             <h3 className="text-lg font-semibold">{t("cta.title")}</h3>
             <p className="mt-1 text-sm text-[#6e6a61]">{t("cta.description")}</p>
