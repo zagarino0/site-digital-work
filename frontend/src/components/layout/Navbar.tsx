@@ -132,13 +132,12 @@ export default function Navbar() {
                   to={item.to}
                   onClick={closeMobileMenu}
                   className={({ isActive }) =>
-                    `rounded-xl px-4 py-3.5 text-sm font-medium transition-colors ${
+                    `px-4 py-3.5 text-sm font-medium transition-colors ${
                       isActive
-                        ? "bg-[#f0eee8] text-[#11110f]"
-                        : "text-[#56544d] hover:bg-[#f7f5ef]"
+                        ? "text-[#11110f]"
+                        : "text-[#56544d] hover:text-[#11110f]"
                     }`
-                  }
-                >
+                  }                >
                   {t(`nav.${item.key}`)}
                 </NavLink>
               ))}
