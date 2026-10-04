@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import Container from "../ui/Container";
-import Badge from "../ui/Badge";
 
 import {
   fetchProjects,
@@ -152,7 +151,7 @@ export default function HomeRealisations() {
       className="
         border-y
         border-dw-border
-        bg-dw-surface
+        bg-white
         py-24
         sm:py-32
       "
@@ -176,13 +175,10 @@ export default function HomeRealisations() {
             text-center
           "
         >
-          <motion.div variants={itemVariants}>
-            <Badge>
-              {t(
-                "realisations.badge",
-                "Nos réalisations"
-              )}
-            </Badge>
+          <motion.div variants={itemVariants} className="mb-5 flex items-center justify-center gap-4 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#77736a]">
+            <span className="h-px w-10 bg-[#cfc7b8]" />
+            <span>{t("realisations.badge", "Nos réalisations")}</span>
+            <span className="h-px w-10 bg-[#cfc7b8]" />
           </motion.div>
 
           <motion.h2
@@ -243,7 +239,7 @@ export default function HomeRealisations() {
                   rounded-3xl
                   border
                   border-dw-border
-                  bg-dw-card
+                  bg-white
                 "
               >
                 <div
@@ -302,12 +298,12 @@ export default function HomeRealisations() {
               max-w-2xl
               rounded-2xl
               border
-              border-red-500/20
-              bg-red-500/10
+              border-[#ead0cb]
+              bg-[#faf0ee]
               p-5
               text-center
               text-sm
-              text-red-500
+              text-[#9b3d32]
             "
           >
             {error}
@@ -343,8 +339,8 @@ export default function HomeRealisations() {
                   items-center
                   justify-center
                   rounded-2xl
-                  bg-dw-primary/10
-                  text-dw-primary
+                  bg-[#f4f1eb]
+                  text-[#11110f]
                 "
               >
                 <FolderKanban size={24} />
@@ -434,7 +430,7 @@ export default function HomeRealisations() {
               gap-2
               rounded-xl
               border
-              border-dw-primary/20
+              border-[#d6d0c4]
               bg-dw-primary/10
               px-5
               py-3
@@ -442,8 +438,8 @@ export default function HomeRealisations() {
               font-semibold
               text-dw-primary
               transition-all
-              hover:border-dw-primary/40
-              hover:bg-dw-primary/15
+              hover:border-[#11110f]
+              hover:bg-[#eee9df]
             "
           >
             {t(
@@ -505,7 +501,7 @@ function ProjectCard({
         transition-all
         duration-300
         hover:-translate-y-1
-        hover:border-dw-primary/30
+        hover:border-[#c99a4d]
         hover:shadow-xl
         hover:shadow-dw-primary/5
       "
