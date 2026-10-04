@@ -95,13 +95,12 @@ export default function Realisations() {
           "Erreur chargement réalisations:",
           error
         );
-
-       
-         {error instanceof Error
-          ? error.message
-          : t("realisations.states.loadError")}
-     
-      } finally {
+        setError(
+          error instanceof Error
+            ? error.message
+            : t("realisations.states.loadError")
+        );
+} finally {
         setLoading(false);
       }
     }
@@ -750,12 +749,6 @@ function ProjectCard({ project }: ProjectCardProps) {
           "
         />
 
-        {/* STATUS */}
-
-        <div className="absolute right-4 top-4 z-30">
-          <ProjectStatusBadge status={project.status} />
-        </div>
-
         {/* CATEGORY */}
 
         <div
@@ -810,17 +803,22 @@ function ProjectCard({ project }: ProjectCardProps) {
         {/* TITLE */}
 
         <div className="flex items-start justify-between gap-4">
-          <h3
-            className="
-              text-xl
-              font-bold
-              leading-tight
-              text-dw-text
-            "
-          >
-            {project.title}
-         
-          </h3>
+          <div className="min-w-0 flex-1">
+            <div className="mb-3">
+              <ProjectStatusBadge status={project.status} />
+            </div>
+
+            <h3
+              className="
+                text-xl
+                font-bold
+                leading-tight
+                text-dw-text
+              "
+            >
+              {project.title}
+            </h3>
+          </div>
 
           {hasLink && (
             <a
