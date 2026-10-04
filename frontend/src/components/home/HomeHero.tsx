@@ -1,5 +1,6 @@
 import { ArrowRight, BarChart3, ArrowUpRight } from "lucide-react";
-import { projects } from "../../data/projects";
+import { useEffect, useState } from "react";
+import { fetchProjects, type Project } from "../../services/projectsApi";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -8,9 +9,52 @@ const image = `${import.meta.env.BASE_URL}images/mahajanga-background.jpg`;
 
 export default function HomeHero() {
   const { t } = useTranslation();
-  const completedProjects = projects.filter((project) => project.status === "completed").length;
-  const projectCategories = new Set(projects.map((project) => project.category)).size;
-  const technologies = new Set(projects.flatMap((project) => project.technologies)).size;
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadPublishedProjects() {
+      try {
+        const data = await fetchProjects();
+
+        if (active) {
+          setProjects(
+            data.filter((project) => project.published === true)
+          );
+        }
+      } catch (error) {
+        console.error(
+          "Erreur chargement statistiques hero:",
+          error
+        );
+
+        if (active) {
+          setProjects([]);
+        }
+      }
+    }
+
+    void loadPublishedProjects();
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  /*
+   * Les statistiques publiques proviennent exclusivement
+   * des projets publiés dans PostgreSQL, donc de la même
+   * source de vérité que l'administration.
+   */
+  const publishedProjects = projects;
+  const publishedProjectCount = publishedProjects.length;
+  const projectCategories = new Set(
+    publishedProjects.map((project) => project.category)
+  ).size;
+  const technologies = new Set(
+    publishedProjects.flatMap((project) => project.technologies)
+  ).size;
 
   return (
     <section
@@ -77,7 +121,7 @@ export default function HomeHero() {
             className="mt-10 flex flex-wrap items-center gap-0 border-t border-[#e5e1d8] pt-6"
           >
             {[
-              [String(completedProjects), t("hero.stats.projects", { defaultValue: "Projets réalisés" })],
+              [String(publishedProjectCount), t("hero.stats.projects", { defaultValue: "Projets réalisés" })],
               [String(projectCategories), t("hero.stats.categories", { defaultValue: "Domaines couverts" })],
               [String(technologies), t("hero.stats.technologies", { defaultValue: "Technologies utilisées" })],
             ].map(([value, label], index) => (
@@ -128,7 +172,7 @@ export default function HomeHero() {
                 <BarChart3 className="h-5 w-5" />
               </span>
               <div>
-                <div className="text-lg font-semibold leading-none">{completedProjects}</div>
+                <div className="text-lg font-semibold leading-none">{publishedProjectCount}</div>
                 <div className="mt-1 text-xs text-[#77736a]">
                   {t("hero.stats.projects", { defaultValue: "Projets réalisés" })}
                 </div>
