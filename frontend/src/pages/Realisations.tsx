@@ -752,7 +752,7 @@ function ProjectCard({ project }: ProjectCardProps) {
 
         {/* STATUS */}
 
-        <div className="absolute right-4 top-4">
+        <div className="absolute right-4 top-4 z-30">
           <ProjectStatusBadge status={project.status} />
         </div>
 
@@ -1069,14 +1069,21 @@ function ProjectStatusBadge({
     },
   } as const;
 
-  const current = config[status] ?? config.completed;
+  const normalizedStatus =
+    status === "completed" ||
+    status === "in-progress" ||
+    status === "maintenance"
+      ? status
+      : "completed";
+
+  const current = config[normalizedStatus];
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-[11px] font-bold backdrop-blur-md ${current.className}`}
+      className={`relative z-30 inline-flex min-h-8 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1.5 text-[11px] font-bold shadow-lg backdrop-blur-md ${current.className}`}
     >
-      <span className="h-1.5 w-1.5 rounded-full bg-current" />
-      {current.label}
+      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-current" />
+      <span>{current.label}</span>
     </span>
   );
 }
