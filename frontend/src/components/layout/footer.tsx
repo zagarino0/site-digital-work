@@ -307,6 +307,8 @@ export default function Footer() {
                 </div>
               </div>
             </div>
+            </div>
+          </div>
 
           {/* Bottom */}
           <div className="mt-14 border-t border-[#e5e1d8] pt-8 dark:border-[#e5e1d8]">
