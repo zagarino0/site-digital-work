@@ -2,8 +2,6 @@ import "dotenv/config";
 
 import express from "express";
 import cors from "cors";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
 
 import pool from "./database/db.js";
 
@@ -11,36 +9,10 @@ import authRoutes from "./routes/auth.routes.js";
 import projectsRoutes from "./routes/projects.routes.js";
 import uploadRoutes from "./routes/upload.routes.js";
 
-/* =========================================================
-   PATHS
-========================================================= */
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-/*
- * server.ts
- *
- * backend/src/server.ts
- *
- * backend/
- * ├── src/
- * │   └── server.ts
- * │
- * └── uploads/
- *
- * Depuis src :
- * ../uploads
- */
-
-const uploadsPath = process.env.UPLOADS_DIR
-  ? path.resolve(process.env.UPLOADS_DIR)
-  : path.resolve(__dirname, "../uploads");
-
-console.log(
-  "[UPLOAD] Static uploads directory:",
-  uploadsPath
-);
+import {
+  getUploadsRoot,
+  getUploadStorageWarning,
+} from "./config/uploads.js";
 
 /* =========================================================
    APP
@@ -55,6 +27,7 @@ const PORT = Number(
 /* =========================================================
    CORS
 ========================================================= */
+
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
@@ -82,15 +55,22 @@ app.use(express.json());
    STATIC UPLOADS
 ========================================================= */
 
-/*
- * Les fichiers présents dans :
- *
- * backend/uploads/...
- *
- * sont accessibles avec :
- *
- * http://localhost:4000/uploads/...
- */
+const uploadsPath = getUploadsRoot();
+
+console.log(
+  "[UPLOAD] Static uploads directory:",
+  uploadsPath
+);
+
+const uploadStorageWarning =
+  getUploadStorageWarning();
+
+if (uploadStorageWarning) {
+  console.warn(
+    "[UPLOAD]",
+    uploadStorageWarning
+  );
+}
 
 app.use(
   "/uploads",
