@@ -221,13 +221,13 @@ select:focus-visible {
 
 /* Editorial icon tiles: deliberately square/soft-rounded, never circular. */
 .dw-icon-tile {
-  border-radius: 12px !important;
-  background-color: #f4f1eb;
-  color: #11110f;
+  border-radius: 9999px !important;
+  background-color: #f4f1eb !important;
+  color: #11110f !important;
 }
 
 [data-theme="dark"] .dw-icon-tile {
-  background-color: #201f1b !important;
+  background-color: #2a2924 !important;
   color: #f5f2e9 !important;
 }
 
