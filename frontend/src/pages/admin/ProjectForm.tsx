@@ -28,7 +28,7 @@ import ThemeSwitcher from "../../components/ui/ThemeSwitcher";
 
 import {
   createProject,
-  fetchProjectById,
+  getProject,
   getProjectImageUrl,
   updateProject,
   uploadProjectImage,
@@ -38,6 +38,10 @@ import type {
   Project,
   ProjectPayload,
 } from "../../services/projectsApi";
+
+import {
+  getProject as getAdminProject,
+} from "../../services/adminApi";
 
 import {
   PROJECT_CATEGORIES,
@@ -257,7 +261,7 @@ export default function ProjectForm() {
         setSuccess("");
 
         const project =
-          await fetchProjectById(id);
+          await getAdminProject(id);
 
         if (cancelled) {
           return;
