@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="150" viewBox="0 0 560 150" role="img" aria-labelledby="title">
+  <title id="title">Digital Work — Des solutions digitales pour un avenir plus grand</title>
+  <g transform="translate(0 6)">
+    <path d="M8 12H76C106 12 125 31 125 61V81L101 60C101 43 92 34 74 34H12Q8 34 8 30V16Q8 12 12 12Z" fill="#11100F"/>
+    <path d="M8 47H29Q33 47 33 51V83H79L94 103H12Q8 103 8 99Z" fill="#11100F"/>
+    <path d="M88 61L106 106H126L101 60Z" fill="#D1A04B"/>
+    <path d="M129 60L151 30Q155 24 159 31L193 106H171L151 72L132 106Z" fill="#D1A04B"/>
+    <path d="M180 69L209 12H238L194 106Z" fill="#D1A04B"/>
+  </g>
+  <text x="258" y="54" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" letter-spacing="1.2" fill="#11100F">DIGITAL</text>
+  <text x="258" y="89" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700" letter-spacing="1.2" fill="#D1A04B">WORK</text>
+  <path d="M258 105H543" stroke="#D1A04B" stroke-width="1.5"/>
+  <text x="258" y="122" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="600" letter-spacing="2.4" fill="#11100F">DES SOLUTIONS DIGITALES</text>
+  <text x="258" y="137" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="600" letter-spacing="1.7" fill="#11100F">POUR UN AVENIR <tspan fill="#D1A04B">PLUS GRAND.</tspan></text>
+</svg>
