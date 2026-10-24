@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="530" viewBox="0 0 830 530" role="img" aria-labelledby="title desc">
+  <title id="title">Digital Work</title>
+  <desc id="desc">Logo Digital Work noir et or champagne avec la signature Des solutions digitales pour un avenir plus grand.</desc>
+  <rect width="830" height="530" fill="#FFFFFF"/>
+  <g transform="translate(0 0)">
+    <path d="M139 54H314C388 54 435 101 435 176V236L375 179C375 139 353 106 309 106H149Q139 106 139 96V64Q139 54 149 54Z" fill="#11100F"/>
+    <path d="M139 139H191Q201 139 201 149V234H331L366 282H149Q139 282 139 272Z" fill="#11100F"/>
+    <path d="M347 179L391 291H440L375 179Z" fill="#D1A04B"/>
+    <path d="M446 179L492 109Q500 96 508 112L590 291H536L493 210L447 291Z" fill="#D1A04B"/>
+    <path d="M568 198L649 54H728L606 291Z" fill="#D1A04B"/>
+  </g>
+  <text x="65" y="396" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700" letter-spacing="9" fill="#11100F">DIGITAL</text>
+  <text x="502" y="396" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700" letter-spacing="2" fill="#D1A04B">WORK</text>
+  <text x="415" y="449" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" letter-spacing="9" fill="#11100F">DES SOLUTIONS DIGITALES</text>
+  <text x="415" y="481" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" letter-spacing="7" fill="#11100F">POUR UN AVENIR <tspan fill="#D1A04B">PLUS GRAND.</tspan></text>
+</svg>
