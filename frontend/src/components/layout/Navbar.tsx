@@ -69,7 +69,7 @@ export default function Navbar() {
 
             <div className="leading-none">
               <div className="text-lg font-bold tracking-tight text-[#11110f]">
-                Digital<span className="text-[#11110f]">Work</span>
+                Digital<span className="text-[#d1a04b]">Work</span>
               </div>
               <div className="mt-1 text-[9px] font-medium uppercase tracking-[0.25em] text-[#77736a]">
                 Solutions digitales
