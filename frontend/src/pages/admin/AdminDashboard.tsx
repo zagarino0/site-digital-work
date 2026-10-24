@@ -17,7 +17,9 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-import logo from "../../assets/logo.png";
+import logo from "../../assets/digital-work-logo-horizontal.svg";
+import darkLogo from "../../assets/digital-work-logo-horizontal-dark.svg";
+import { useTheme } from "../../contexts/ThemeContext";
 
 import Button from "../../components/ui/Button";
 import ThemeSwitcher from "../../components/ui/ThemeSwitcher";
@@ -31,6 +33,8 @@ import {
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
+  const { theme } = useTheme();
+  const currentLogo = theme === "dark" ? darkLogo : logo;
 
   const [projects, setProjects] =
     useState<Project[]>([]);
@@ -143,32 +147,14 @@ export default function AdminDashboard() {
           "
         >
 
-          {/* Logo + titre */}
+          {/* Logo officiel + titre de l'espace admin */}
           <div className="flex min-w-0 items-center gap-3">
-
             <img
-              src={logo}
-              alt="Digital Work"
-              className="
-                h-10
-                w-10
-                shrink-0
-                sm:h-11
-                sm:w-11
-                object-contain
-              "
+              src={currentLogo}
+              alt="Digital Work — Des solutions digitales pour un avenir plus grand"
+              className="h-12 w-auto max-w-[240px] shrink-0 object-contain sm:h-14"
             />
-
-            <div className="min-w-0">
-              <p className="truncate text-[10px] font-semibold uppercase tracking-[0.15em] text-dw-primary sm:text-xs">
-                Digital Work
-              </p>
-
-              <h1 className="mt-1 truncate text-lg font-bold text-dw-text sm:text-xl">
-                Administration
-              </h1>
-            </div>
-
+            <h1 className="sr-only">Administration</h1>
           </div>
 
           {/* Actions */}
