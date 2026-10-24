@@ -62,7 +62,7 @@ export default function Footer() {
             <div className="leading-none">
               <div className="text-lg font-bold tracking-tight text-[#11110f]">
                 Digital
-                <span className="text-[#c99a4d]">
+                <span className="text-[#d1a04b]">
                   Work
                 </span>
               </div>
@@ -92,7 +92,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/services"
-                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.services.websites")}
                   </Link>
@@ -101,7 +101,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/services"
-                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.services.webApplications")}
                   </Link>
@@ -110,7 +110,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/services"
-                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.services.mobileApplications")}
                   </Link>
@@ -119,7 +119,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/solutions"
-                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.services.businessSolutions")}
                   </Link>
@@ -128,7 +128,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/solutions"
-                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.services.automation")}
                   </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/solutions"
-                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] transition-colors hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.services.digitalSolutions")}
                   </Link>
@@ -155,7 +155,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/"
-                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.navigation.home")}
                   </Link>
@@ -164,7 +164,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/services"
-                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.navigation.services")}
                   </Link>
@@ -173,7 +173,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/solutions"
-                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.navigation.solutions")}
                   </Link>
@@ -182,7 +182,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/realisations"
-                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.navigation.projects")}
                   </Link>
@@ -191,7 +191,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/a-propos"
-                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.navigation.about")}
                   </Link>
@@ -200,7 +200,7 @@ export default function Footer() {
                 <li>
                   <Link
                     to="/contact"
-                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                    className="text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                   >
                     {t("footer.navigation.contact")}
                   </Link>
@@ -217,7 +217,7 @@ export default function Footer() {
               <div className="mt-5 space-y-4">
                 <a
                   href={`mailto:${t("footer.contact.email")}`}
-                  className="flex min-w-0 items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                  className="flex min-w-0 items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                 >
                   <Mail className="mt-0.5 h-4 w-4 shrink-0" />
                   <span className="min-w-0 break-all">{t("footer.contact.email")}</span>
@@ -225,7 +225,7 @@ export default function Footer() {
 
                 <a
                   href="tel:+261348428652"
-                  className="flex items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#c99a4d]"
+                  className="flex items-start gap-3 text-sm text-[#6e6a61] hover:text-[#11110f] dark:text-[#77736a] dark:hover:text-[#d1a04b]"
                 >
                   <Phone className="mt-0.5 h-4 w-4 shrink-0" />
                   <span className="min-w-0 break-words">{t("footer.contact.phone")}</span>
@@ -244,7 +244,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook — Zagarino Razafindrafita"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#d1a04b] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#d1a04b] dark:hover:bg-[#f4f1eb] dark:hover:text-[#d1a04b]"
                 >
                   <Facebook className="h-4 w-4" />
                 </a>
@@ -252,7 +252,7 @@ export default function Footer() {
                 <a
                   href="#"
                   aria-label="Instagram"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#d1a04b] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#d1a04b] dark:hover:bg-[#f4f1eb] dark:hover:text-[#d1a04b]"
                 >
                   <Instagram className="h-4 w-4" />
                 </a>
@@ -262,7 +262,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn — Zagarino Razafindrafita"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#d1a04b] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#d1a04b] dark:hover:bg-[#f4f1eb] dark:hover:text-[#d1a04b]"
                 >
                   <Linkedin className="h-4 w-4" />
                 </a>
@@ -272,7 +272,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="GitHub — zagarino0"
-                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#c99a4d] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#c99a4d] dark:hover:bg-[#f4f1eb] dark:hover:text-[#c99a4d]"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#e5e1d8] text-[#6e6a61] transition-all hover:border-[#d1a04b] hover:bg-[#f4f1eb] hover:text-[#11110f] dark:border-[#e5e1d8] dark:text-[#77736a] dark:hover:border-[#d1a04b] dark:hover:bg-[#f4f1eb] dark:hover:text-[#d1a04b]"
                 >
                   <Github className="h-4 w-4" />
                 </a>
@@ -364,7 +364,7 @@ export default function Footer() {
             </button>
 
             <div className="pr-10">
-              <p className="text-xs font-bold uppercase tracking-widest text-[#11110f] dark:text-[#c99a4d]">
+              <p className="text-xs font-bold uppercase tracking-widest text-[#11110f] dark:text-[#d1a04b]">
                 Digital Work
               </p>
 
