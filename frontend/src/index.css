@@ -3,41 +3,49 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --dw-background: #ffffff;
-  --dw-surface: #fbfaf7;
-  --dw-card: #ffffff;
-  --dw-text: #171714;
-  --dw-muted: #706e67;
-  --dw-border: rgba(23, 23, 20, 0.11);
-  --dw-primary: #171714;
-  --dw-primary-hover: #34332e;
-  --dw-primary-dark: #0d0d0b;
-  --dw-cyan: #171714;
+  /* Official Digital Work brand palette */
+  --dw-brand-black: #11100f;
+  --dw-brand-gold: #d1a04b;
+  --dw-brand-white: #ffffff;
+  --dw-brand-ivory: #f5f1e9;
+
+  --dw-background: var(--dw-brand-white);
+  --dw-surface: var(--dw-brand-ivory);
+  --dw-card: var(--dw-brand-white);
+  --dw-text: var(--dw-brand-black);
+  --dw-muted: #706b62;
+  --dw-border: rgba(17, 16, 15, 0.12);
+  --dw-primary: var(--dw-brand-black);
+  --dw-primary-hover: #34312b;
+  --dw-primary-dark: #0b0a09;
+  --dw-accent: var(--dw-brand-gold);
+  --dw-cyan: var(--dw-brand-gold);
   --dw-success: #2f6b4f;
   --dw-warning: #8a641d;
   --dw-danger: #9b3d35;
-  --dw-purple: #171714;
-  --dw-orange: #8a5b2d;
-  --dw-grid: rgba(23, 23, 20, 0.045);
+  --dw-purple: var(--dw-brand-black);
+  --dw-orange: var(--dw-brand-gold);
+  --dw-grid: rgba(17, 16, 15, 0.045);
 }
 
 [data-theme="dark"] {
-  --dw-background: #171714;
-  --dw-surface: #201f1b;
-  --dw-card: #282720;
-  --dw-text: #f5f2e9;
-  --dw-muted: #aaa69b;
-  --dw-border: rgba(245, 242, 233, 0.12);
-  --dw-primary: #f5f2e9;
-  --dw-primary-hover: #ffffff;
-  --dw-primary-dark: #ffffff;
-  --dw-cyan: #f5f2e9;
+  --dw-background: var(--dw-brand-black);
+  --dw-surface: #201e19;
+  --dw-card: #28251f;
+  --dw-text: var(--dw-brand-ivory);
+  --dw-muted: #b4aa99;
+  --dw-border: rgba(245, 241, 233, 0.14);
+  --dw-primary: var(--dw-brand-ivory);
+  --dw-primary-hover: var(--dw-brand-white);
+  --dw-primary-dark: var(--dw-brand-white);
+  --dw-accent: var(--dw-brand-gold);
+  --dw-cyan: var(--dw-brand-gold);
   --dw-success: #86b79a;
   --dw-warning: #d8b66d;
   --dw-danger: #dc8b82;
-  --dw-purple: #f5f2e9;
-  --dw-orange: #d0a274;
-  --dw-grid: rgba(245, 242, 233, 0.04);
+  --dw-purple: var(--dw-brand-ivory);
+  --dw-orange: var(--dw-brand-gold);
+  --dw-grid: rgba(245, 241, 233, 0.04);
 }
 
 @theme {
@@ -50,6 +58,7 @@
   --color-dw-primary: var(--dw-primary);
   --color-dw-primary-hover: var(--dw-primary-hover);
   --color-dw-primary-dark: var(--dw-primary-dark);
+  --color-dw-accent: var(--dw-accent);
   --color-dw-cyan: var(--dw-cyan);
   --color-dw-success: var(--dw-success);
   --color-dw-warning: var(--dw-warning);
@@ -85,8 +94,8 @@ button, a, input, textarea, select {
   background-size: 44px 44px;
 }
 
-.dw-gradient-text {
-  background: linear-gradient(110deg, var(--dw-primary), var(--dw-muted));
+ .dw-gradient-text {
+  background: linear-gradient(110deg, var(--dw-primary), var(--dw-accent));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -270,8 +279,8 @@ select:focus-visible {
 /* Editorial icon tiles: deliberately square/soft-rounded, never circular. */
 .dw-icon-tile {
   border-radius: 9999px !important;
-  background-color: #f4f1eb !important;
-  color: #11110f !important;
+  background-color: var(--dw-brand-ivory) !important;
+  color: var(--dw-brand-black) !important;
 }
 
 /* Explicit dark-mode override must outrank the generic hard-coded bg-* compatibility rules above. */
