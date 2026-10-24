@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 
 import Button from "../ui/Button";
 import ThemeSwitcher from "../ui/ThemeSwitcher";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/digital-work-logo-horizontal.svg";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
 
@@ -63,18 +63,9 @@ export default function Navbar() {
           >
             <img
               src={logo}
-              alt="Digital Work"
-              className="h-10 w-10 object-contain transition-transform duration-200 group-hover:scale-105"
+              alt="Digital Work — Des solutions digitales pour un avenir plus grand"
+              className="h-12 w-auto max-w-[174px] object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
-
-            <div className="leading-none">
-              <div className="text-lg font-bold tracking-tight text-[#11110f]">
-                Digital<span className="text-[#d1a04b]">Work</span>
-              </div>
-              <div className="mt-1 text-[9px] font-medium uppercase tracking-[0.25em] text-[#77736a]">
-                Solutions digitales
-              </div>
-            </div>
           </Link>
 
           <nav className="hidden items-center gap-1 lg:flex">
