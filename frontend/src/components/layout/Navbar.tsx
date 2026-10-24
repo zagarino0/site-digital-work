@@ -6,6 +6,8 @@ import { Link, NavLink } from "react-router-dom";
 import Button from "../ui/Button";
 import ThemeSwitcher from "../ui/ThemeSwitcher";
 import logo from "../../assets/digital-work-logo-horizontal.svg";
+import darkLogo from "../../assets/digital-work-logo-horizontal-dark.svg";
+import { useTheme } from "../../contexts/ThemeContext";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
 
@@ -20,6 +22,8 @@ const navigation = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const { t } = useTranslation();
+  const { theme } = useTheme();
+  const currentLogo = theme === "dark" ? darkLogo : logo;
   const adminClickCount = useRef(0);
   const adminClickTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -62,7 +66,7 @@ export default function Navbar() {
             aria-label="Digital Work - Accueil"
           >
             <img
-              src={logo}
+              src={currentLogo}
               alt="Digital Work — Des solutions digitales pour un avenir plus grand"
               className="h-12 w-auto max-w-[174px] object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
