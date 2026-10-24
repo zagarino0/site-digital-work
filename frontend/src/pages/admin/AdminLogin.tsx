@@ -10,13 +10,17 @@ import {
 
 import { useNavigate } from "react-router-dom";
 
-import logo from "../../assets/logo.png";
+import logo from "../../assets/digital-work-logo-horizontal.svg";
+import darkLogo from "../../assets/digital-work-logo-horizontal-dark.svg";
+import { useTheme } from "../../contexts/ThemeContext";
 import Button from "../../components/ui/Button";
 import ThemeSwitcher from "../../components/ui/ThemeSwitcher";
 import { apiUrl } from "../../config/api";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
+  const { theme } = useTheme();
+  const currentLogo = theme === "dark" ? darkLogo : logo;
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -151,43 +155,12 @@ export default function AdminLogin() {
           <div className="mb-8 flex flex-col items-center text-center">
 
             <img
-              src={logo}
+              src={currentLogo}
               alt="Digital Work"
-              className="
-                h-16
-                w-16
-                object-contain
-              "
+              className="mb-2 h-auto w-full max-w-[280px] object-contain"
             />
 
-            <div className="mt-4 leading-none">
-              <div
-                className="
-                  text-2xl
-                  font-bold
-                  tracking-tight
-                  text-dw-white
-                "
-              >
-                Digital
-                <span className="text-dw-primary">
-                  Work
-                </span>
-              </div>
 
-              <div
-                className="
-                  mt-2
-                  text-[9px]
-                  font-medium
-                  uppercase
-                  tracking-[0.25em]
-                  text-dw-muted
-                "
-              >
-                Solutions digitales
-              </div>
-            </div>
 
             <div className="mt-6">
               <h1
